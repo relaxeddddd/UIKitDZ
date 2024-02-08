@@ -11,6 +11,7 @@
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* ViewController.swift */; };
 		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
+		04AC45742B74F09E00A5F589 /* CostumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45732B74F09E00A5F589 /* CostumModel.swift */; };
 		04B0A4152B74020F00CB7376 /* CostumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0A4142B74020F00CB7376 /* CostumView.swift */; };
 		04B0A4192B74062E00CB7376 /* verdana1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0A4182B74062E00CB7376 /* verdana1.ttf */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		0499A4772B71214100DDDFCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04AC45732B74F09E00A5F589 /* CostumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumModel.swift; sourceTree = "<group>"; };
 		04B0A4142B74020F00CB7376 /* CostumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumView.swift; sourceTree = "<group>"; };
 		04B0A4182B74062E00CB7376 /* verdana1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = verdana1.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 				0499A4752B71214100DDDFCC /* SceneDelegate.swift */,
 				0499A4772B71214100DDDFCC /* ViewController.swift */,
 				04B0A4142B74020F00CB7376 /* CostumView.swift */,
+				04AC45732B74F09E00A5F589 /* CostumModel.swift */,
 				0499A47C2B71214400DDDFCC /* Assets.xcassets */,
 				0499A4812B71214400DDDFCC /* Info.plist */,
 			);
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0499A4782B71214100DDDFCC /* ViewController.swift in Sources */,
+				04AC45742B74F09E00A5F589 /* CostumModel.swift in Sources */,
 				04B0A4152B74020F00CB7376 /* CostumView.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,

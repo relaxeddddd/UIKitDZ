@@ -8,6 +8,7 @@ class ViewController: UIViewController {
     // MARK: - Public Properties
 
     let myView = CostumView()
+    let myModel = Reversed()
 
     // MARK: - Ovveride Methods
 
@@ -42,8 +43,7 @@ class ViewController: UIViewController {
             self.myView.oldWord.text = alertController.textFields?.first?.text?.capitalized ?? "Нет слова"
             self.myView.wordTitleLabelTwo.isHidden = false
             guard let word = alertController.textFields?.first?.text else { return }
-            let revesedWord = String(word.reversed())
-            self.myView.newWord.text = revesedWord.capitalized
+            self.myView.newWord.text = self.myModel.reversed(word: word).capitalized
         })
         present(alertController, animated: true)
     }
