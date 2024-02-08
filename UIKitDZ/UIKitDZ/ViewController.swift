@@ -36,8 +36,11 @@ final class ViewController: UIViewController {
             message: message,
             preferredStyle: style
         )
-        alertControllerLose.addAction(UIAlertAction(title: "Oк", style: .default))
-        alertControllerLose.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        let alertOk = UIAlertAction(title: "Ок", style: .default)
+        let alertCancle = UIAlertAction(title: "Отмена", style: .default)
+        alertControllerLose.addAction(alertCancle)
+        alertControllerLose.addAction(alertOk)
+        alertControllerLose.preferredAction = alertOk
         present(alertControllerLose, animated: true)
     }
 
@@ -48,8 +51,11 @@ final class ViewController: UIViewController {
             message: message,
             preferredStyle: style
         )
-        additionAlertController.addAction(UIAlertAction(title: "Отмена", style: .cancel))
-        additionAlertController.addAction(UIAlertAction(title: "Oк", style: .default))
+        let actionOk = UIAlertAction(title: "Ок", style: .default)
+        let actionCancle = UIAlertAction(title: "Отмена", style: .default)
+        additionAlertController.addAction(actionCancle)
+        additionAlertController.addAction(actionOk)
+        additionAlertController.preferredAction = actionOk
         present(additionAlertController, animated: true)
     }
 
@@ -77,11 +83,15 @@ final class ViewController: UIViewController {
 
     // Number guessing function
     @objc private func guessTheNumber() {
-        let alertController = UIAlertController(title: "Угадай число от 1 до 10", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "Угадай число от 1 до 10",
+            message: nil,
+            preferredStyle: .alert
+        )
         alertController.addTextField { textFeild in
             textFeild.placeholder = "Введите число"
         }
-        alertController.addAction(UIAlertAction(title: "Ок", style: .default) { _ in
+        let actionOk = UIAlertAction(title: "Ок", style: .default) { _ in
             let number = Int(alertController.textFields?.first?.text ?? "nil")
             let randomNumber = self.model.randomNumber
             if number ?? 0 > randomNumber {
@@ -107,9 +117,10 @@ final class ViewController: UIViewController {
                 alertControllerWin.addAction(UIAlertAction(title: "Oк", style: .cancel))
                 self.present(alertControllerWin, animated: true)
             }
-
-        })
-        alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        }
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .default))
+        alertController.addAction(actionOk)
+        alertController.preferredAction = actionOk
         present(alertController, animated: true)
     }
 
