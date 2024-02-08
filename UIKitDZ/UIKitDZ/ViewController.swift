@@ -6,9 +6,11 @@ import UIKit
 /// Класс ViewController
 class ViewController: UIViewController {
     // MARK: - Public Properties
+
     let myView = CostumView()
 
     // MARK: - Ovveride Methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(myView.wordTitleLabelOne)
@@ -21,6 +23,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+
     // Show alert befor tapped button
     @objc private func showWordAlert() {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)

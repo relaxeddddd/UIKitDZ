@@ -6,6 +6,7 @@ import UIKit
 /// Класс CostumView
 class CostumView: UIView {
     // MARK: - Public Properties
+
     var startButton: UIButton = {
         let button = UIButton()
         button.setTitle("Начать", for: .normal)
