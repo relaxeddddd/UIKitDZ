@@ -4,7 +4,7 @@
 import UIKit
 
 /// Класс ViewController
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     // MARK: - Public Properties
 
     let myView = CostumView()

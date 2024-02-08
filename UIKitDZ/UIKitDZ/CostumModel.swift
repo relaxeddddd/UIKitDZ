@@ -3,6 +3,7 @@
 
 import Foundation
 
+// Model
 struct Reversed {
     func reversed(word: String) -> String {
         String(word.reversed())
