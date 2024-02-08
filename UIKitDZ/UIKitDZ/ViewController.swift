@@ -68,6 +68,7 @@ class ViewController: UIViewController {
         }
         let action = UIAlertAction(title: "Готово", style: .cancel) { _ in
             self.myView.helloTextLabel.text? += alertController.textFields?.first?.text ?? "nil"
+            self.myView.helloTextLabel.text? += "!"
             self.myView.helloTextLabel.isHidden = false
         }
         alertController.addAction(action)
