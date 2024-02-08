@@ -4,7 +4,7 @@
 import UIKit
 
 /// Класс ViewController
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     // MARK: - Public Properties
 
     let myView = CostumView()
@@ -27,10 +27,10 @@ class ViewController: UIViewController {
         printYourName(title: "Пожалуйста, представьтесь", message: nil, style: .alert)
     }
 
-    // MARK: - Public methods
+    // MARK: - Private methods
 
     // Showing alertness when calculating numbers
-    func showAlertOfGuessNumber(title: String, message: String, style: UIAlertController.Style) {
+    private func showAlertOfGuessNumber(title: String, message: String, style: UIAlertController.Style) {
         let alertControllerLose = UIAlertController(
             title: title,
             message: message,
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
 
     // Function for displaying an alert when performing mathematical operations
-    func showAlertOfResultCalculation(titel: String, message: String, style: UIAlertController.Style) {
+    private func showAlertOfResultCalculation(titel: String, message: String, style: UIAlertController.Style) {
         let additionAlertController = UIAlertController(
             title: titel,
             message: message,
@@ -54,14 +54,14 @@ class ViewController: UIViewController {
     }
 
     // Function for setting the background
-    func addBackground(nameImage: String) {
+    private func addBackground(nameImage: String) {
         let backgroundImage = UIImageView(image: UIImage(named: nameImage))
         backgroundImage.frame = view.bounds
         view.addSubview(backgroundImage)
     }
 
     // Alert function to enter a name
-    func printYourName(title: String, message: String?, style: UIAlertController.Style) {
+    private func printYourName(title: String, message: String?, style: UIAlertController.Style) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         alertController.addTextField { textField in
             textField.placeholder = "Введите ваше имя"
@@ -74,8 +74,6 @@ class ViewController: UIViewController {
         alertController.addAction(action)
         present(alertController, animated: true)
     }
-
-    // MARK: - Private methods
 
     // Number guessing function
     @objc private func guessTheNumber() {

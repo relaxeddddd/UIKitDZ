@@ -7,7 +7,7 @@ import UIKit
 class CostumView: UIView {
     // MARK: - Public Properties
 
-    var helloTextLabel: UILabel = {
+    public var helloTextLabel: UILabel = {
         let label = UILabel()
         label.text = "Приветствую,\n"
         label.numberOfLines = 0
@@ -19,7 +19,7 @@ class CostumView: UIView {
         return label
     }()
 
-    var guessTheNumberButton: UIButton = {
+    public var guessTheNumberButton: UIButton = {
         let button = UIButton()
         button.setTitle("Угадай число", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -35,7 +35,7 @@ class CostumView: UIView {
         return button
     }()
 
-    var calculationButton: UIButton = {
+    public var calculationButton: UIButton = {
         let button = UIButton()
         button.setTitle("Калькулятор", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
