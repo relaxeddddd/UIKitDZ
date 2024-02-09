@@ -93,8 +93,8 @@
 				0499A46C2B71214100DDDFCC /* Sources */,
 				0499A46D2B71214100DDDFCC /* Frameworks */,
 				0499A46E2B71214100DDDFCC /* Resources */,
-				0499A48D2B7129AB00DDDFCC /* Swift Lint */,
 				0499A48E2B7133E200DDDFCC /* Swift Formater */,
+				0499A48D2B7129AB00DDDFCC /* Swift Lint */,
 			);
 			buildRules = (
 				0499A48C2B71246800DDDFCC /* PBXBuildRule */,
