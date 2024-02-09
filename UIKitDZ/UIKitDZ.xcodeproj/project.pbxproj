@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4732B71214100DDDFCC /* AppDelegate.swift */; };
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
-		0499A4782B71214100DDDFCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* ViewController.swift */; };
+		0499A4782B71214100DDDFCC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* MainViewController.swift */; };
 		0499A47B2B71214100DDDFCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0499A4792B71214100DDDFCC /* Main.storyboard */; };
 		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
 		0499A4802B71214400DDDFCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47E2B71214400DDDFCC /* LaunchScreen.storyboard */; };
 		04AC457D2B750F5C00A5F589 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC457C2B750F5C00A5F589 /* ReservationViewController.swift */; };
+		04AC45842B75427300A5F589 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45832B75427300A5F589 /* CheckViewController.swift */; };
+		04AC45872B754C1B00A5F589 /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45862B754C1B00A5F589 /* ThanksViewController.swift */; };
+		04AC45892B757EBF00A5F589 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45882B757EBF00A5F589 /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -36,12 +39,15 @@
 		0499A4702B71214100DDDFCC /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0499A4732B71214100DDDFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0499A4752B71214100DDDFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0499A4772B71214100DDDFCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0499A4772B71214100DDDFCC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0499A47A2B71214100DDDFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A47F2B71214400DDDFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04AC457C2B750F5C00A5F589 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		04AC45832B75427300A5F589 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		04AC45862B754C1B00A5F589 /* ThanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
+		04AC45882B757EBF00A5F589 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +80,13 @@
 		0499A4722B71214100DDDFCC /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				04AC45852B754C0200A5F589 /* ThanksScreen */,
+				04AC45822B75406200A5F589 /* CheckScreen */,
 				04AC457B2B750F3A00A5F589 /* ReservationScreen */,
 				04AC45792B74FF8800A5F589 /* MainScreen */,
 				0499A4732B71214100DDDFCC /* AppDelegate.swift */,
 				0499A4752B71214100DDDFCC /* SceneDelegate.swift */,
+				04AC45882B757EBF00A5F589 /* UserInfo.swift */,
 				0499A47C2B71214400DDDFCC /* Assets.xcassets */,
 				0499A47E2B71214400DDDFCC /* LaunchScreen.storyboard */,
 				0499A4812B71214400DDDFCC /* Info.plist */,
@@ -89,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				04AC457A2B74FFA000A5F589 /* MainScreenView */,
-				0499A4772B71214100DDDFCC /* ViewController.swift */,
+				0499A4772B71214100DDDFCC /* MainViewController.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -108,6 +117,22 @@
 				04AC457C2B750F5C00A5F589 /* ReservationViewController.swift */,
 			);
 			path = ReservationScreen;
+			sourceTree = "<group>";
+		};
+		04AC45822B75406200A5F589 /* CheckScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04AC45832B75427300A5F589 /* CheckViewController.swift */,
+			);
+			path = CheckScreen;
+			sourceTree = "<group>";
+		};
+		04AC45852B754C0200A5F589 /* ThanksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04AC45862B754C1B00A5F589 /* ThanksViewController.swift */,
+			);
+			path = ThanksScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,10 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0499A4782B71214100DDDFCC /* ViewController.swift in Sources */,
+				0499A4782B71214100DDDFCC /* MainViewController.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
+				04AC45842B75427300A5F589 /* CheckViewController.swift in Sources */,
 				04AC457D2B750F5C00A5F589 /* ReservationViewController.swift in Sources */,
+				04AC45892B757EBF00A5F589 /* UserInfo.swift in Sources */,
+				04AC45872B754C1B00A5F589 /* ThanksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
