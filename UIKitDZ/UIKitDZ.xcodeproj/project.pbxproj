@@ -11,8 +11,12 @@
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* ViewController.swift */; };
 		0499A47B2B71214100DDDFCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0499A4792B71214100DDDFCC /* Main.storyboard */; };
-		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
 		0499A4802B71214400DDDFCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47E2B71214400DDDFCC /* LaunchScreen.storyboard */; };
+		04AC45D32B765A3200A5F589 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45D22B765A3200A5F589 /* Model.swift */; };
+		04AC45D52B765C4600A5F589 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45D42B765C4600A5F589 /* PlaylistViewController.swift */; };
+		04AC45D92B7664CB00A5F589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AC45D82B7664CB00A5F589 /* Assets.xcassets */; };
+		04AC45DB2B76D0E500A5F589 /* Winter Sheet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04AC45DA2B76D0E500A5F589 /* Winter Sheet.mp3 */; };
+		04AC45E02B770E1100A5F589 /* YEEI 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04AC45DF2B770E1100A5F589 /* YEEI 5.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -37,9 +41,13 @@
 		0499A4752B71214100DDDFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0499A4772B71214100DDDFCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0499A47A2B71214100DDDFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A47F2B71214400DDDFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04AC45D22B765A3200A5F589 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		04AC45D42B765C4600A5F589 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		04AC45D82B7664CB00A5F589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04AC45DA2B76D0E500A5F589 /* Winter Sheet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Winter Sheet.mp3"; sourceTree = "<group>"; };
+		04AC45DF2B770E1100A5F589 /* YEEI 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "YEEI 5.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +83,24 @@
 				0499A4732B71214100DDDFCC /* AppDelegate.swift */,
 				0499A4752B71214100DDDFCC /* SceneDelegate.swift */,
 				0499A4772B71214100DDDFCC /* ViewController.swift */,
+				04AC45D42B765C4600A5F589 /* PlaylistViewController.swift */,
+				04AC45D22B765A3200A5F589 /* Model.swift */,
 				0499A4792B71214100DDDFCC /* Main.storyboard */,
-				0499A47C2B71214400DDDFCC /* Assets.xcassets */,
 				0499A47E2B71214400DDDFCC /* LaunchScreen.storyboard */,
 				0499A4812B71214400DDDFCC /* Info.plist */,
+				04AC45D82B7664CB00A5F589 /* Assets.xcassets */,
+				04AC45DE2B770DEE00A5F589 /* Songs */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		04AC45DE2B770DEE00A5F589 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				04AC45DA2B76D0E500A5F589 /* Winter Sheet.mp3 */,
+				04AC45DF2B770E1100A5F589 /* YEEI 5.mp3 */,
+			);
+			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0499A4802B71214400DDDFCC /* LaunchScreen.storyboard in Resources */,
-				0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */,
+				04AC45D92B7664CB00A5F589 /* Assets.xcassets in Resources */,
+				04AC45E02B770E1100A5F589 /* YEEI 5.mp3 in Resources */,
+				04AC45DB2B76D0E500A5F589 /* Winter Sheet.mp3 in Resources */,
 				0499A47B2B71214100DDDFCC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +223,8 @@
 				0499A4782B71214100DDDFCC /* ViewController.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
+				04AC45D52B765C4600A5F589 /* PlaylistViewController.swift in Sources */,
+				04AC45D32B765A3200A5F589 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2NN82372P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -374,6 +399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2NN82372P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
