@@ -8,14 +8,14 @@ import UIKit
 class PlaySongViewController: UIViewController {
     // MARK: - IBOutlets
 
-    @IBOutlet var backgroundValueSong: UIImageView!
-    @IBOutlet var imageSong: UIImageView!
-    @IBOutlet var titleSong: UILabel!
-    @IBOutlet var nameOfSong: UILabel!
-    @IBOutlet var sliderSong: UISlider!
-    @IBOutlet var endTimeLabel: UILabel!
-    @IBOutlet var previousSong: UIButton!
-    @IBOutlet var secondSong: UIButton!
+    @IBOutlet private var backgroundValueSong: UIImageView!
+    @IBOutlet private var imageSong: UIImageView!
+    @IBOutlet private var titleSong: UILabel!
+    @IBOutlet private var nameOfSong: UILabel!
+    @IBOutlet private var sliderSong: UISlider!
+    @IBOutlet private var endTimeLabel: UILabel!
+    @IBOutlet private var previousSong: UIButton!
+    @IBOutlet private var secondSong: UIButton!
 
     // MARK: - Public Properties
 
@@ -53,24 +53,24 @@ class PlaySongViewController: UIViewController {
     }
 
     /// Двигаем слайдер
-    @IBAction func sliderSongAction(_ sender: UISlider) {
+    @IBAction private func sliderSongAction(_ sender: UISlider) {
         if sender == sliderSong {
             player.currentTime = TimeInterval(sender.value)
         }
     }
 
     /// Перемотка слайдера на 30 секунд назад
-    @IBAction func reloadBack(_ sender: Any) {
+    @IBAction private func reloadBack(_ sender: Any) {
         player.currentTime -= 30.0
     }
 
     /// Перемотка слайдера на 30 секунд вперед
-    @IBAction func reloadForward(_ sender: Any) {
+    @IBAction private func reloadForward(_ sender: Any) {
         player.currentTime += 30.0
     }
 
     /// Вкл/выкл звук
-    @IBAction func offSound(_ sender: UIButton) {
+    @IBAction private func offSound(_ sender: UIButton) {
         if isSound {
             player.volume = 0.0
             isSound = false
@@ -80,6 +80,25 @@ class PlaySongViewController: UIViewController {
             isSound = true
             sender.setImage(UIImage(systemName: "speaker.wave.1.fill"), for: .normal)
         }
+    }
+    
+    /// Кнопка поделиться
+    @IBAction private func sharedButton(_ sender: UIButton) {
+        let activitt = UIActivityViewController(activityItems: ["https://vk.com"], applicationActivities: nil)
+        activitt.popoverPresentationController?.sourceView = view
+        present(activitt, animated: true)
+    }
+
+    /// Открыть плейлист
+    @IBAction private func openPlaylist(_ sender: UIButton) {
+        dismiss(animated: true)
+        player.pause()
+    }
+
+    /// Закрыть проигрыватель
+    @IBAction private func closeButton(_ sender: UIButton) {
+        dismiss(animated: true)
+        player.pause()
     }
 
     // MARK: - Private Methods
@@ -141,24 +160,5 @@ class PlaySongViewController: UIViewController {
                 }
             }
         }
-    }
-
-    /// Кнопка поделиться
-    @IBAction func sharedButton(_ sender: UIButton) {
-        let activitt = UIActivityViewController(activityItems: ["https://vk.com"], applicationActivities: nil)
-        activitt.popoverPresentationController?.sourceView = view
-        present(activitt, animated: true)
-    }
-
-    /// Открыть плейлист
-    @IBAction func openPlaylist(_ sender: UIButton) {
-        dismiss(animated: true)
-        player.pause()
-    }
-
-    /// Закрыть проигрыватель
-    @IBAction func closeButton(_ sender: UIButton) {
-        dismiss(animated: true)
-        player.pause()
     }
 }

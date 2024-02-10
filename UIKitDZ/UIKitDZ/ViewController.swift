@@ -8,14 +8,14 @@ import UIKit
 final class PlaylistViewController: UIViewController {
     // MARK: - IB Outlets
 
-    @IBOutlet var albumImageFirst: UIImageView!
-    @IBOutlet var trackTitleFirtst: UILabel!
-    @IBOutlet var nameOfSongFirst: UILabel!
-    @IBOutlet var durationFirst: UILabel!
-    @IBOutlet var albumImageTwice: UIImageView!
-    @IBOutlet var trackTitleTwice: UILabel!
-    @IBOutlet var nameOfSongTwice: UILabel!
-    @IBOutlet var durationTwice: UILabel!
+    @IBOutlet private var albumImageFirst: UIImageView!
+    @IBOutlet private var trackTitleFirtst: UILabel!
+    @IBOutlet private var nameOfSongFirst: UILabel!
+    @IBOutlet private var durationFirst: UILabel!
+    @IBOutlet private var albumImageTwice: UIImageView!
+    @IBOutlet private var trackTitleTwice: UILabel!
+    @IBOutlet private var nameOfSongTwice: UILabel!
+    @IBOutlet private var durationTwice: UILabel!
 
     // MARK: - Life Cycle
 
