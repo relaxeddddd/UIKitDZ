@@ -15,6 +15,7 @@ class PlaySongViewController: UIViewController {
     @IBOutlet private var sliderSong: UISlider!
     @IBOutlet private var endTimeLabel: UILabel!
     @IBOutlet private var previousSong: UIButton!
+    @IBOutlet private var stopButton: UIButton!
     @IBOutlet private var secondSong: UIButton!
     @IBOutlet var volumeSlider: UISlider!
 
@@ -142,6 +143,7 @@ class PlaySongViewController: UIViewController {
             imageSong.image = UIImage(named: PlayList.trak2.imgName)
             titleSong.text = PlayList.trak2.title
             nameOfSong.text = PlayList.trak2.nameOfSong
+            stopButton.setImage(UIImage(systemName: "pause.circle"), for: .normal)
             if let audioPath = Bundle.main.path(forResource: namesOfSongs.last, ofType: "mp3") {
                 do {
                     player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
@@ -154,6 +156,7 @@ class PlaySongViewController: UIViewController {
             imageSong.image = UIImage(named: PlayList.trak1.imgName)
             titleSong.text = PlayList.trak1.title
             nameOfSong.text = PlayList.trak1.nameOfSong
+            stopButton.setImage(UIImage(systemName: "pause.circle"), for: .normal)
             if let audioPath = Bundle.main.path(forResource: namesOfSongs.first, ofType: "mp3") {
                 do {
                     player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))

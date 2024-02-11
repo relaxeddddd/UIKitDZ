@@ -331,6 +331,7 @@
                         <outlet property="previousSong" destination="fv0-ds-hrY" id="Xi3-ja-Ef1"/>
                         <outlet property="secondSong" destination="6xZ-L2-EWr" id="5EF-CF-D1N"/>
                         <outlet property="sliderSong" destination="noc-eJ-Cu3" id="GNd-Pe-o8B"/>
+                        <outlet property="stopButton" destination="RFl-rV-458" id="Vzz-Pl-hhP"/>
                         <outlet property="titleSong" destination="DCJ-I2-hsp" id="iey-dG-vMw"/>
                         <outlet property="volumeSlider" destination="Ita-D5-doR" id="HYR-ze-zjb"/>
                     </connections>
