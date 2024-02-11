@@ -1,10 +1,10 @@
-// RegistrationViewController.swift
+// AuthorizationViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Класс для показа экрана входа
-final class RegistrationViewController: UIViewController, UITextFieldDelegate {
+/// Класс AuthorizationViewController  показа экрана входа
+final class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Life Cicle
 
     override func viewDidLoad() {
@@ -103,5 +103,5 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Constants
 
-    let registrationView = RegistrationViewViewController()
+    let registrationView = AuthorizationViewViewController()
 }

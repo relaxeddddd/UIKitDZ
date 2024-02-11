@@ -1,10 +1,10 @@
-// PersonView.swift
+// PersonsBirthdayViewViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Класс PersonView для заполнения UIView данными экрана дня рождений пользователей
-class PersonView: UIView {
+/// Класс PersonsBirthdayViewViewController для заполнения UIView данными экрана дня рождений пользователей
+class PersonsBirthdayViewViewController: UIView {
     // MARK: - Public Properties
 
     public let todayLabel: UILabel = {

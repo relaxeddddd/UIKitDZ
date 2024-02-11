@@ -11,10 +11,10 @@
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* PersonsBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* PersonsBirthdayViewController.swift */; };
 		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
-		04AC45E32B779A9E00A5F589 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45E22B779A9E00A5F589 /* PersonView.swift */; };
+		04AC45E32B779A9E00A5F589 /* PersonsBirthdayViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45E22B779A9E00A5F589 /* PersonsBirthdayViewViewController.swift */; };
 		04AC45E52B77A86600A5F589 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45E42B77A86600A5F589 /* PersonModel.swift */; };
-		04AC45EA2B77DB2200A5F589 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45E92B77DB2200A5F589 /* RegistrationViewController.swift */; };
-		04AC45EC2B77DB3600A5F589 /* RegistrationViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45EB2B77DB3600A5F589 /* RegistrationViewViewController.swift */; };
+		04AC45EA2B77DB2200A5F589 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45E92B77DB2200A5F589 /* AuthorizationViewController.swift */; };
+		04AC45EC2B77DB3600A5F589 /* AuthorizationViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45EB2B77DB3600A5F589 /* AuthorizationViewViewController.swift */; };
 		04AC45EE2B77ED5F00A5F589 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC45ED2B77ED5F00A5F589 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,10 +41,10 @@
 		0499A4772B71214100DDDFCC /* PersonsBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsBirthdayViewController.swift; sourceTree = "<group>"; };
 		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04AC45E22B779A9E00A5F589 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		04AC45E22B779A9E00A5F589 /* PersonsBirthdayViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsBirthdayViewViewController.swift; sourceTree = "<group>"; };
 		04AC45E42B77A86600A5F589 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
-		04AC45E92B77DB2200A5F589 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		04AC45EB2B77DB3600A5F589 /* RegistrationViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewViewController.swift; sourceTree = "<group>"; };
+		04AC45E92B77DB2200A5F589 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		04AC45EB2B77DB3600A5F589 /* AuthorizationViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewViewController.swift; sourceTree = "<group>"; };
 		04AC45ED2B77ED5F00A5F589 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0499A4772B71214100DDDFCC /* PersonsBirthdayViewController.swift */,
-				04AC45E22B779A9E00A5F589 /* PersonView.swift */,
+				04AC45E22B779A9E00A5F589 /* PersonsBirthdayViewViewController.swift */,
 				04AC45E42B77A86600A5F589 /* PersonModel.swift */,
 			);
 			path = EnterScreen;
@@ -101,8 +101,8 @@
 		04AC45E62B77D8C100A5F589 /* RegistrationViewController */ = {
 			isa = PBXGroup;
 			children = (
-				04AC45E92B77DB2200A5F589 /* RegistrationViewController.swift */,
-				04AC45EB2B77DB3600A5F589 /* RegistrationViewViewController.swift */,
+				04AC45E92B77DB2200A5F589 /* AuthorizationViewController.swift */,
+				04AC45EB2B77DB3600A5F589 /* AuthorizationViewViewController.swift */,
 				04AC45ED2B77ED5F00A5F589 /* DataModel.swift */,
 			);
 			path = RegistrationViewController;
@@ -221,14 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AC45EA2B77DB2200A5F589 /* RegistrationViewController.swift in Sources */,
+				04AC45EA2B77DB2200A5F589 /* AuthorizationViewController.swift in Sources */,
 				04AC45E52B77A86600A5F589 /* PersonModel.swift in Sources */,
 				0499A4782B71214100DDDFCC /* PersonsBirthdayViewController.swift in Sources */,
-				04AC45EC2B77DB3600A5F589 /* RegistrationViewViewController.swift in Sources */,
+				04AC45EC2B77DB3600A5F589 /* AuthorizationViewViewController.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				04AC45EE2B77ED5F00A5F589 /* DataModel.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
-				04AC45E32B779A9E00A5F589 /* PersonView.swift in Sources */,
+				04AC45E32B779A9E00A5F589 /* PersonsBirthdayViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

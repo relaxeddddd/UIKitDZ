@@ -1,10 +1,10 @@
-// RegistrationViewViewController.swift
+// AuthorizationViewViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 /// Класс RegistrationViewViewController для создания элементов для экрана регистрации
-class RegistrationViewViewController: UIView {
+class AuthorizationViewViewController: UIView {
     // MARK: - Public Properties
 
     var image: UIImageView = {
@@ -101,14 +101,14 @@ class RegistrationViewViewController: UIView {
         label.text = "Use FaceID"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textColor = .black
-        label.frame = CGRect(x: 120, y: 570, width: 175, height: 31)
+        label.frame = CGRect(x: 100, y: 570, width: 175, height: 31)
         return label
     }()
 
     var switchFaceId: UISwitch = {
         let switchId = UISwitch()
         switchId.isOn = false
-        switchId.frame = CGRect(x: 250, y: 570, width: 0, height: 0)
+        switchId.frame = CGRect(x: 230, y: 570, width: 0, height: 0)
         return switchId
     }()
 

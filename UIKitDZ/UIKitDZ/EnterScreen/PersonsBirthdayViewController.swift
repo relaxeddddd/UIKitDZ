@@ -7,14 +7,14 @@ import UIKit
 final class PersonsBirthdayViewController: UIViewController {
     // MARK: - Private Properties
 
-    private let personView = PersonView()
+    private let personView = PersonsBirthdayViewViewController()
 
     // MARK: - Life Cicle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Controller")
         view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
         addViews()
     }
 
@@ -22,7 +22,7 @@ final class PersonsBirthdayViewController: UIViewController {
 
     /// Добаввления элементов на контроллер
     private func addViews() {
-        let firstPerson = PersonView(
+        let firstPerson = PersonsBirthdayViewViewController(
             frame: CGRect(x: 20, y: 130, width: 350, height: 95),
             name: Person.person2.personName,
             dateOfBirthday: Person.person1.personDateOfBirthday,
@@ -32,7 +32,7 @@ final class PersonsBirthdayViewController: UIViewController {
             daysBeforeBirthdayColor: UIColor(red: 90 / 255, green: 67 / 255, blue: 148 / 255, alpha: 1.0)
         )
 
-        let twicePerson = PersonView(
+        let twicePerson = PersonsBirthdayViewViewController(
             frame: CGRect(x: 20, y: 275, width: 350, height: 95),
             name: Person.person2.personName,
             dateOfBirthday: Person.person2.personDateOfBirthday,
@@ -42,7 +42,7 @@ final class PersonsBirthdayViewController: UIViewController {
             daysBeforeBirthdayColor: UIColor(red: 90 / 255, green: 67 / 255, blue: 148 / 255, alpha: 1.0)
         )
 
-        let thirdPerson = PersonView(
+        let thirdPerson = PersonsBirthdayViewViewController(
             frame: CGRect(x: 20, y: 420, width: 350, height: 95),
             name: Person.person3.personName,
             dateOfBirthday: Person.person3.personDateOfBirthday,
@@ -52,7 +52,7 @@ final class PersonsBirthdayViewController: UIViewController {
             daysBeforeBirthdayColor: UIColor(red: 90 / 255, green: 67 / 255, blue: 148 / 255, alpha: 1.0)
         )
 
-        let fourthPerson = PersonView(
+        let fourthPerson = PersonsBirthdayViewViewController(
             frame: CGRect(x: 20, y: 565, width: 350, height: 95),
             name: Person.person4.personName,
             dateOfBirthday: Person.person4.personDateOfBirthday,
