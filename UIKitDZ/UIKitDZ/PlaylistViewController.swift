@@ -16,6 +16,7 @@ class PlaySongViewController: UIViewController {
     @IBOutlet private var endTimeLabel: UILabel!
     @IBOutlet private var previousSong: UIButton!
     @IBOutlet private var secondSong: UIButton!
+    @IBOutlet var volumeSlider: UISlider!
 
     // MARK: - Public Properties
 
@@ -34,7 +35,7 @@ class PlaySongViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appdateInformationOnScreen()
-        settingSlider()
+        settingSliders()
         previousSong.addTarget(self, action: #selector(switchSong), for: .touchDown)
         secondSong.addTarget(self, action: #selector(switchSong), for: .touchDown)
     }
@@ -81,7 +82,7 @@ class PlaySongViewController: UIViewController {
             sender.setImage(UIImage(systemName: "speaker.wave.1.fill"), for: .normal)
         }
     }
-    
+
     /// Кнопка поделиться
     @IBAction private func sharedButton(_ sender: UIButton) {
         let activitt = UIActivityViewController(activityItems: ["https://vk.com"], applicationActivities: nil)
@@ -128,9 +129,11 @@ class PlaySongViewController: UIViewController {
     }
 
     /// Установка минимального и максимального значения слайдера
-    private func settingSlider() {
+    private func settingSliders() {
         sliderSong.minimumValue = 0.0
         sliderSong.maximumValue = Float(player.duration)
+        sliderSong.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
+        volumeSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
     }
 
     /// Переключение песен
@@ -160,5 +163,9 @@ class PlaySongViewController: UIViewController {
                 }
             }
         }
+    }
+
+    @IBAction func volumeSlider(_ sender: UISlider) {
+        player.volume = sender.value
     }
 }
