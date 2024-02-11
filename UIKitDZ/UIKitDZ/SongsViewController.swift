@@ -1,4 +1,4 @@
-// ViewController.swift
+// SongsViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import AVFAudio
