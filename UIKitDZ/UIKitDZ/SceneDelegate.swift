@@ -13,9 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = PersonsBirthdayViewController()
-        window?.makeKeyAndVisible()
+        let window = UIWindow(windowScene: windowScene)
+        let navigationController = UINavigationController(rootViewController: RegistrationViewController())
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        self.window = window
     }
 }

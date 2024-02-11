@@ -1,11 +1,16 @@
-// EnterViewController.swift
+// PersonsBirthdayViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Класс ViewController
-class PersonsBirthdayViewController: UIViewController {
-    let personView = PersonView()
+/// Класс PersonsBirthdayViewController который показывает дни рождения пользователей
+final class PersonsBirthdayViewController: UIViewController {
+    // MARK: - Private Properties
+
+    private let personView = PersonView()
+
+    // MARK: - Life Cicle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View Controller")
@@ -13,6 +18,9 @@ class PersonsBirthdayViewController: UIViewController {
         addViews()
     }
 
+    // MARK: - Private Methods
+
+    /// Добаввления элементов на контроллер
     private func addViews() {
         let firstPerson = PersonView(
             frame: CGRect(x: 20, y: 130, width: 350, height: 95),

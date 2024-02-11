@@ -4,6 +4,7 @@
 import Foundation
 import UIKit
 
+/// Модель PersonInfo
 struct PersonInfo {
     var personImage: String
     var personName: String

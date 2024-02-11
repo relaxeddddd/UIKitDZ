@@ -3,8 +3,11 @@
 
 import UIKit
 
+/// Класс PersonView для заполнения UIView данными экрана дня рождений пользователей
 class PersonView: UIView {
-    let todayLabel: UILabel = {
+    // MARK: - Public Properties
+
+    public let todayLabel: UILabel = {
         let label = UILabel()
         label.text = "Today"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -12,7 +15,7 @@ class PersonView: UIView {
         return label
     }()
 
-    let nextWeek: UILabel = {
+    public let nextWeek: UILabel = {
         let label = UILabel()
         label.text = "Neext Week"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -20,7 +23,7 @@ class PersonView: UIView {
         return label
     }()
 
-    let newxtMonth: UILabel = {
+    public let newxtMonth: UILabel = {
         let label = UILabel()
         label.text = "Next Month"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -28,7 +31,7 @@ class PersonView: UIView {
         return label
     }()
 
-    let newxtYear: UILabel = {
+    public let newxtYear: UILabel = {
         let label = UILabel()
         label.text = "June 2024"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -36,26 +39,26 @@ class PersonView: UIView {
         return label
     }()
 
-    let nameOfPerson: UILabel = {
+    public let nameOfPerson: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         return label
     }()
 
-    let personDateOfBirthday: UILabel = {
+    public let personDateOfBirthday: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont(name: "Verdana", size: 14)
         return label
     }()
 
-    let personImage: UIImageView = {
+    public let personImage: UIImageView = {
         let image = UIImageView()
         return image
     }()
 
-    let daysBefore: UILabel = {
+    public let daysBefore: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.numberOfLines = 2
@@ -64,11 +67,13 @@ class PersonView: UIView {
         return label
     }()
 
-    let cackeImage: UIImageView = {
+    public let cackeImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "cacke")
         return image
     }()
+
+    // MARK: - Initializers
 
     init(
         frame: CGRect = .zero,
@@ -93,14 +98,9 @@ class PersonView: UIView {
         super.init(coder: coder)
     }
 
-    func setUpSubviews() {
-        addSubview(nameOfPerson)
-        addSubview(personDateOfBirthday)
-        addSubview(personImage)
-        addSubview(daysBefore)
-        layer.cornerRadius = 12
-    }
+    // MARK: - Life Cicle
 
+    //  Расположение элементов
     override func layoutSubviews() {
         super.layoutSubviews()
         nameOfPerson.frame = CGRect(x: 100, y: 20, width: 250, height: 30)
@@ -114,7 +114,18 @@ class PersonView: UIView {
         addSubviewInView(nameSubvieu: daysBefore)
     }
 
-    func addSubviewInView(nameSubvieu: UIView) {
+    // MARK: - Private Methods
+
+    private func setUpSubviews() {
+        addSubview(nameOfPerson)
+        addSubview(personDateOfBirthday)
+        addSubview(personImage)
+        addSubview(daysBefore)
+        layer.cornerRadius = 12
+    }
+
+    /// Установка  элементов в пределах UIView
+    private func addSubviewInView(nameSubvieu: UIView) {
         if !bounds.contains(nameSubvieu.frame) {
             nameSubvieu.frame.origin.x = max(
                 0,
