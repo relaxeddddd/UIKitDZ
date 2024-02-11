@@ -12,29 +12,33 @@ class PersonsBirthdayViewViewController: UIView {
         label.text = "Today"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textColor = .black
+        label.frame = CGRect(x: 20, y: 70, width: 300, height: 100)
         return label
     }()
 
     public let nextWeek: UILabel = {
         let label = UILabel()
-        label.text = "Neext Week"
+        label.text = "Next week"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textColor = .black
+        label.frame = CGRect(x: 20, y: 215, width: 300, height: 100)
         return label
     }()
 
-    public let newxtMonth: UILabel = {
+    public let nextMonth: UILabel = {
         let label = UILabel()
-        label.text = "Next Month"
+        label.text = "Next month"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
+        label.frame = CGRect(x: 20, y: 355, width: 300, height: 100)
         label.textColor = .black
         return label
     }()
 
-    public let newxtYear: UILabel = {
+    public let nextYear: UILabel = {
         let label = UILabel()
         label.text = "June 2024"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
+        label.frame = CGRect(x: 20, y: 495, width: 300, height: 100)
         label.textColor = .black
         return label
     }()
@@ -53,7 +57,7 @@ class PersonsBirthdayViewViewController: UIView {
         return label
     }()
 
-    public let personImage: UIImageView = {
+    public var personImage: UIImageView = {
         let image = UIImageView()
         return image
     }()
@@ -65,12 +69,6 @@ class PersonsBirthdayViewViewController: UIView {
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         return label
-    }()
-
-    public let cackeImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "cacke")
-        return image
     }()
 
     // MARK: - Initializers
@@ -100,7 +98,7 @@ class PersonsBirthdayViewViewController: UIView {
 
     // MARK: - Life Cicle
 
-    //  Расположение элементов
+    //  Расположение элементов в пределах UIView
     override func layoutSubviews() {
         super.layoutSubviews()
         nameOfPerson.frame = CGRect(x: 100, y: 20, width: 250, height: 30)
@@ -116,6 +114,7 @@ class PersonsBirthdayViewViewController: UIView {
 
     // MARK: - Private Methods
 
+    /// добавление наших subviews на наше UIView
     private func setUpSubviews() {
         addSubview(nameOfPerson)
         addSubview(personDateOfBirthday)

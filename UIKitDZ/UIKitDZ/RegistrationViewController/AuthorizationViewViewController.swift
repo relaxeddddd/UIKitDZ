@@ -7,14 +7,14 @@ import UIKit
 class AuthorizationViewViewController: UIView {
     // MARK: - Public Properties
 
-    var image: UIImageView = {
+    public var image: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "registrationImage")
         image.frame = CGRect(x: 140, y: 70, width: 125, height: 125)
         return image
     }()
 
-    var title: UILabel = {
+    public var title: UILabel = {
         let label = UILabel()
         label.text = "Birthday Reminder"
         label.textAlignment = .center
@@ -26,7 +26,7 @@ class AuthorizationViewViewController: UIView {
         return label
     }()
 
-    var signInLabel: UILabel = {
+    public var signInLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign in"
         label.font = UIFont(name: "Verdana-Bold", size: 26)
@@ -35,7 +35,7 @@ class AuthorizationViewViewController: UIView {
         return label
     }()
 
-    var emailLabel: UILabel = {
+    public var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "Email"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -44,7 +44,7 @@ class AuthorizationViewViewController: UIView {
         return label
     }()
 
-    var emailTextField: UITextField = {
+    public var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Typing email"
         textField.textColor = .black
@@ -54,14 +54,14 @@ class AuthorizationViewViewController: UIView {
         return textField
     }()
 
-    var uiViewTextField: UIView = {
+    public var uiViewTextField: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = .lightGray
         uiView.frame = CGRect(x: 20, y: 395, width: 350, height: 1)
         return uiView
     }()
 
-    var passwordLabel: UILabel = {
+    public var passwordLabel: UILabel = {
         let label = UILabel()
         label.text = "Password"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -70,7 +70,7 @@ class AuthorizationViewViewController: UIView {
         return label
     }()
 
-    var passwordTextField: UITextField = {
+    public var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Typing password"
         textField.textColor = .black
@@ -81,14 +81,14 @@ class AuthorizationViewViewController: UIView {
         return textField
     }()
 
-    var uiViewPasswordField: UIView = {
+    public var uiViewPasswordField: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = .lightGray
         uiView.frame = CGRect(x: 20, y: 475, width: 350, height: 1)
         return uiView
     }()
 
-    var eyeButton: UIButton = {
+    public var eyeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         button.frame = CGRect(x: 338, y: 450, width: 40, height: 22)
@@ -96,7 +96,7 @@ class AuthorizationViewViewController: UIView {
         return button
     }()
 
-    var useFaceIdLabel: UILabel = {
+    public var useFaceIdLabel: UILabel = {
         let label = UILabel()
         label.text = "Use FaceID"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -105,14 +105,14 @@ class AuthorizationViewViewController: UIView {
         return label
     }()
 
-    var switchFaceId: UISwitch = {
+    public var switchFaceId: UISwitch = {
         let switchId = UISwitch()
         switchId.isOn = false
         switchId.frame = CGRect(x: 230, y: 570, width: 0, height: 0)
         return switchId
     }()
 
-    var enterButton: UIButton = {
+    public var enterButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
