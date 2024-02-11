@@ -8,9 +8,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(
-        _: UIScene,
-        willConnectTo _: UISceneSession,
-        options _: UIScene.ConnectionOptions
-    ) {}
-//        guard let value = (scene as? UIWindowScene) else { return }
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
+    }
 }
