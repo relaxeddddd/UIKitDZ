@@ -58,6 +58,7 @@ final class PersonsBirthdayViewController: UIViewController {
         view.backgroundColor = .white
         let rightBarItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tappedButton))
         navigationItem.rightBarButtonItem = rightBarItem
+        navigationItem.title = "Birthday Reminder"
         addPerson()
         view.addSubview(personView.todayLabel)
         view.addSubview(personView.nextWeek)
