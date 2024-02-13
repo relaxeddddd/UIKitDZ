@@ -40,11 +40,18 @@ final class OrderViewController: UIViewController {
     /// Добавление таргетов
     private func addTargets() {
         orderView.closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
+        orderView.enterButton.addTarget(self, action: #selector(goToSmsViewController), for: .touchUpInside)
     }
 
     /// Закрытие экрана
     @objc private func closeScreen() {
         dismiss(animated: true)
+    }
+
+    @objc private func goToSmsViewController() {
+        let navigationViewController = UINavigationController(rootViewController: SmsViewController())
+        navigationViewController.modalPresentationStyle = .fullScreen
+        present(navigationViewController, animated: true)
     }
 
     // MARK: - Constants

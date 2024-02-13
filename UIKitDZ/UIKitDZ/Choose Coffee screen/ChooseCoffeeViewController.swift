@@ -30,6 +30,7 @@ final class ChooseCoffeeViewController: UIViewController {
         let shareButton = UIButton()
         shareButton.setImage(UIImage(named: "share"), for: .normal)
         shareButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        shareButton.addTarget(self, action: #selector(shareToTelegram), for: .touchUpInside)
         let shareBarButtonItem = UIBarButtonItem(customView: shareButton)
 
         navigationItem.leftBarButtonItem = backBarButtonItem
@@ -85,6 +86,12 @@ final class ChooseCoffeeViewController: UIViewController {
         let orderController = OrderViewController()
         orderController.orderView.priceLabel.text = chooseView.priceLabel.text
         present(orderController, animated: true)
+    }
+
+    @objc private func shareToTelegram() {
+        let message = "Лови промокод roadmaplove на любой напиток из Кофейнов"
+        let activityViewController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        present(activityViewController, animated: true)
     }
 
     // MARK: - Constants

@@ -20,6 +20,8 @@
 		043BD38E2B7AFEFF004CB819 /* IngredientsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD38D2B7AFEFF004CB819 /* IngredientsViewViewController.swift */; };
 		043BD3932B7B2265004CB819 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3922B7B2265004CB819 /* OrderViewController.swift */; };
 		043BD3952B7B289F004CB819 /* OrderViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3942B7B289F004CB819 /* OrderViewViewController.swift */; };
+		043BD3982B7BA1D6004CB819 /* SmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3972B7BA1D6004CB819 /* SmsViewController.swift */; };
+		043BD39A2B7BA1E9004CB819 /* SmsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3992B7BA1E9004CB819 /* SmsViewViewController.swift */; };
 		0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4732B71214100DDDFCC /* AppDelegate.swift */; };
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* LoginViewController.swift */; };
@@ -56,6 +58,8 @@
 		043BD38D2B7AFEFF004CB819 /* IngredientsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewViewController.swift; sourceTree = "<group>"; };
 		043BD3922B7B2265004CB819 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		043BD3942B7B289F004CB819 /* OrderViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewViewController.swift; sourceTree = "<group>"; };
+		043BD3972B7BA1D6004CB819 /* SmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsViewController.swift; sourceTree = "<group>"; };
+		043BD3992B7BA1E9004CB819 /* SmsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsViewViewController.swift; sourceTree = "<group>"; };
 		0499A4702B71214100DDDFCC /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0499A4732B71214100DDDFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0499A4752B71214100DDDFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 			path = "Order screen";
 			sourceTree = "<group>";
 		};
+		043BD3962B7BA186004CB819 /* Sms screen */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3972B7BA1D6004CB819 /* SmsViewController.swift */,
+				043BD3992B7BA1E9004CB819 /* SmsViewViewController.swift */,
+			);
+			path = "Sms screen";
+			sourceTree = "<group>";
+		};
 		0499A4672B71214100DDDFCC = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +198,7 @@
 				043BD2E42B7A3338004CB819 /* Login screen */,
 				043BD2E62B7A33A3004CB819 /* Menu screen */,
 				043BD2EB2B7A33FE004CB819 /* Choose Coffee screen */,
+				043BD3962B7BA186004CB819 /* Sms screen */,
 				043BD2EE2B7A3502004CB819 /* Thanks screen */,
 				0499A47C2B71214400DDDFCC /* Assets.xcassets */,
 				0499A4812B71214400DDDFCC /* Info.plist */,
@@ -314,8 +328,10 @@
 				043BD2ED2B7A3430004CB819 /* ChooseCoffeeViewController.swift in Sources */,
 				043BD2F02B7A353E004CB819 /* ThanksScreenViewController.swift in Sources */,
 				043BD3932B7B2265004CB819 /* OrderViewController.swift in Sources */,
+				043BD3982B7BA1D6004CB819 /* SmsViewController.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				043BD3842B7AE5A2004CB819 /* ChooseCoffeeViewViewController.swift in Sources */,
+				043BD39A2B7BA1E9004CB819 /* SmsViewViewController.swift in Sources */,
 				043BD37D2B7AD05B004CB819 /* LoginViewViewController.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
 				043BD2EA2B7A33D1004CB819 /* MenuViewController.swift in Sources */,
@@ -452,6 +468,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2NN82372P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -478,6 +495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2NN82372P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
