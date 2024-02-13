@@ -4,7 +4,7 @@
 import UIKit
 
 // Класс для отображение модельного окна с выбором ингридиентов
-class IngredientsViewController: UIViewController {
+final class IngredientsViewController: UIViewController {
     // MARK: - Public Properties
 
     /// Замыкание для передачи данных(в нашем случае обновленной цены)
@@ -59,7 +59,7 @@ class IngredientsViewController: UIViewController {
         summaUp?(newPrice)
         dismiss(animated: true)
     }
-    
+
     /// Функция для добавления текста с определенным цветом к нашим Label
     private func configNamedFood(nameLabel: UILabel, price: String) {
         let price = NSAttributedString(

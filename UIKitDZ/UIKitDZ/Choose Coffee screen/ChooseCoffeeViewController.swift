@@ -4,7 +4,7 @@
 import UIKit
 
 /// Класс ChooseCoffeeViewController отвечающий за показ экрана с меню кофе
-class ChooseCoffeeViewController: UIViewController {
+final class ChooseCoffeeViewController: UIViewController {
     // MARK: - Life Cycle
 
     override func viewDidLoad() {

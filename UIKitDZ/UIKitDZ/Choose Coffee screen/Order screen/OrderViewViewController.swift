@@ -3,8 +3,10 @@
 
 import UIKit
 
+///  Класс OrderViewViewController для добавления view's на OrderViewController
 class OrderViewViewController: UIView {
-    let chooseCoffee = ChooseCoffeeViewViewController()
+    // MARK: - Public Methods
+
     public let closeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "close"), for: .normal)
@@ -12,28 +14,28 @@ class OrderViewViewController: UIView {
         return button
     }()
 
-    let flowersLeftImage: UIImageView = {
+    public let flowersLeftImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "leftFlowers")
         image.frame = CGRect(x: 20, y: 47, width: 100, height: 73)
         return image
     }()
 
-    let flowersRightImage: UIImageView = {
+    public let flowersRightImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "rightFlowers")
         image.frame = CGRect(x: 260, y: 47, width: 100, height: 73)
         return image
     }()
 
-    let flowersMidleImage: UIImageView = {
+    public let flowersMidleImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "midleFlowers")
         image.frame = CGRect(x: 137, y: 472, width: 100, height: 40)
         return image
     }()
 
-    let titleOrderLabel: UILabel = {
+    public let titleOrderLabel: UILabel = {
         let label = UILabel()
         label.text = "Вашъ Заказъ"
         label.font = UIFont.verdana18
@@ -41,17 +43,17 @@ class OrderViewViewController: UIView {
         return label
     }()
 
-    let priceLabel: UILabel = {
+    public let priceLabel: UILabel = {
         let label = UILabel()
         label.text = "nil"
         label.font = UIFont.verdana18
         label.textAlignment = .center
-        label.frame = CGRect(x: 80, y: 433, width: 231, height: 30)
+        label.frame = CGRect(x: 72, y: 433, width: 231, height: 30)
         return label
     }()
 
     // Кофе
-    let coffeeLabel: UILabel = {
+    public let coffeeLabel: UILabel = {
         let label = UILabel()
         label.text = "Американо"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -59,7 +61,7 @@ class OrderViewViewController: UIView {
         return label
     }()
 
-    let coffeePriceLabel: UILabel = {
+    public let coffeePriceLabel: UILabel = {
         let label = UILabel()
         label.text = "100 руб"
         label.font = UIFont(name: "Verdana-Bold", size: 16)
@@ -69,14 +71,14 @@ class OrderViewViewController: UIView {
     }()
 
     // Молоко
-    let milkLabel: UILabel = {
+    public let milkLabel: UILabel = {
         let label = UILabel()
         label.text = "Молоко"
         label.frame = CGRect(x: 20, y: 191, width: 150, height: 30)
         return label
     }()
 
-    let milkPriceLabel: UILabel = {
+    public let milkPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "50 руб"
         label.textAlignment = .right
@@ -85,14 +87,14 @@ class OrderViewViewController: UIView {
     }()
 
     // Эспрессо
-    let espressoLabel: UILabel = {
+    public let espressoLabel: UILabel = {
         let label = UILabel()
         label.text = "Эспрессо 50мл"
         label.frame = CGRect(x: 20, y: 227, width: 150, height: 30)
         return label
     }()
 
-    let espressoPriceLabel: UILabel = {
+    public let espressoPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "50 руб"
         label.textAlignment = .right

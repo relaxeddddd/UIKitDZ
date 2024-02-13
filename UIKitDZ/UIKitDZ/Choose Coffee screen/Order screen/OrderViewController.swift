@@ -3,8 +3,9 @@
 
 import UIKit
 
-class OrderViewController: UIViewController {
-    let orderView = OrderViewViewController()
+/// Класс OrderViewController для отображения экрана с чеом
+final class OrderViewController: UIViewController {
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +14,9 @@ class OrderViewController: UIViewController {
         addTargets()
     }
 
+    // MARK: - Private Methods
+
+    /// Добавление view's на наш экран
     private func addViews() {
         view.addSubview(orderView.closeButton)
         view.addSubview(orderView.enterButton)
@@ -33,11 +37,17 @@ class OrderViewController: UIViewController {
         view.addSubview(orderView.priceLabel)
     }
 
+    /// Добавление таргетов
     private func addTargets() {
         orderView.closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
     }
 
+    /// Закрытие экрана
     @objc private func closeScreen() {
         dismiss(animated: true)
     }
+
+    // MARK: - Constants
+
+    let orderView = OrderViewViewController()
 }
