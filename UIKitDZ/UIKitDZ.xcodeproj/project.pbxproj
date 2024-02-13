@@ -10,6 +10,16 @@
 		043BD2EA2B7A33D1004CB819 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD2E92B7A33D1004CB819 /* MenuViewController.swift */; };
 		043BD2ED2B7A3430004CB819 /* ChooseCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD2EC2B7A3430004CB819 /* ChooseCoffeeViewController.swift */; };
 		043BD2F02B7A353E004CB819 /* ThanksScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD2EF2B7A353E004CB819 /* ThanksScreenViewController.swift */; };
+		043BD37D2B7AD05B004CB819 /* LoginViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD37C2B7AD05B004CB819 /* LoginViewViewController.swift */; };
+		043BD37F2B7AD3E3004CB819 /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043BD37E2B7AD3E3004CB819 /* AmaticSC-Bold.ttf */; };
+		043BD3822B7ADDEF004CB819 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3812B7ADDEF004CB819 /* UIColor+Extension.swift */; };
+		043BD3842B7AE5A2004CB819 /* ChooseCoffeeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3832B7AE5A2004CB819 /* ChooseCoffeeViewViewController.swift */; };
+		043BD3862B7AED31004CB819 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3852B7AED31004CB819 /* UIFont+Extension.swift */; };
+		043BD3892B7AF849004CB819 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3882B7AF849004CB819 /* CustomButton.swift */; };
+		043BD38C2B7AFEE9004CB819 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD38B2B7AFEE9004CB819 /* IngredientsViewController.swift */; };
+		043BD38E2B7AFEFF004CB819 /* IngredientsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD38D2B7AFEFF004CB819 /* IngredientsViewViewController.swift */; };
+		043BD3932B7B2265004CB819 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3922B7B2265004CB819 /* OrderViewController.swift */; };
+		043BD3952B7B289F004CB819 /* OrderViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3942B7B289F004CB819 /* OrderViewViewController.swift */; };
 		0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4732B71214100DDDFCC /* AppDelegate.swift */; };
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* LoginViewController.swift */; };
@@ -36,6 +46,16 @@
 		043BD2E92B7A33D1004CB819 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		043BD2EC2B7A3430004CB819 /* ChooseCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCoffeeViewController.swift; sourceTree = "<group>"; };
 		043BD2EF2B7A353E004CB819 /* ThanksScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksScreenViewController.swift; sourceTree = "<group>"; };
+		043BD37C2B7AD05B004CB819 /* LoginViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewController.swift; sourceTree = "<group>"; };
+		043BD37E2B7AD3E3004CB819 /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
+		043BD3812B7ADDEF004CB819 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		043BD3832B7AE5A2004CB819 /* ChooseCoffeeViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCoffeeViewViewController.swift; sourceTree = "<group>"; };
+		043BD3852B7AED31004CB819 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		043BD3882B7AF849004CB819 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		043BD38B2B7AFEE9004CB819 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
+		043BD38D2B7AFEFF004CB819 /* IngredientsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewViewController.swift; sourceTree = "<group>"; };
+		043BD3922B7B2265004CB819 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		043BD3942B7B289F004CB819 /* OrderViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewViewController.swift; sourceTree = "<group>"; };
 		0499A4702B71214100DDDFCC /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0499A4732B71214100DDDFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0499A4752B71214100DDDFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				0499A4772B71214100DDDFCC /* LoginViewController.swift */,
+				043BD37C2B7AD05B004CB819 /* LoginViewViewController.swift */,
 			);
 			path = "Login screen";
 			sourceTree = "<group>";
@@ -83,7 +104,10 @@
 		043BD2EB2B7A33FE004CB819 /* Choose Coffee screen */ = {
 			isa = PBXGroup;
 			children = (
+				043BD3832B7AE5A2004CB819 /* ChooseCoffeeViewViewController.swift */,
 				043BD2EC2B7A3430004CB819 /* ChooseCoffeeViewController.swift */,
+				043BD38A2B7AFEA4004CB819 /* Ingridients screen */,
+				043BD3912B7B222E004CB819 /* Order screen */,
 			);
 			path = "Choose Coffee screen";
 			sourceTree = "<group>";
@@ -94,6 +118,49 @@
 				043BD2EF2B7A353E004CB819 /* ThanksScreenViewController.swift */,
 			);
 			path = "Thanks screen";
+			sourceTree = "<group>";
+		};
+		043BD3792B7AC55A004CB819 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				043BD37E2B7AD3E3004CB819 /* AmaticSC-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		043BD3802B7ADDCF004CB819 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3812B7ADDEF004CB819 /* UIColor+Extension.swift */,
+				043BD3852B7AED31004CB819 /* UIFont+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		043BD3872B7AF82F004CB819 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3882B7AF849004CB819 /* CustomButton.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		043BD38A2B7AFEA4004CB819 /* Ingridients screen */ = {
+			isa = PBXGroup;
+			children = (
+				043BD38B2B7AFEE9004CB819 /* IngredientsViewController.swift */,
+				043BD38D2B7AFEFF004CB819 /* IngredientsViewViewController.swift */,
+			);
+			path = "Ingridients screen";
+			sourceTree = "<group>";
+		};
+		043BD3912B7B222E004CB819 /* Order screen */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3922B7B2265004CB819 /* OrderViewController.swift */,
+				043BD3942B7B289F004CB819 /* OrderViewViewController.swift */,
+			);
+			path = "Order screen";
 			sourceTree = "<group>";
 		};
 		0499A4672B71214100DDDFCC = {
@@ -121,6 +188,9 @@
 				043BD2EE2B7A3502004CB819 /* Thanks screen */,
 				0499A47C2B71214400DDDFCC /* Assets.xcassets */,
 				0499A4812B71214400DDDFCC /* Info.plist */,
+				043BD3802B7ADDCF004CB819 /* Extension */,
+				043BD3872B7AF82F004CB819 /* Custom */,
+				043BD3792B7AC55A004CB819 /* Fonts */,
 				043BD2E52B7A3356004CB819 /* Support */,
 			);
 			path = UIKitDZ;
@@ -187,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043BD37F2B7AD3E3004CB819 /* AmaticSC-Bold.ttf in Resources */,
 				0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,9 +313,18 @@
 				0499A4782B71214100DDDFCC /* LoginViewController.swift in Sources */,
 				043BD2ED2B7A3430004CB819 /* ChooseCoffeeViewController.swift in Sources */,
 				043BD2F02B7A353E004CB819 /* ThanksScreenViewController.swift in Sources */,
+				043BD3932B7B2265004CB819 /* OrderViewController.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
+				043BD3842B7AE5A2004CB819 /* ChooseCoffeeViewViewController.swift in Sources */,
+				043BD37D2B7AD05B004CB819 /* LoginViewViewController.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
 				043BD2EA2B7A33D1004CB819 /* MenuViewController.swift in Sources */,
+				043BD38E2B7AFEFF004CB819 /* IngredientsViewViewController.swift in Sources */,
+				043BD3862B7AED31004CB819 /* UIFont+Extension.swift in Sources */,
+				043BD38C2B7AFEE9004CB819 /* IngredientsViewController.swift in Sources */,
+				043BD3952B7B289F004CB819 /* OrderViewViewController.swift in Sources */,
+				043BD3822B7ADDEF004CB819 /* UIColor+Extension.swift in Sources */,
+				043BD3892B7AF849004CB819 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

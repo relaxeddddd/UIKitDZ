@@ -1,14 +1,9 @@
-//
-//  MenuViewController.swift
-//  UIKitDZ
-//
-//  Created by mac on 12.02.2024.
-//
+// MenuViewController.swift
+// Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 class MenuViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Menu VC")
