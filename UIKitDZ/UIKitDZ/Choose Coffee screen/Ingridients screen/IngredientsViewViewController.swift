@@ -55,7 +55,7 @@ class IngredientsViewViewController: UIView {
 
     public let siropLabel: UILabel = {
         let label = UILabel()
-        label.text = "Сироп + 20"
+        label.text = "Сироп "
         label.frame = CGRect(x: 20, y: 174, width: 275, height: 35)
         return label
     }()
@@ -70,7 +70,7 @@ class IngredientsViewViewController: UIView {
 
     public let milkSoyaLabel: UILabel = {
         let label = UILabel()
-        label.text = "Молоко соевое + 50"
+        label.text = "Молоко соевое "
         label.frame = CGRect(x: 20, y: 224, width: 275, height: 35)
         return label
     }()
@@ -85,7 +85,7 @@ class IngredientsViewViewController: UIView {
 
     public let milkMindalLabel: UILabel = {
         let label = UILabel()
-        label.text = "Молоко миндальное + 50"
+        label.text = "Молоко миндальное "
         label.frame = CGRect(x: 20, y: 274, width: 275, height: 35)
         return label
     }()
@@ -100,7 +100,7 @@ class IngredientsViewViewController: UIView {
 
     public let espressoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Эспрессо 50мл + 50"
+        label.text = "Эспрессо 50мл "
         label.frame = CGRect(x: 20, y: 324, width: 275, height: 35)
         return label
     }()

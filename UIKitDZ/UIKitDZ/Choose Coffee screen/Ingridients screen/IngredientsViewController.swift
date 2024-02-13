@@ -18,6 +18,10 @@ class IngredientsViewController: UIViewController {
         addViews()
         addTarget()
         configNamedFood(nameLabel: ingredientsView.milkLabel, price: "+50 руб")
+        configNamedFood(nameLabel: ingredientsView.siropLabel, price: "+20 руб")
+        configNamedFood(nameLabel: ingredientsView.milkSoyaLabel, price: "+50 руб")
+        configNamedFood(nameLabel: ingredientsView.milkMindalLabel, price: "+70 руб")
+        configNamedFood(nameLabel: ingredientsView.espressoLabel, price: "+50 руб")
     }
 
     // MARK: - Private Properties
@@ -38,16 +42,6 @@ class IngredientsViewController: UIViewController {
         view.addSubview(ingredientsView.espressoLabel)
     }
 
-    private func configNamedFood(nameLabel: UILabel, price: String) {
-        let price = NSAttributedString(
-            string: price,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGreen]
-        )
-        let allText = NSMutableAttributedString(string: nameLabel.text ?? "nil")
-        allText.append(price)
-        nameLabel.attributedText = allText
-    }
-
     /// Добавление target's действий
     private func addTarget() {
         ingredientsView.closeButton.addTarget(self, action: #selector(setNewPrice), for: .touchUpInside)
@@ -64,6 +58,17 @@ class IngredientsViewController: UIViewController {
         let newPrice = "Цѣна - \(sum + 100) руб"
         summaUp?(newPrice)
         dismiss(animated: true)
+    }
+    
+    /// Функция для добавления текста с определенным цветом к нашим Label
+    private func configNamedFood(nameLabel: UILabel, price: String) {
+        let price = NSAttributedString(
+            string: price,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGreen]
+        )
+        let allText = NSMutableAttributedString(string: nameLabel.text ?? "nil")
+        allText.append(price)
+        nameLabel.attributedText = allText
     }
 
     // MARK: - Contants
