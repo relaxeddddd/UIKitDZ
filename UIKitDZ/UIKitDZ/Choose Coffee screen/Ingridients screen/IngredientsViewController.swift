@@ -50,10 +50,8 @@ final class IngredientsViewController: UIViewController {
     /// Обновление ценника в зависимости от нажатого switch
     @objc private func setNewPrice() {
         var sum = 0
-        for (index, element) in ingredientsView.switches.enumerated() {
-            if element.isOn {
-                sum += prices[index]
-            }
+        for (index, element) in ingredientsView.switches.enumerated() where element.isOn {
+            sum += prices[index]
         }
         let newPrice = "Цѣна - \(sum + 100) руб"
         summaUp?(newPrice)

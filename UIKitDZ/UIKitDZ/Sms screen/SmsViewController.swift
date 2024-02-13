@@ -28,6 +28,7 @@ final class SmsViewController: UIViewController {
     // Добавление таргетов
     private func addTargets() {
         smsView.smsTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        smsView.acceptButton.addTarget(self, action: #selector(goToThanksScreen), for: .touchUpInside)
     }
 
     // Настройка бар айтемов
@@ -41,9 +42,16 @@ final class SmsViewController: UIViewController {
         view.addSubview(smsView)
     }
 
-    // Закрытие окна смс
+    // !заглушка!
+    @objc private func goToThanksScreen() {
+        // !заглушка!
+    }
+
+    // Возврат на экран Choose Coffee
     @objc private func closeScreen() {
-        dismiss(animated: true)
+        for view in navigationController?.viewControllers ?? [] where view is ChooseCoffeeViewController {
+            navigationController?.popToViewController(view, animated: true)
+        }
     }
 
     // Проверка на заполненость TF с кодом и изменение состояния кнопки

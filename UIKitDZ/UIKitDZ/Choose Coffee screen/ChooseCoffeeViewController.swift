@@ -82,12 +82,19 @@ final class ChooseCoffeeViewController: UIViewController {
         present(ingredientsController, animated: true)
     }
 
+    // При нажатии на кнопку с переходом в Order у нас при закрытие ордера вызывается делегат с помощью которого пушится
+    // Sms screen
     @objc private func goToOrderScreen() {
         let orderController = OrderViewController()
+        orderController.push = {
+            let smsController = SmsViewController()
+            self.navigationController?.pushViewController(smsController, animated: true)
+        }
         orderController.orderView.priceLabel.text = chooseView.priceLabel.text
         present(orderController, animated: true)
     }
 
+    // Метод что б поделиться смс
     @objc private func shareToTelegram() {
         let message = "Лови промокод roadmaplove на любой напиток из Кофейнов"
         let activityViewController = UIActivityViewController(activityItems: [message], applicationActivities: nil)

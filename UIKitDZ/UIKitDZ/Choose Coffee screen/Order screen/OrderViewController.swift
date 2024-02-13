@@ -5,6 +5,8 @@ import UIKit
 
 /// Класс OrderViewController для отображения экрана с чеом
 final class OrderViewController: UIViewController {
+    var push: (() -> Void)?
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -45,13 +47,13 @@ final class OrderViewController: UIViewController {
 
     /// Закрытие экрана
     @objc private func closeScreen() {
-        dismiss(animated: true)
+        dismiss(animated: true) {}
     }
 
     @objc private func goToSmsViewController() {
-        let navigationViewController = UINavigationController(rootViewController: SmsViewController())
-        navigationViewController.modalPresentationStyle = .fullScreen
-        present(navigationViewController, animated: true)
+        dismiss(animated: true) {
+            self.push?()
+        }
     }
 
     // MARK: - Constants
