@@ -98,7 +98,7 @@ class LoginViewViewController: UIView {
         button.frame = CGRect(x: 20, y: 664, width: 335, height: 45)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = UIFont.verdana18
-        button.isEnabled = true
+        button.isEnabled = false
         return button
     }()
 }
