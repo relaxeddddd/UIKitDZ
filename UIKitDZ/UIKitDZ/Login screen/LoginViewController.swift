@@ -49,7 +49,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
 
     // Переход на следующий VC после нажатия на кнопку
     @objc private func tappedButton() {
-        let navigationViewController = UINavigationController(rootViewController: ChooseCoffeeViewController())
+        let navigationViewController =
+            UINavigationController(rootViewController: ChooseCoffeeViewController()) // Поменять на Ксю
         navigationViewController.modalPresentationStyle = .fullScreen
         present(navigationViewController, animated: true)
     }

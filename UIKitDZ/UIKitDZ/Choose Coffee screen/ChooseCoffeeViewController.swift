@@ -24,6 +24,7 @@ final class ChooseCoffeeViewController: UIViewController {
         backButton.layer.cornerRadius = 44 / 2
         backButton.setImage(UIImage(named: "rowBack"), for: .normal)
         backButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        backButton.addTarget(self, action: #selector(goBackViewController), for: .touchUpInside)
         let backBarButtonItem = UIBarButtonItem(customView: backButton)
 
         // Создаем кнопку поделиться
@@ -40,6 +41,7 @@ final class ChooseCoffeeViewController: UIViewController {
     private func addTarget() {
         chooseView.segmentControl.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
         chooseView.ingredientsButton.addTarget(self, action: #selector(goToIngredientsScreen), for: .touchUpInside)
+//        chooseView.coffeeBeansButton.addTarget(self, action: #selector(), for: .touchUpInside)
         chooseView.enterButton.addTarget(self, action: #selector(goToOrderScreen), for: .touchUpInside)
     }
 
@@ -58,6 +60,7 @@ final class ChooseCoffeeViewController: UIViewController {
         view.addSubview(chooseView.enterButton)
     }
 
+    // Меняем картинки в сегмент контроллере
     @objc private func selectedValue(sender: UISegmentedControl) {
         if sender == chooseView.segmentControl {
             let segmentIndex = sender.selectedSegmentIndex
@@ -65,10 +68,19 @@ final class ChooseCoffeeViewController: UIViewController {
         }
     }
 
+    // Возвращаеися на прошлый vc
     @objc private func goBackViewController() {
-        navigationController?.popViewController(animated: true)
+        let menuController = MenuViewController()
+        navigationController?.popToViewController(menuController, animated: true)
     }
 
+//    Данные Ксю
+//    @objc private func gotoCoffeeBeansScreen() {
+//        let coffeeBeansController = //
+//        present(coffeeBeansController, animated: true)
+//    }
+
+    // Переход на экран ингредиентов и перенос цены в Order Screen
     @objc private func goToIngredientsScreen() {
         let ingredientsController = IngredientsViewController()
         ingredientsController.summaUp = { newOrder in

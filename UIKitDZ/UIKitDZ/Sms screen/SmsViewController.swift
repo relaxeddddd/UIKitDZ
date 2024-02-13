@@ -42,9 +42,10 @@ final class SmsViewController: UIViewController {
         view.addSubview(smsView)
     }
 
-    // !заглушка!
+    // Презент ThanksScreenViewController
     @objc private func goToThanksScreen() {
-        // !заглушка!
+        let thanksController = ThanksScreenViewController()
+        present(thanksController, animated: true)
     }
 
     // Возврат на экран Choose Coffee
