@@ -3,11 +3,10 @@
 
 import UIKit
 
-// Создание Меню для кофейни
+// экран меню для кофейни
 final class MenuViewController: UIViewController {
     // MARK: - Visual Component
 
-    // лого кофейни
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 100, y: 49, width: 175, height: 76)
@@ -15,7 +14,6 @@ final class MenuViewController: UIViewController {
         return imageView
     }()
 
-    // приветствие
     private lazy var greetingTextView: UITextView = {
         let textView = UITextView(frame: CGRect(x: 20, y: 147, width: 185, height: 44))
         textView.text = "Добро пожаловать,\nГость"
@@ -26,7 +24,6 @@ final class MenuViewController: UIViewController {
         return textView
     }()
 
-    // круг с буквой Г
     private lazy var circleImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 311, y: 147, width: 44, height: 44))
         imageView.image = UIImage(named: "circleImage")
@@ -47,7 +44,6 @@ final class MenuViewController: UIViewController {
         return label
     }()
 
-    // белая вью
     private lazy var newView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 248, width: 375, height: 564))
         view.backgroundColor = .white
@@ -73,6 +69,19 @@ final class MenuViewController: UIViewController {
         addressLabel.backgroundColor = .clear
         addressLabel.font = UIFont(name: "Verdana-Bold", size: 14.0)
         view.addSubview(addressLabel)
+        
+       enum Constants {
+            static let permissionTitleFirstPart = "Разрѣшите"
+            static let permissionTitleSecondPart = "доступъ"
+            static let permissionTitleThirdPart = "къ"
+            
+            static let locationText = "геолокаціи"
+            static let locationTextSecondPart = "для"
+            
+            static let searchCoffeeShopTextFirstPart = "поиска"
+            static let searchCoffeeShopTextSecondPart = "ближайшей"
+            static let searchCoffeeShopTextThirdPart = "кофейни"
+        }
 
         let geolocationLabel = UILabel(frame: CGRect(x: 15, y: 30, width: 260, height: 30))
         geolocationLabel.textColor = .lightGray
@@ -88,15 +97,13 @@ final class MenuViewController: UIViewController {
         return view
     }()
 
-    // лого меню
     private lazy var menuLogoImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 124, y: 122, width: 125, height: 80))
         imageView.image = UIImage(named: "menuImage")
         return imageView
     }()
 
-    // Первая позиция меню "Пти пате"
-    private lazy var rectangleOne: UIImageView = {
+    private lazy var rectangleOneImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 20, y: 216, width: 335, height: 80))
         imageView.image = UIImage(named: "rectangleImage")
         return imageView
@@ -111,14 +118,13 @@ final class MenuViewController: UIViewController {
         return label
     }()
 
-    private lazy var cakeImage: UIImageView = {
+    private lazy var cakeImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 272, y: 221, width: 70, height: 70))
         imageView.image = UIImage(named: "cakeImage")
         return imageView
     }()
 
-    // вторая позиция меню
-    private lazy var rectangleTwo: UIImageView = {
+    private lazy var rectangleTwoImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 20, y: 316, width: 335, height: 80))
         imageView.image = UIImage(named: "rectangleImage")
         return imageView
@@ -133,14 +139,13 @@ final class MenuViewController: UIViewController {
         return label
     }()
 
-    private lazy var capImage: UIImageView = {
+    private lazy var capImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 252, y: 15, width: 70, height: 48))
         imageView.image = UIImage(named: "capCoffeeImage")
         return imageView
     }()
 
-    // третья позиция/ кнопка
-    private lazy var rectangleThree: UIImageView = {
+    private lazy var rectangleThreeImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 20, y: 416, width: 335, height: 80))
         imageView.image = UIImage(named: "rectangleImage")
         return imageView
@@ -165,8 +170,8 @@ final class MenuViewController: UIViewController {
         let button = UIButton(frame: CGRect(
             x: 0,
             y: 0,
-            width: rectangleThree.frame.width,
-            height: rectangleThree.frame.height
+            width: rectangleThreeImageView.frame.width,
+            height: rectangleThreeImageView.frame.height
         ))
         button.backgroundColor = .clear
         button.addTarget(self, action: #selector(coffeeButtonTapped), for: .touchUpInside)
@@ -192,16 +197,16 @@ final class MenuViewController: UIViewController {
         view.addSubview(newView)
         newView.addSubview(coffeeAddressesView)
         newView.addSubview(menuLogoImageView)
-        newView.addSubview(rectangleOne)
-        rectangleOne.addSubview(ptiPateLabel)
-        newView.addSubview(cakeImage)
-        newView.addSubview(rectangleTwo)
-        rectangleTwo.addSubview(hotBeveragesLabel)
-        rectangleTwo.addSubview(capImage)
-        newView.addSubview(rectangleThree)
-        rectangleThree.addSubview(capSpoonImageView)
-        rectangleThree.addSubview(coffeeLabel)
-        rectangleThree.addSubview(coffeeButton)
+        newView.addSubview(rectangleOneImageView)
+        rectangleOneImageView.addSubview(ptiPateLabel)
+        newView.addSubview(cakeImageView)
+        newView.addSubview(rectangleTwoImageView)
+        rectangleTwoImageView.addSubview(hotBeveragesLabel)
+        rectangleTwoImageView.addSubview(capImageView)
+        newView.addSubview(rectangleThreeImageView)
+        rectangleThreeImageView.addSubview(capSpoonImageView)
+        rectangleThreeImageView.addSubview(coffeeLabel)
+        rectangleThreeImageView.addSubview(coffeeButton)
     }
 
     // кнопка для перехода
