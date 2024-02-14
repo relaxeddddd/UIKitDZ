@@ -3,7 +3,9 @@
 
 import UIKit
 
-class ThanksScreenViewController: UIViewController {
+final class ThanksScreenViewController: UIViewController {
+    // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +42,16 @@ class ThanksScreenViewController: UIViewController {
         goodButton.setTitleColor(.white, for: .normal)
         goodButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         goodButton.contentHorizontalAlignment = .center
+        goodButton.addTarget(self, action: #selector(goodButtonTapped), for: .touchUpInside)
         view.addSubview(goodButton)
+    }
+
+    // MARK: - Button Action
+
+    // обработчик кнопки для возврата на экран меню
+    @objc func goodButtonTapped() {
+        let menuVC = MenuViewController()
+
+        navigationController?.pushViewController(menuVC, animated: true)
     }
 }

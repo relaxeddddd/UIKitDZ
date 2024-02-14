@@ -3,137 +3,198 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+final class MenuViewController: UIViewController {
+    // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         // коричневый экран
         view.backgroundColor = UIColor(named: "newBrown")
+    }
 
-        // лого кофейни
-        let logoImage = UIImageView(frame: CGRect(x: 100, y: 49, width: 175, height: 76))
-        logoImage.image = UIImage(named: "coffeLogoImage")
-        view.addSubview(logoImage)
+    // лого кофейни
+    lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.frame = CGRect(x: 100, y: 49, width: 175, height: 76)
+        imageView.image = UIImage(named: "coffeLogoImage")
+        return imageView
+    }()
 
-        // приветствие
-        let greeting = UITextView(frame: CGRect(x: 20, y: 147, width: 185, height: 44))
-        greeting.text = "Добро пожаловать,\nГость"
-        greeting.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        greeting.backgroundColor = UIColor.clear
-        greeting.textAlignment = .left
-        greeting.font = UIFont(name: "Verdana-Bold", size: 13.0)
-        view.addSubview(greeting)
+    // приветствие
+    lazy var greetingTextView: UITextView = {
+        let textView = UITextView(frame: CGRect(x: 20, y: 147, width: 185, height: 44))
+        textView.text = "Добро пожаловать,\nГость"
+        textView.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        textView.backgroundColor = UIColor.clear
+        textView.textAlignment = .left
+        textView.font = UIFont(name: "Verdana-Bold", size: 13.0)
+        return textView
+    }()
 
-        // круг с буквой Г
-        let circle = UIImageView(frame: CGRect(x: 311, y: 147, width: 44, height: 44))
-        circle.image = UIImage(named: "circleImage")
-        view.addSubview(circle)
+    // круг с буквой Г
+    lazy var circleImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 311, y: 147, width: 44, height: 44))
+        imageView.image = UIImage(named: "circleImage")
+        return imageView
+    }()
 
-        let labelL = UILabel()
-        labelL.frame = CGRect(x: 0, y: 0, width: circle.frame.width, height: circle.frame.height)
-        labelL.text = "Г"
-        labelL.textColor = .white
-        labelL.textAlignment = .center
-        labelL.font = UIFont(name: "Verdana-Bold", size: 20)
-        circle.addSubview(labelL)
+    lazy var letterLabel: UILabel = {
+        let label = UILabel(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: circleImageView.frame.width,
+            height: circleImageView.frame.height
+        ))
+        label.text = "Г"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont(name: "Verdana-Bold", size: 20)
+        return label
+    }()
 
-        // белая вью
-        let newView = UIView(frame: CGRect(x: 0, y: 248, width: 375, height: 564))
-        newView.backgroundColor = .white
-        newView.layer.cornerRadius = 12
-        view.addSubview(newView)
+    // белая вью
+    lazy var newView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 248, width: 375, height: 564))
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 12
+        return view
+    }()
 
-        // адреса кофеен
-        let rectangleMint = UIImageView(frame: CGRect(x: 20, y: 40, width: 335, height: 70))
-        rectangleMint.image = UIImage(named: "rectangleMint")
-        newView.addSubview(rectangleMint)
+    lazy var coffeeAddressesView: UIView = {
+        let view = UIView(frame: CGRect(x: 20, y: 40, width: 335, height: 70))
 
-        let adressCof = UILabel()
-        adressCof.frame = CGRect(x: 15, y: 12, width: 150, height: 15)
-        adressCof.text = "Адреса кофеен"
-        adressCof.textColor = .black
-        adressCof.backgroundColor = .clear
-        adressCof.font = UIFont(name: "Verdana-Bold", size: 14.0)
-        rectangleMint.addSubview(adressCof)
+        let backgroundImageView = UIImageView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: view.frame.height
+        ))
+        backgroundImageView.image = UIImage(named: "rectangleMint")
+        view.addSubview(backgroundImageView)
 
-        let geolocation = UILabel()
-        geolocation.frame = CGRect(x: 15, y: 30, width: 260, height: 30)
-        geolocation.textColor = .lightGray
-        geolocation.font = UIFont(name: "Verdana", size: 10.0)
-        geolocation.text = "Разрѣшите доступъ къ ​геолокаціи для\nпоиска ближайшей кофейни"
-        geolocation.numberOfLines = 2
-        geolocation.backgroundColor = .clear
-        rectangleMint.addSubview(geolocation)
+        let addressLabel = UILabel(frame: CGRect(x: 15, y: 12, width: 150, height: 15))
+        addressLabel.text = "Адреса кофеен"
+        addressLabel.textColor = .black
+        addressLabel.backgroundColor = .clear
+        addressLabel.font = UIFont(name: "Verdana-Bold", size: 14.0)
+        view.addSubview(addressLabel)
 
-        let dot = UIImageView(frame: CGRect(x: 289, y: 19, width: 20, height: 30))
-        dot.image = UIImage(named: "dotImage")
-        rectangleMint.addSubview(dot)
+        let geolocationLabel = UILabel(frame: CGRect(x: 15, y: 30, width: 260, height: 30))
+        geolocationLabel.textColor = .lightGray
+        geolocationLabel.font = UIFont(name: "Verdana", size: 10.0)
+        geolocationLabel.text = "Разрѣшите доступъ къ ​геолокаціи для\nпоиска ближайшей кофейни"
+        geolocationLabel.numberOfLines = 2
+        view.addSubview(geolocationLabel)
 
-        // лого меню
-        let logoMenu = UIImageView(frame: CGRect(x: 124, y: 122, width: 125, height: 80))
-        logoMenu.image = UIImage(named: "menuImage")
-        newView.addSubview(logoMenu)
+        let dotImageView = UIImageView(frame: CGRect(x: 289, y: 19, width: 20, height: 30))
+        dotImageView.image = UIImage(named: "dotImage")
+        view.addSubview(dotImageView)
 
-        // Первая позиция меню "Пти пате"
-        let rectangleOne = UIImageView(frame: CGRect(x: 20, y: 216, width: 335, height: 80))
-        rectangleOne.image = UIImage(named: "rectangleImage")
-        newView.addSubview(rectangleOne)
+        return view
+    }()
 
-        let ptiPate = UILabel()
-        ptiPate.frame = CGRect(x: 25, y: 30, width: 180, height: 19)
-        ptiPate.text = "Пти пате aля «РюсЪ»"
-        ptiPate.textColor = .black
-        ptiPate.backgroundColor = .clear
-        ptiPate.font = UIFont(name: "Verdana-Bold", size: 14.0)
-        ptiPate.textAlignment = .left
-        rectangleOne.addSubview(ptiPate)
+    // лого меню
+    lazy var menuLogoImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 124, y: 122, width: 125, height: 80))
+        imageView.image = UIImage(named: "menuImage")
+        return imageView
+    }()
 
-        let cakeImage = UIImageView(frame: CGRect(x: 272, y: 221, width: 70, height: 70))
-        cakeImage.image = UIImage(named: "cakeImage")
-        newView.addSubview(cakeImage)
+    // Первая позиция меню "Пти пате"
+    lazy var rectangleOne: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 20, y: 216, width: 335, height: 80))
+        imageView.image = UIImage(named: "rectangleImage")
+        return imageView
+    }()
 
-        // вторая позиция меню
-        let rectangleTwo = UIImageView(frame: CGRect(x: 20, y: 316, width: 335, height: 80))
-        rectangleTwo.image = UIImage(named: "rectangleImage")
-        newView.addSubview(rectangleTwo)
+    lazy var ptiPateLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 25, y: 30, width: 180, height: 19))
+        label.text = "Пти пате aля «РюсЪ»"
+        label.textColor = .black
+        label.font = UIFont(name: "Verdana-BoldItalic", size: 14.0)
+        label.textAlignment = .left
+        return label
+    }()
 
-        let hotBeverages = UILabel()
-        hotBeverages.frame = CGRect(x: 25, y: 30, width: 180, height: 19)
-        hotBeverages.text = "Горячiя напитки"
-        hotBeverages.textColor = .black
-        hotBeverages.backgroundColor = .clear
-        hotBeverages.font = UIFont(name: "Verdana-Bold", size: 14.0)
-        hotBeverages.textAlignment = .left
-        rectangleTwo.addSubview(hotBeverages)
+    lazy var cakeImage: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 272, y: 221, width: 70, height: 70))
+        imageView.image = UIImage(named: "cakeImage")
+        return imageView
+    }()
 
-        let capImage = UIImageView(frame: CGRect(x: 252, y: 15, width: 70, height: 48))
-        capImage.image = UIImage(named: "capCoffeeImage")
-        rectangleTwo.addSubview(capImage)
+    // вторая позиция меню
+    lazy var rectangleTwo: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 20, y: 316, width: 335, height: 80))
+        imageView.image = UIImage(named: "rectangleImage")
+        return imageView
+    }()
 
-        // третья позиция/ кнопка
-        let rectangleThree = UIImageView(frame: CGRect(x: 20, y: 416, width: 335, height: 80))
-        rectangleThree.image = UIImage(named: "rectangleImage")
-        newView.addSubview(rectangleThree)
+    lazy var hotBeveragesLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 25, y: 30, width: 180, height: 19))
+        label.text = "Горячiя напитки"
+        label.textColor = .black
+        label.font = UIFont(name: "Verdana-BoldItalic", size: 14.0)
+        label.textAlignment = .left
+        return label
+    }()
 
-        let capSpoon = UIImageView(frame: CGRect(x: 252, y: 5, width: 70, height: 70))
-        capSpoon.image = UIImage(named: "capSpoonImage")
-        rectangleThree.addSubview(capSpoon)
+    lazy var capImage: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 252, y: 15, width: 70, height: 48))
+        imageView.image = UIImage(named: "capCoffeeImage")
+        return imageView
+    }()
 
-        let coffeText = UILabel()
-        coffeText.frame = CGRect(x: 25, y: 30, width: 180, height: 19)
-        coffeText.text = "Кофий"
-        coffeText.font = UIFont(name: "Verdana-Bold", size: 14.0)
-        coffeText.textAlignment = .left
-        coffeText.backgroundColor = .clear
-        coffeText.textColor = .black
-        rectangleThree.addSubview(coffeText)
+    // третья позиция/ кнопка
+    lazy var rectangleThree: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 20, y: 416, width: 335, height: 80))
+        imageView.image = UIImage(named: "rectangleImage")
+        return imageView
+    }()
 
-        let coffeeButton = UIButton(frame: CGRect(
+    lazy var capSpoonImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 252, y: 5, width: 70, height: 70))
+        imageView.image = UIImage(named: "capSpoonImage")
+        return imageView
+    }()
+
+    lazy var coffeeLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 25, y: 30, width: 180, height: 19))
+        label.text = "Кофий"
+        label.font = UIFont(name: "Verdana-BoldItalic", size: 14.0)
+        label.textAlignment = .left
+        label.textColor = .black
+        return label
+    }()
+
+    lazy var coffeeButton: UIButton = {
+        let button = UIButton(frame: CGRect(
             x: 0,
             y: 0,
             width: rectangleThree.frame.width,
             height: rectangleThree.frame.height
         ))
-        coffeeButton.backgroundColor = .clear
+        button.backgroundColor = .clear
+        return button
+    }()
+
+    private func setupViews() {
+        view.addSubview(logoImageView)
+        view.addSubview(greetingTextView)
+        view.addSubview(circleImageView)
+        circleImageView.addSubview(letterLabel)
+        view.addSubview(newView)
+        newView.addSubview(coffeeAddressesView)
+        newView.addSubview(menuLogoImageView)
+        newView.addSubview(rectangleOne)
+        rectangleOne.addSubview(ptiPateLabel)
+        newView.addSubview(cakeImage)
+        newView.addSubview(rectangleTwo)
+        rectangleTwo.addSubview(hotBeveragesLabel)
+        rectangleTwo.addSubview(capImage)
+        newView.addSubview(rectangleThree)
+        rectangleThree.addSubview(capSpoonImageView)
+        rectangleThree.addSubview(coffeeLabel)
         rectangleThree.addSubview(coffeeButton)
     }
 }

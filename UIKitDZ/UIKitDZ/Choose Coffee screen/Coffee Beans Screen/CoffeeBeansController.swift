@@ -3,69 +3,162 @@
 
 import UIKit
 
-class CoffeeBeansController: UIViewController {
+// выбор обжарки зерен
+final class CoffeeBeansController: UIViewController {
+    // var delegate: SelectionRoastCoffeDelegate?
+    // var selectedRoastText: String?
+
+    // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         view.backgroundColor = UIColor(named: "beigeColor")
+    }
 
-        // кружок наполовину закрытый
-        let circleWhite = UIImageView(frame: CGRect(x: 24, y: 50, width: 44, height: 44))
-        circleWhite.image = UIImage(named: "circleWhiteImage")
+    // MARK: - UI Elements
+
+    // кружок наполовину закрытый
+    lazy var circleWhite: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 24, y: 50, width: 44, height: 44))
+        imageView.image = UIImage(named: "circleWhiteImage")
+        return imageView
+    }()
+
+    // новая вью
+    lazy var newView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 62, width: 375, height: 750))
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+
+    // крестик - закрыть
+    lazy var xButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 20, y: 26, width: 14, height: 14))
+        button.setImage(UIImage(named: "xImage"), for: .normal)
+        return button
+    }()
+
+    // текст "уточните...
+    lazy var beansText: UILabel = {
+        let label = UILabel(frame: CGRect(x: 40, y: 53, width: 294, height: 30))
+        label.text = "Уточните обжарку зеренъ"
+        label.font = UIFont(name: "Verdana-Bold", size: 14.0)
+        label.textAlignment = .center
+        return label
+    }()
+
+    // !темная обжарка!
+    // основание
+    lazy var rectangleDark: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 15, y: 102, width: 165, height: 165))
+        imageView.image = UIImage(named: "rectangleBeans")
+        return imageView
+    }()
+
+    // картинка зерен
+    lazy var beansDark: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 31, y: 17, width: 100, height: 100))
+        imageView.image = UIImage(named: "darkBeanse")
+        return imageView
+    }()
+
+    // кнопка
+    lazy var darkRoastsButton: UIButton = {
+        let darkButton = UIButton(type: .custom)
+        darkButton.frame = CGRect(x: 0, y: 112, width: 165, height: 40)
+        darkButton.setTitle("Темная\nобжарка", for: .normal)
+        darkButton.titleLabel?.numberOfLines = 2
+        darkButton.titleLabel?.textAlignment = .center
+        darkButton.setTitleColor(.black, for: .normal)
+        darkButton.titleLabel?.font = UIFont(name: "Verdana", size: 14)
+        // darkButton.addTarget(self, action: #selector(darkRoastButtonTapped), for: .touchUpInside)
+        return darkButton
+    }()
+
+    // !светлая обжарка!
+    // основание
+    lazy var rectangleLight: UIImageView = {
+        let light = UIImageView(frame: CGRect(x: 195, y: 102, width: 165, height: 165))
+        light.image = UIImage(named: "rectangleBeans")
+        return light
+    }()
+
+    // картина зерен
+    lazy var beanseLight: UIImageView = {
+        let beanse = UIImageView(frame: CGRect(x: 32, y: 17, width: 100, height: 100))
+        beanse.image = UIImage(named: "lightBeanse")
+        return beanse
+    }()
+
+    // кнопка
+    lazy var lightRoastButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 117, width: 165, height: 40)
+        button.setTitle("Светлая\nобжарка", for: .normal)
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Verdana", size: 14)
+        // button.addTarget(self, action: #selector(lightRoastButtonTapped), for: .touchUpInside)
+        return button
+    }()
+
+    // MARK: - Private Methods
+
+    // кладем все элементы на экран
+    private func setupViews() {
         view.addSubview(circleWhite)
-
-        // новая вью
-        let newView = UIView(frame: CGRect(x: 0, y: 62, width: 375, height: 750))
-        newView.backgroundColor = .white
-        newView.layer.cornerRadius = 15
         view.addSubview(newView)
-
-        // кнопка закрыть
-        let xButton = UIButton(frame: CGRect(x: 20, y: 26, width: 14, height: 14))
-        xButton.setImage(UIImage(named: "xImage"), for: .normal)
         newView.addSubview(xButton)
-
-        // текст уточните
-        let beansText = UILabel(frame: CGRect(x: 40, y: 53, width: 294, height: 30))
-        beansText.text = "Уточните обжарку зеренъ"
-        beansText.font = UIFont(name: "Verdana-Bold", size: 14.0)
-        beansText.textAlignment = .center
         newView.addSubview(beansText)
-
-        // темная обжарка
-        let rectangleDark = UIImageView(frame: CGRect(x: 15, y: 102, width: 165, height: 165))
-        rectangleDark.image = UIImage(named: "rectangleBeans")
         newView.addSubview(rectangleDark)
-
-        let beansDark = UIImageView(frame: CGRect(x: 31, y: 17, width: 100, height: 100))
-        beansDark.image = UIImage(named: "darkBeanse")
         rectangleDark.addSubview(beansDark)
-
-        let darkRoastButton = UIButton(type: .custom)
-        darkRoastButton.frame = CGRect(x: 0, y: 112, width: 165, height: 40)
-        darkRoastButton.setTitle("Темная\nобжарка", for: .normal)
-        darkRoastButton.titleLabel?.numberOfLines = 2
-        darkRoastButton.titleLabel?.textAlignment = .center
-        darkRoastButton.setTitleColor(.black, for: .normal)
-        darkRoastButton.titleLabel?.font = UIFont(name: "Verdana", size: 14)
-        rectangleDark.addSubview(darkRoastButton)
-
-        // светлая обжарка
-        let rectangleLight = UIImageView(frame: CGRect(x: 195, y: 102, width: 165, height: 165))
-        rectangleLight.image = UIImage(named: "rectangleBeans")
+        rectangleDark.addSubview(darkRoastsButton)
         newView.addSubview(rectangleLight)
-
-        let beanseLight = UIImageView(frame: CGRect(x: 32, y: 17, width: 100, height: 100))
-        beanseLight.image = UIImage(named: "lightBeanse")
         rectangleLight.addSubview(beanseLight)
-
-        let lightRoastButton = UIButton(type: .custom)
-        lightRoastButton.frame = CGRect(x: 0, y: 117, width: 165, height: 40)
-        lightRoastButton.setTitle("Светлая\nобжарка", for: .normal)
-        lightRoastButton.titleLabel?.numberOfLines = 2
-        lightRoastButton.titleLabel?.textAlignment = .center
-        lightRoastButton.setTitleColor(.black, for: .normal)
-        lightRoastButton.titleLabel?.font = UIFont(name: "Verdana", size: 14)
         rectangleLight.addSubview(lightRoastButton)
     }
 }
+
+/* тут будет реализация кнопок для передачи картинки и текста в контроллер Ильи (варианты обжарок кофе
+
+ extension CoffeeBeansController {
+     @objc func darkRoastButtonTapped() {
+         darkRoastsButton.layer.borderWidth = 1
+         lightRoastButton.layer.borderWidth = 0
+         darkRoastsButton.backgroundColor = .green
+
+         if let selectedImage = beansDark.image {
+             delegate?.sendTheImage(selectedImage)
+         }
+         delegate?.sendTheText(darkRoastsButton.titleLabel?.text ?? "")
+     }
+
+     @objc func lightRoastButtonTapped() {
+         lightRoastButton.layer.borderWidth = 1
+         darkRoastsButton.layer.borderWidth = 0
+         lightRoastButton.backgroundColor = .green
+
+         if let selectedImage = beanseLight.image {
+             delegate?.sendTheImage(selectedImage)
+         }
+         delegate?.sendTheText(lightRoastButton.titleLabel?.text ?? "")
+     }
+
+     @objc func beansDarkTapped() {
+         // Устанавливаем толщину обводки
+         beansDark.layer.borderWidth = 10
+         // Устанавливаем цвет обводки
+         beansDark.layer.borderColor = UIColor.green.cgColor
+     }
+
+     @objc func beansLightTapped() {
+         // Устанавливаем толщину обводки
+         beanseLight.layer.borderWidth = 10
+         // Устанавливаем цвет обводки
+         beanseLight.layer.borderColor = UIColor.green.cgColor
+     }
+ }
+ */
