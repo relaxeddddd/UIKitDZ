@@ -1,9 +1,12 @@
-// CustomButton.swift
+// EnableEnterCustomButton.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-class CustomButton: UIButton {
+// Кастомная кнопка входа
+final class EnableEnterCustomButton: UIButton {
+    // MARK: Initializers
+
     init(frame: CGRect, text: String) {
         super.init(frame: frame)
         setTitle(text, for: .normal)
@@ -14,6 +17,8 @@ class CustomButton: UIButton {
         super.init(coder: aDecoder)
         setupButton()
     }
+
+    // MARK: - Private Methods
 
     private func setupButton() {
         backgroundColor = UIColor(red: 89 / 255, green: 190 / 255, blue: 199 / 255, alpha: 1.0)

@@ -4,14 +4,16 @@
 import UIKit
 
 /// Класс ViewController который отвечает за показ экрана авторизации
-final class LoginViewController: UIViewController, UITextFieldDelegate {
+final class LoginViewController: UIViewController {
+    // MARK: - Public Properties
+
+    private let loginView = LoginView()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
-        addTarget()
-        loginView.passwordTextField.delegate = self
     }
 
     // MARK: - Private Methods
@@ -23,27 +25,24 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(loginView.autorizationLabel)
         view.addSubview(loginView.emailLabel)
         view.addSubview(loginView.emailTextField)
-        view.addSubview(loginView.uiViewTextField)
-        view.addSubview(loginView.passwordLabel)
-        view.addSubview(loginView.passwordTextField)
-        view.addSubview(loginView.uiViewPasswordField)
-        view.addSubview(loginView.eyeButton)
-        view.addSubview(loginView.enterButton)
-    }
-    
-    // Метод по добавлению таргетов к views
-    private func addTarget() {
-        loginView.eyeButton.addTarget(self, action: #selector(showPassword), for: .touchUpInside)
-        loginView.passwordTextField.addTarget(
-            self,
-            action: #selector(textFieldDidChange(textField:)),
-            for: .editingChanged
-        )
         loginView.emailTextField.addTarget(
             self,
             action: #selector(textFieldDidChange(textField:)),
             for: .editingChanged
         )
+        view.addSubview(loginView.uiViewTextField)
+        view.addSubview(loginView.passwordLabel)
+        view.addSubview(loginView.passwordTextField)
+        loginView.passwordTextField.delegate = self
+        loginView.passwordTextField.addTarget(
+            self,
+            action: #selector(textFieldDidChange(textField:)),
+            for: .editingChanged
+        )
+        view.addSubview(loginView.uiViewPasswordField)
+        view.addSubview(loginView.eyeButton)
+        loginView.eyeButton.addTarget(self, action: #selector(showPassword), for: .touchUpInside)
+        view.addSubview(loginView.enterButton)
         loginView.enterButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
     }
 
@@ -78,8 +77,6 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-
-    // MARK: - Constants
-
-    private let loginView = LoginViewViewController()
 }
+
+extension LoginViewController: UITextFieldDelegate {}

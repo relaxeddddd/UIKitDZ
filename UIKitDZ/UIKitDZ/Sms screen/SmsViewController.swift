@@ -3,16 +3,19 @@
 
 import UIKit
 
-// Класс для отображения экрана ввода смс
+/// Экран для ввода смс
 final class SmsViewController: UIViewController {
+    // MARK: - Public Properties
+
+    var smsView = SmsView()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        addBarItems()
+        setupBarButton()
         addViews()
-        addTargets()
     }
 
     // MARK: - Private Methods
@@ -21,18 +24,13 @@ final class SmsViewController: UIViewController {
     private func addViews() {
         view.addSubview(smsView.textLabel)
         view.addSubview(smsView.smsTextField)
+        smsView.smsTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         view.addSubview(smsView.sendAgainButton)
         view.addSubview(smsView.acceptButton)
-    }
-
-    // Добавление таргетов
-    private func addTargets() {
-        smsView.smsTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         smsView.acceptButton.addTarget(self, action: #selector(goToThanksScreen), for: .touchUpInside)
     }
 
-    // Настройка бар айтемов
-    private func addBarItems() {
+    private func setupBarButton() {
         title = "Кодъ из СМС"
 
         let barButtonLeft = UIButton()
@@ -67,8 +65,4 @@ final class SmsViewController: UIViewController {
             }
         }
     }
-
-    // MARK: - Constants
-
-    let smsView = SmsViewViewController()
 }

@@ -1,16 +1,25 @@
-// LoginViewViewController.swift
+// LoginView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Класс LoginViewViewController для создания view's для LoginViewController
-class LoginViewViewController: UIView {
+/// Добавление элементов на экран авторизации
+class LoginView: UIView {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let title = "КОФЕИНОВЪ"
+        static let autorixation = "Авторизация"
+        static let login = "Логин"
+        static let password = "Пароль"
+    }
+
     // MARK: - Public Properties
 
     public var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "AmaticSC-Bold", size: 55)
-        label.text = "КОФЕИНОВЪ"
+        label.text = Constants.title
         label.textColor = UIColor(red: 207 / 255, green: 180 / 255, blue: 150 / 255, alpha: 1.0)
         label.frame = CGRect(x: 100, y: 103, width: 300, height: 80)
         return label
@@ -26,7 +35,7 @@ class LoginViewViewController: UIView {
 
     public var autorizationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Авторизация"
+        label.text = Constants.autorixation
         label.font = UIFont(name: "Verdana-Bold", size: 26)
         label.frame = CGRect(x: 20, y: 280, width: 195, height: 32)
         return label
@@ -34,7 +43,7 @@ class LoginViewViewController: UIView {
 
     public var emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "Логин"
+        label.text = Constants.login
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 332, width: 175, height: 20)
         return label
@@ -59,7 +68,7 @@ class LoginViewViewController: UIView {
 
     public var passwordLabel: UILabel = {
         let label = UILabel()
-        label.text = "Пароль"
+        label.text = Constants.password
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 407, width: 175, height: 20)
         return label

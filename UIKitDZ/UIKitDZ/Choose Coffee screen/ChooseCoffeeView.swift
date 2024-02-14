@@ -1,20 +1,29 @@
-// ChooseCoffeeViewViewController.swift
+// ChooseCoffeeView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Класс ChooseCoffeeViewViewController для создания view's для ChooseCoffeeViewController
-class ChooseCoffeeViewViewController: UIView {
+/// Класс для создания объектов на экран с выбором кофе
+final class ChooseCoffeeView: UIView {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let roasting = "Тёмная \nобжарка"
+        static let addIngredients = "Дополнительные \nингредiенты"
+        static let price = "Цѣна - 100 руб"
+    }
+
     // MARK: - Public Properties
 
-    public var segmentItems = ["Американо", "Капучино", "Латте"]
+    var segmentItems = ["Американо", "Капучино", "Латте"]
 
     // MARK: - Visual Components
-    public let uiView: UIView = {
-        let uiView = UIView()
-        uiView.backgroundColor = UIColor(red: 234 / 255, green: 212 / 255, blue: 188 / 255, alpha: 1.0)
-        uiView.frame = CGRect(x: 0, y: 0, width: 375, height: 346)
-        return uiView
+
+    public let uiViewBackground: UIView = {
+        let uiViewBackground = UIView()
+        uiViewBackground.backgroundColor = UIColor(red: 234 / 255, green: 212 / 255, blue: 188 / 255, alpha: 1.0)
+        uiViewBackground.frame = CGRect(x: 0, y: 0, width: 375, height: 346)
+        return uiViewBackground
     }()
 
     public lazy var imageCoffee: UIImageView = {
@@ -47,16 +56,16 @@ class ChooseCoffeeViewViewController: UIView {
         return button
     }()
 
-    public let beansImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "beans")
-        image.frame = CGRect(x: 46, y: 499, width: 100, height: 100)
-        return image
+    public let beansImageView: UIImageView = {
+        let beansImageView = UIImageView()
+        beansImageView.image = UIImage(named: "beans")
+        beansImageView.frame = CGRect(x: 46, y: 499, width: 100, height: 100)
+        return beansImageView
     }()
 
     public let beansLabel: UILabel = {
         let label = UILabel()
-        label.text = "Тёмная \nобжарка"
+        label.text = Constants.roasting
         label.font = UIFont(name: "Verdana", size: 13)
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -82,7 +91,7 @@ class ChooseCoffeeViewViewController: UIView {
 
     public let ingredientsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Дополнительные \nингредiенты"
+        label.text = Constants.addIngredients
         label.font = UIFont(name: "Verdana", size: 13)
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -93,14 +102,14 @@ class ChooseCoffeeViewViewController: UIView {
 
     public let priceLabel: UILabel = {
         let label = UILabel()
-        label.text = "Цѣна - 100 руб"
+        label.text = Constants.price
         label.font = UIFont.verdana18
         label.textAlignment = .right
         label.frame = CGRect(x: 15, y: 669, width: 345, height: 30)
         return label
     }()
 
-    public let enterButton = CustomButton(
+    public let enterButton = EnableEnterCustomButton(
         frame: CGRect(x: 15, y: 717, width: 345, height: 53),
         text: "Заказать"
     )

@@ -5,7 +5,10 @@ import UIKit
 
 /// Класс OrderViewController для отображения экрана с чеом
 final class OrderViewController: UIViewController {
-    var push: (() -> Void)?
+    // MARK: - Public Properties
+
+    var orderView = OrderView()
+    var nextScreenHandler: (() -> Void)?
 
     // MARK: - Life Cycle
 
@@ -13,7 +16,6 @@ final class OrderViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         addViews()
-        addTargets()
     }
 
     // MARK: - Private Methods
@@ -21,7 +23,9 @@ final class OrderViewController: UIViewController {
     /// Добавление view's на наш экран
     private func addViews() {
         view.addSubview(orderView.closeButton)
+        orderView.closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
         view.addSubview(orderView.enterButton)
+        orderView.enterButton.addTarget(self, action: #selector(goToSmsViewController), for: .touchUpInside)
         view.addSubview(orderView.flowersLeftImage)
         view.addSubview(orderView.flowersRightImage)
         view.addSubview(orderView.flowersMidleImage)
@@ -39,12 +43,6 @@ final class OrderViewController: UIViewController {
         view.addSubview(orderView.priceLabel)
     }
 
-    /// Добавление таргетов
-    private func addTargets() {
-        orderView.closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
-        orderView.enterButton.addTarget(self, action: #selector(goToSmsViewController), for: .touchUpInside)
-    }
-
     /// Закрытие экрана
     @objc private func closeScreen() {
         dismiss(animated: true) {}
@@ -52,11 +50,7 @@ final class OrderViewController: UIViewController {
 
     @objc private func goToSmsViewController() {
         dismiss(animated: true) {
-            self.push?()
+            self.nextScreenHandler?()
         }
     }
-
-    // MARK: - Constants
-
-    let orderView = OrderViewViewController()
 }

@@ -1,10 +1,23 @@
-// OrderViewViewController.swift
+// OrderView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-///  Класс OrderViewViewController для добавления view's на OrderViewController
-class OrderViewViewController: UIView {
+/// Класс для создания объектов на экран с чеком
+class OrderView: UIView {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let order = "Вашъ Заказъ"
+        static let price = "nil"
+        static let americano = "Американо"
+        static let milk = "Молоко"
+        static let espresso = "Эспрессо 50мл"
+        static let price50 = "50 руб"
+        static let price70 = "70 руб"
+        static let price100 = "100 руб"
+    }
+
     // MARK: - Visual Components
 
     public let closeButton: UIButton = {
@@ -37,7 +50,7 @@ class OrderViewViewController: UIView {
 
     public let titleOrderLabel: UILabel = {
         let label = UILabel()
-        label.text = "Вашъ Заказъ"
+        label.text = Constants.order
         label.font = UIFont.verdana18
         label.frame = CGRect(x: 120, y: 100, width: 140, height: 30)
         return label
@@ -45,7 +58,7 @@ class OrderViewViewController: UIView {
 
     public let priceLabel: UILabel = {
         let label = UILabel()
-        label.text = "nil"
+        label.text = Constants.price
         label.font = UIFont.verdana18
         label.textAlignment = .center
         label.frame = CGRect(x: 72, y: 433, width: 231, height: 30)
@@ -55,7 +68,7 @@ class OrderViewViewController: UIView {
     // Кофе
     public let coffeeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Американо"
+        label.text = Constants.americano
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 155, width: 150, height: 30)
         return label
@@ -63,7 +76,7 @@ class OrderViewViewController: UIView {
 
     public let coffeePriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "100 руб"
+        label.text = Constants.price100
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textAlignment = .right
         label.frame = CGRect(x: 225, y: 155, width: 130, height: 30)
@@ -73,14 +86,14 @@ class OrderViewViewController: UIView {
     // Молоко
     public let milkLabel: UILabel = {
         let label = UILabel()
-        label.text = "Молоко"
+        label.text = Constants.milk
         label.frame = CGRect(x: 20, y: 191, width: 150, height: 30)
         return label
     }()
 
     public let milkPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "50 руб"
+        label.text = Constants.price50
         label.textAlignment = .right
         label.frame = CGRect(x: 225, y: 191, width: 130, height: 30)
         return label
@@ -89,18 +102,21 @@ class OrderViewViewController: UIView {
     // Эспрессо
     public let espressoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Эспрессо 50мл"
+        label.text = Constants.espresso
         label.frame = CGRect(x: 20, y: 227, width: 150, height: 30)
         return label
     }()
 
     public let espressoPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "50 руб"
+        label.text = Constants.price50
         label.textAlignment = .right
         label.frame = CGRect(x: 225, y: 227, width: 130, height: 30)
         return label
     }()
 
-    public let enterButton = CustomButton(frame: CGRect(x: 15, y: 632, width: 345, height: 53), text: "Оплатить")
+    public let enterButton = EnableEnterCustomButton(
+        frame: CGRect(x: 15, y: 632, width: 345, height: 53),
+        text: "Оплатить"
+    )
 }

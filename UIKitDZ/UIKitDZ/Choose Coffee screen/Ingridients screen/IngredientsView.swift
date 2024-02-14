@@ -1,17 +1,27 @@
-// IngredientsViewViewController.swift
+// IngredientsView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-// Класс IngredientsViewViewController для добавления view's на IngredientsViewController
-class IngredientsViewViewController: UIView {
+/// Класс для создания объектов на экран с ингредиентами
+class IngredientsView: UIView {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let addIngredients = "Выберите дополнительные \nингредіенты"
+        static let milk = "Молоко"
+        static let sirop = "Сиров"
+        static let soymilk = "Молоко соевое"
+        static let almondMilk = "Молоко миндальное"
+        static let espresso = "Эспрессо 50мл"
+    }
+
     // MARK: - Public Properties
 
     public var switches = [UISwitch]()
 
     // MARK: - Visual Components
 
-    /// Массив свитчей
     public let closeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "close"), for: .normal)
@@ -21,7 +31,7 @@ class IngredientsViewViewController: UIView {
 
     public let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Выберите дополнительные \nингредіенты"
+        label.text = Constants.addIngredients
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
         label.font = UIFont.verdana18
@@ -40,7 +50,7 @@ class IngredientsViewViewController: UIView {
 
     public let milkLabel: UILabel = {
         let label = UILabel()
-        label.text = "Молоко "
+        label.text = Constants.milk
         label.frame = CGRect(x: 20, y: 124, width: 275, height: 35)
         return label
     }()
@@ -55,7 +65,7 @@ class IngredientsViewViewController: UIView {
 
     public let siropLabel: UILabel = {
         let label = UILabel()
-        label.text = "Сироп "
+        label.text = Constants.sirop
         label.frame = CGRect(x: 20, y: 174, width: 275, height: 35)
         return label
     }()
@@ -70,7 +80,7 @@ class IngredientsViewViewController: UIView {
 
     public let milkSoyaLabel: UILabel = {
         let label = UILabel()
-        label.text = "Молоко соевое "
+        label.text = Constants.soymilk
         label.frame = CGRect(x: 20, y: 224, width: 275, height: 35)
         return label
     }()
@@ -85,7 +95,7 @@ class IngredientsViewViewController: UIView {
 
     public let milkMindalLabel: UILabel = {
         let label = UILabel()
-        label.text = "Молоко миндальное "
+        label.text = Constants.almondMilk
         label.frame = CGRect(x: 20, y: 274, width: 275, height: 35)
         return label
     }()
@@ -100,7 +110,7 @@ class IngredientsViewViewController: UIView {
 
     public let espressoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Эспрессо 50мл "
+        label.text = Constants.espresso
         label.frame = CGRect(x: 20, y: 324, width: 275, height: 35)
         return label
     }()

@@ -1,15 +1,21 @@
-// SmsViewViewController.swift
+// SmsView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Класс SmsViewViewController для добавление view's на экран SmsViewController
-class SmsViewViewController: UIView {
+/// Класс для создания элементов на экран с смс
+class SmsView: UIView {
+    // MARK: - Contstants
+
+    private enum Constants {
+        static let title = "Введите кодъ изъ смс, чтобы \nподтвердить оплату"
+    }
+
     // MARK: - Visual Components
 
     public let textLabel: UILabel = {
         let label = UILabel()
-        label.text = "Введите кодъ изъ смс, чтобы \nподтвердить оплату"
+        label.text = Constants.title
         label.font = UIFont(name: "Verdana", size: 14)
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping

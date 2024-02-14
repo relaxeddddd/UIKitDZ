@@ -3,12 +3,18 @@
 
 import UIKit
 
-// Класс для отображение модельного окна с выбором ингридиентов
+// Показ экрана ингредиентов
 final class IngredientsViewController: UIViewController {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let prices = [50, 20, 50, 70, 50]
+    }
+
     // MARK: - Public Properties
 
-    /// Замыкание для передачи данных(в нашем случае обновленной цены)
-    var summaUp: ((String) -> Void)?
+    var ingredientsView = IngredientsView()
+    var getPriceHandler: ((String) -> Void)?
 
     // MARK: - Lyfe Cicle
 
@@ -16,19 +22,14 @@ final class IngredientsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         addViews()
-        addTarget()
-        configNamedFood(nameLabel: ingredientsView.milkLabel, price: "+50 руб")
-        configNamedFood(nameLabel: ingredientsView.siropLabel, price: "+20 руб")
-        configNamedFood(nameLabel: ingredientsView.milkSoyaLabel, price: "+50 руб")
-        configNamedFood(nameLabel: ingredientsView.milkMindalLabel, price: "+70 руб")
-        configNamedFood(nameLabel: ingredientsView.espressoLabel, price: "+50 руб")
+        addConfigNameFood()
     }
 
-    // MARK: - Private Properties
+    // MARK: - Private Methods
 
-    /// Добавление наших view's на экран
     private func addViews() {
         view.addSubview(ingredientsView.closeButton)
+        ingredientsView.closeButton.addTarget(self, action: #selector(setNewPrice), for: .touchUpInside)
         view.addSubview(ingredientsView.titleLabel)
         view.addSubview(ingredientsView.milkSwitch)
         view.addSubview(ingredientsView.milkLabel)
@@ -42,19 +43,14 @@ final class IngredientsViewController: UIViewController {
         view.addSubview(ingredientsView.espressoLabel)
     }
 
-    /// Добавление target's действий
-    private func addTarget() {
-        ingredientsView.closeButton.addTarget(self, action: #selector(setNewPrice), for: .touchUpInside)
-    }
-
     /// Обновление ценника в зависимости от нажатого switch
     @objc private func setNewPrice() {
         var sum = 0
         for (index, element) in ingredientsView.switches.enumerated() where element.isOn {
-            sum += prices[index]
+            sum += Constants.prices[index]
         }
         let newPrice = "Цѣна - \(sum + 100) руб"
-        summaUp?(newPrice)
+        getPriceHandler?(newPrice)
         dismiss(animated: true)
     }
 
@@ -69,8 +65,11 @@ final class IngredientsViewController: UIViewController {
         nameLabel.attributedText = allText
     }
 
-    // MARK: - Contants
-
-    let prices = [50, 20, 50, 70, 50]
-    let ingredientsView = IngredientsViewViewController()
+    private func addConfigNameFood() {
+        configNamedFood(nameLabel: ingredientsView.milkLabel, price: "+50 руб")
+        configNamedFood(nameLabel: ingredientsView.siropLabel, price: "+20 руб")
+        configNamedFood(nameLabel: ingredientsView.milkSoyaLabel, price: "+50 руб")
+        configNamedFood(nameLabel: ingredientsView.milkMindalLabel, price: "+70 руб")
+        configNamedFood(nameLabel: ingredientsView.espressoLabel, price: "+50 руб")
+    }
 }
