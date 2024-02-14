@@ -3,30 +3,22 @@
 
 import UIKit
 
-// выбор обжарки зерен
+//Контроллер с выбором обжарки зерен
 final class CoffeeBeansController: UIViewController {
     // var delegate: SelectionRoastCoffeDelegate?
     // var selectedRoastText: String?
 
-    // MARK: - Life cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViews()
-        view.backgroundColor = UIColor(named: "beigeColor")
-    }
-
-    // MARK: - UI Elements
+    // MARK: - Visual Component
 
     // кружок наполовину закрытый
-    lazy var circleWhite: UIImageView = {
+    private lazy var circleWhite: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 24, y: 50, width: 44, height: 44))
         imageView.image = UIImage(named: "circleWhiteImage")
         return imageView
     }()
 
     // новая вью
-    lazy var newView: UIView = {
+    private lazy var newView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 62, width: 375, height: 750))
         view.backgroundColor = .white
         view.layer.cornerRadius = 15
@@ -34,14 +26,14 @@ final class CoffeeBeansController: UIViewController {
     }()
 
     // крестик - закрыть
-    lazy var xButton: UIButton = {
+    private lazy var xButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 26, width: 14, height: 14))
         button.setImage(UIImage(named: "xImage"), for: .normal)
         return button
     }()
 
     // текст "уточните...
-    lazy var beansText: UILabel = {
+    private lazy var beansText: UILabel = {
         let label = UILabel(frame: CGRect(x: 40, y: 53, width: 294, height: 30))
         label.text = "Уточните обжарку зеренъ"
         label.font = UIFont(name: "Verdana-Bold", size: 14.0)
@@ -51,21 +43,21 @@ final class CoffeeBeansController: UIViewController {
 
     // !темная обжарка!
     // основание
-    lazy var rectangleDark: UIImageView = {
+    private lazy var rectangleDark: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 15, y: 102, width: 165, height: 165))
         imageView.image = UIImage(named: "rectangleBeans")
         return imageView
     }()
 
     // картинка зерен
-    lazy var beansDark: UIImageView = {
+    private lazy var beansDark: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 31, y: 17, width: 100, height: 100))
         imageView.image = UIImage(named: "darkBeanse")
         return imageView
     }()
 
     // кнопка
-    lazy var darkRoastsButton: UIButton = {
+    private lazy var darkRoastsButton: UIButton = {
         let darkButton = UIButton(type: .custom)
         darkButton.frame = CGRect(x: 0, y: 112, width: 165, height: 40)
         darkButton.setTitle("Темная\nобжарка", for: .normal)
@@ -79,21 +71,21 @@ final class CoffeeBeansController: UIViewController {
 
     // !светлая обжарка!
     // основание
-    lazy var rectangleLight: UIImageView = {
+    private lazy var rectangleLight: UIImageView = {
         let light = UIImageView(frame: CGRect(x: 195, y: 102, width: 165, height: 165))
         light.image = UIImage(named: "rectangleBeans")
         return light
     }()
 
     // картина зерен
-    lazy var beanseLight: UIImageView = {
+    private lazy var beanseLight: UIImageView = {
         let beanse = UIImageView(frame: CGRect(x: 32, y: 17, width: 100, height: 100))
         beanse.image = UIImage(named: "lightBeanse")
         return beanse
     }()
 
     // кнопка
-    lazy var lightRoastButton: UIButton = {
+    private lazy var lightRoastButton: UIButton = {
         let button = UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 117, width: 165, height: 40)
         button.setTitle("Светлая\nобжарка", for: .normal)
@@ -104,6 +96,14 @@ final class CoffeeBeansController: UIViewController {
         // button.addTarget(self, action: #selector(lightRoastButtonTapped), for: .touchUpInside)
         return button
     }()
+
+    // MARK: - Life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        view.backgroundColor = UIColor(named: "beigeColor")
+    }
 
     // MARK: - Private Methods
 

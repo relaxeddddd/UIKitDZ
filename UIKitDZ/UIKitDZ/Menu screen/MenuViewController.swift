@@ -3,18 +3,12 @@
 
 import UIKit
 
+// Создание Меню для кофейни
 final class MenuViewController: UIViewController {
-    // MARK: - Life cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupViews()
-        // коричневый экран
-        view.backgroundColor = UIColor(named: "newBrown")
-    }
+    // MARK: - Visual Component
 
     // лого кофейни
-    lazy var logoImageView: UIImageView = {
+    private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 100, y: 49, width: 175, height: 76)
         imageView.image = UIImage(named: "coffeLogoImage")
@@ -22,7 +16,7 @@ final class MenuViewController: UIViewController {
     }()
 
     // приветствие
-    lazy var greetingTextView: UITextView = {
+    private lazy var greetingTextView: UITextView = {
         let textView = UITextView(frame: CGRect(x: 20, y: 147, width: 185, height: 44))
         textView.text = "Добро пожаловать,\nГость"
         textView.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
@@ -33,13 +27,13 @@ final class MenuViewController: UIViewController {
     }()
 
     // круг с буквой Г
-    lazy var circleImageView: UIImageView = {
+    private lazy var circleImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 311, y: 147, width: 44, height: 44))
         imageView.image = UIImage(named: "circleImage")
         return imageView
     }()
 
-    lazy var letterLabel: UILabel = {
+    private lazy var letterLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 0,
             y: 0,
@@ -54,14 +48,14 @@ final class MenuViewController: UIViewController {
     }()
 
     // белая вью
-    lazy var newView: UIView = {
+    private lazy var newView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 248, width: 375, height: 564))
         view.backgroundColor = .white
         view.layer.cornerRadius = 12
         return view
     }()
 
-    lazy var coffeeAddressesView: UIView = {
+    private lazy var coffeeAddressesView: UIView = {
         let view = UIView(frame: CGRect(x: 20, y: 40, width: 335, height: 70))
 
         let backgroundImageView = UIImageView(frame: CGRect(
@@ -95,20 +89,20 @@ final class MenuViewController: UIViewController {
     }()
 
     // лого меню
-    lazy var menuLogoImageView: UIImageView = {
+    private lazy var menuLogoImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 124, y: 122, width: 125, height: 80))
         imageView.image = UIImage(named: "menuImage")
         return imageView
     }()
 
     // Первая позиция меню "Пти пате"
-    lazy var rectangleOne: UIImageView = {
+    private lazy var rectangleOne: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 20, y: 216, width: 335, height: 80))
         imageView.image = UIImage(named: "rectangleImage")
         return imageView
     }()
 
-    lazy var ptiPateLabel: UILabel = {
+    private lazy var ptiPateLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 25, y: 30, width: 180, height: 19))
         label.text = "Пти пате aля «РюсЪ»"
         label.textColor = .black
@@ -117,20 +111,20 @@ final class MenuViewController: UIViewController {
         return label
     }()
 
-    lazy var cakeImage: UIImageView = {
+    private lazy var cakeImage: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 272, y: 221, width: 70, height: 70))
         imageView.image = UIImage(named: "cakeImage")
         return imageView
     }()
 
     // вторая позиция меню
-    lazy var rectangleTwo: UIImageView = {
+    private lazy var rectangleTwo: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 20, y: 316, width: 335, height: 80))
         imageView.image = UIImage(named: "rectangleImage")
         return imageView
     }()
 
-    lazy var hotBeveragesLabel: UILabel = {
+    private lazy var hotBeveragesLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 25, y: 30, width: 180, height: 19))
         label.text = "Горячiя напитки"
         label.textColor = .black
@@ -139,26 +133,26 @@ final class MenuViewController: UIViewController {
         return label
     }()
 
-    lazy var capImage: UIImageView = {
+    private lazy var capImage: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 252, y: 15, width: 70, height: 48))
         imageView.image = UIImage(named: "capCoffeeImage")
         return imageView
     }()
 
     // третья позиция/ кнопка
-    lazy var rectangleThree: UIImageView = {
+    private lazy var rectangleThree: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 20, y: 416, width: 335, height: 80))
         imageView.image = UIImage(named: "rectangleImage")
         return imageView
     }()
 
-    lazy var capSpoonImageView: UIImageView = {
+    private lazy var capSpoonImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 252, y: 5, width: 70, height: 70))
         imageView.image = UIImage(named: "capSpoonImage")
         return imageView
     }()
 
-    lazy var coffeeLabel: UILabel = {
+    private lazy var coffeeLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 25, y: 30, width: 180, height: 19))
         label.text = "Кофий"
         label.font = UIFont(name: "Verdana-BoldItalic", size: 14.0)
@@ -167,7 +161,7 @@ final class MenuViewController: UIViewController {
         return label
     }()
 
-    lazy var coffeeButton: UIButton = {
+    private lazy var coffeeButton: UIButton = {
         let button = UIButton(frame: CGRect(
             x: 0,
             y: 0,
@@ -175,8 +169,20 @@ final class MenuViewController: UIViewController {
             height: rectangleThree.frame.height
         ))
         button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(coffeeButtonTapped), for: .touchUpInside)
         return button
     }()
+
+    // MARK: - Life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        // коричневый экран
+        view.backgroundColor = UIColor(named: "newBrown")
+    }
+
+    // MARK: - Private Methods
 
     private func setupViews() {
         view.addSubview(logoImageView)
@@ -196,5 +202,11 @@ final class MenuViewController: UIViewController {
         rectangleThree.addSubview(capSpoonImageView)
         rectangleThree.addSubview(coffeeLabel)
         rectangleThree.addSubview(coffeeButton)
+    }
+
+    // кнопка для перехода
+    @objc private func coffeeButtonTapped() {
+        let coffeeMenuVC = ChooseCoffeeViewController()
+        navigationController?.pushViewController(coffeeMenuVC, animated: true)
     }
 }
