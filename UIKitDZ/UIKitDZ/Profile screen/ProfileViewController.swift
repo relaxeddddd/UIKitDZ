@@ -6,10 +6,10 @@ import UIKit
 class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.setDefaultBackgroundColor()
+        view.setDefaultBackgroundColor()
         setupBarButton()
     }
-    
+
     private func setupBarButton() {
         navigationItem.title = "Профиль"
     }

@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             ],
             animated: true
         )
-        
+
         catalogController.tabBarItem =
             UITabBarItem(title: "Каталог", image: UIImage(named: "catalogIcon"), tag: 0)
 

@@ -1,14 +1,10 @@
-//
-//  UIView.swift
-//  UIKitDZ
-//
-//  Created by mac on 15.02.2024.
-//
+// UIView+Extension.swift
+// Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 public extension UIView {
     func setDefaultBackgroundColor() {
-        self.backgroundColor = .white
+        backgroundColor = .white
     }
 }
