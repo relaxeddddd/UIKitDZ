@@ -5,10 +5,11 @@ import UIKit
 
 /// Класс ChooseCoffeeViewViewController для создания view's для ChooseCoffeeViewController
 class ChooseCoffeeViewViewController: UIView {
-    // MARK: - Public Methods
+    // MARK: - Public Properties
 
-    var segmentItems = ["Американо", "Капучино", "Латте"]
+    public var segmentItems = ["Американо", "Капучино", "Латте"]
 
+    // MARK: - Visual Components
     public let uiView: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = UIColor(red: 234 / 255, green: 212 / 255, blue: 188 / 255, alpha: 1.0)

@@ -5,7 +5,7 @@ import UIKit
 
 /// Класс LoginViewViewController для создания view's для LoginViewController
 class LoginViewViewController: UIView {
-    // MARK: - Public Methods
+    // MARK: - Public Properties
 
     public var titleLabel: UILabel = {
         let label = UILabel()

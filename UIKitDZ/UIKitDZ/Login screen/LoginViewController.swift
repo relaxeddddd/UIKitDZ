@@ -14,6 +14,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         loginView.passwordTextField.delegate = self
     }
 
+    // MARK: - Private Methods
+
     // Добавления views на экран
     private func addViews() {
         view.addSubview(loginView.titleLabel)
@@ -28,9 +30,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(loginView.eyeButton)
         view.addSubview(loginView.enterButton)
     }
-
-    // MARK: - Private Methods
-
+    
     // Метод по добавлению таргетов к views
     private func addTarget() {
         loginView.eyeButton.addTarget(self, action: #selector(showPassword), for: .touchUpInside)
@@ -50,7 +50,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     // Переход на следующий VC после нажатия на кнопку
     @objc private func tappedButton() {
         let navigationViewController =
-            UINavigationController(rootViewController: ChooseCoffeeViewController()) // Поменять на Ксю
+            UINavigationController(rootViewController: MenuViewController()) // Поменять на Ксю
         navigationViewController.modalPresentationStyle = .fullScreen
         present(navigationViewController, animated: true)
     }

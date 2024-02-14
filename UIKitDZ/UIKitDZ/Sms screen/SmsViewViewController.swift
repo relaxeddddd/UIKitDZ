@@ -5,7 +5,7 @@ import UIKit
 
 /// Класс SmsViewViewController для добавление view's на экран SmsViewController
 class SmsViewViewController: UIView {
-    // MARK: - Public Methods
+    // MARK: - Visual Components
 
     public let textLabel: UILabel = {
         let label = UILabel()

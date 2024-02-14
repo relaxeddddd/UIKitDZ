@@ -7,9 +7,9 @@ import UIKit
 class IngredientsViewViewController: UIView {
     // MARK: - Public Properties
 
-    var switches = [UISwitch]()
+    public var switches = [UISwitch]()
 
-    // MARK: - Public Methods
+    // MARK: - Visual Components
 
     /// Массив свитчей
     public let closeButton: UIButton = {

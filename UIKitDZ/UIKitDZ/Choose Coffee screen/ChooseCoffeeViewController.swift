@@ -41,7 +41,7 @@ final class ChooseCoffeeViewController: UIViewController {
     private func addTarget() {
         chooseView.segmentControl.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
         chooseView.ingredientsButton.addTarget(self, action: #selector(goToIngredientsScreen), for: .touchUpInside)
-//        chooseView.coffeeBeansButton.addTarget(self, action: #selector(), for: .touchUpInside)
+        chooseView.coffeeBeansButton.addTarget(self, action: #selector(gotoCoffeeBeansScreen), for: .touchUpInside)
         chooseView.enterButton.addTarget(self, action: #selector(goToOrderScreen), for: .touchUpInside)
     }
 
@@ -74,11 +74,11 @@ final class ChooseCoffeeViewController: UIViewController {
         navigationController?.popToViewController(menuController, animated: true)
     }
 
-//    Данные Ксю
-//    @objc private func gotoCoffeeBeansScreen() {
-//        let coffeeBeansController = //
-//        present(coffeeBeansController, animated: true)
-//    }
+    // Переход на экран с зернами
+    @objc private func gotoCoffeeBeansScreen() {
+        let coffeeBeansController = CoffeeBeansController()
+        present(coffeeBeansController, animated: true)
+    }
 
     // Переход на экран ингредиентов и перенос цены в Order Screen
     @objc private func goToIngredientsScreen() {

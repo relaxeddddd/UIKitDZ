@@ -5,7 +5,7 @@ import UIKit
 
 ///  Класс OrderViewViewController для добавления view's на OrderViewController
 class OrderViewViewController: UIView {
-    // MARK: - Public Methods
+    // MARK: - Visual Components
 
     public let closeButton: UIButton = {
         let button = UIButton()
