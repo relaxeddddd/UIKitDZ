@@ -26,6 +26,7 @@
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* LoginViewController.swift */; };
 		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
+		5E5BECDD2B7B718E00A9D88F /* CoffeeBeansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5BECDC2B7B718E00A9D88F /* CoffeeBeansController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -66,6 +67,7 @@
 		0499A4772B71214100DDDFCC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E5BECDC2B7B718E00A9D88F /* CoffeeBeansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeansController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				043BD2EC2B7A3430004CB819 /* ChooseCoffeeViewController.swift */,
 				043BD38A2B7AFEA4004CB819 /* Ingridients screen */,
 				043BD3912B7B222E004CB819 /* Order screen */,
+				5E5BECDB2B7B712800A9D88F /* Coffee Beans Screen */,
 			);
 			path = "Choose Coffee screen";
 			sourceTree = "<group>";
@@ -208,6 +211,14 @@
 				043BD2E52B7A3356004CB819 /* Support */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		5E5BECDB2B7B712800A9D88F /* Coffee Beans Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5E5BECDC2B7B718E00A9D88F /* CoffeeBeansController.swift */,
+			);
+			path = "Coffee Beans Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 				043BD39A2B7BA1E9004CB819 /* SmsView.swift in Sources */,
 				043BD37D2B7AD05B004CB819 /* LoginView.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
+				5E5BECDD2B7B718E00A9D88F /* CoffeeBeansController.swift in Sources */,
 				043BD2EA2B7A33D1004CB819 /* MenuViewController.swift in Sources */,
 				043BD38E2B7AFEFF004CB819 /* IngredientsView.swift in Sources */,
 				043BD3862B7AED31004CB819 /* UIFont+Extension.swift in Sources */,

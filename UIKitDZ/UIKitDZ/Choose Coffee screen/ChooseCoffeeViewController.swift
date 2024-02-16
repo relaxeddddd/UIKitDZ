@@ -22,7 +22,6 @@ final class ChooseCoffeeViewController: UIViewController {
     private var chooseView = ChooseCoffeeView()
 
     // MARK: - Life Cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBarButton()
@@ -120,3 +119,16 @@ final class ChooseCoffeeViewController: UIViewController {
         present(activityViewController, animated: true, completion: nil)
     }
 }
+
+protocol SelectionRoastCoffeDelegate: AnyObject {
+     func sendTheImage(_ image: UIImage)
+     func sendTheText(_ text: String)
+ }
+
+ class ChooseCoffeeViewController: UIViewController {
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         print("Choose Coffee VC")
+         view.backgroundColor = .blue
+     }
+ }
