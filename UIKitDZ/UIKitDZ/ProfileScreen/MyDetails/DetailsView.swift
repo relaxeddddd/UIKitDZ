@@ -4,15 +4,17 @@
 import UIKit
 
 /// Класс для добавления view's на экран деталей пользователя
-class DetailsView: UIView {
-    let nameTextField = CustomTextFieldFromDetalis(placeholder: "Name")
-    let surnameTextField = CustomTextFieldFromDetalis(placeholder: "Фамилия")
-    let telephoneTextField = CustomTextFieldFromDetalis(placeholder: "Номер телефона")
-    let sizeFootTextField = CustomTextFieldFromDetalis(placeholder: "Размер ноги")
-    let birthdayTextField = CustomTextFieldFromDetalis(placeholder: "Дата рождения")
-    let emailTextField = CustomTextFieldFromDetalis(placeholder: "Почта")
+final class DetailsView: UIView {
+    // MARK: - Visual Components
 
-    let saveButton: UIButton = {
+    var nameTextField = CustomTextFieldFromDetalis(placeholder: "Name")
+    var surnameTextField = CustomTextFieldFromDetalis(placeholder: "Фамилия")
+    var telephoneTextField = CustomTextFieldFromDetalis(placeholder: "Номер телефона")
+    var sizeFootTextField = CustomTextFieldFromDetalis(placeholder: "Размер ноги")
+    var birthdayTextField = CustomTextFieldFromDetalis(placeholder: "Дата рождения")
+    var emailTextField = CustomTextFieldFromDetalis(placeholder: "Почта")
+
+    var saveButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 225 / 255, green: 24 / 255, blue: 131 / 255, alpha: 1.0)
         button.setTitle("Сохранить", for: .normal)
@@ -48,6 +50,8 @@ class DetailsView: UIView {
         setupTextFields()
         setupSaveButton()
     }
+
+    // MARK: - Private Methods
 
     private func setupTextFields() {
         nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true

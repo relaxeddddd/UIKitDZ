@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// Клаасс для отображения экрана информации о пользователе
 class MyDetailsViewController: UIViewController {
     // MARK: - Contstants
 

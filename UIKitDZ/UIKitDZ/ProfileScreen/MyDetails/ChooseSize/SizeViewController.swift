@@ -4,19 +4,17 @@
 import UIKit
 
 /// Представление окна выбора размера
-class SizeViewController: UIViewController {
+final class SizeViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
         static let sizes = [32, 33, 34, 35, 36, 37, 38, 49, 40, 41, 42, 43, 44]
+        static let numberOfComponents = 1
     }
 
     // MARK: - Public Properties
 
     public var didSelectSizeHandler: ((Int) -> Void)?
-
-    // MARK: - Private Properties
-
     private var sizeView = SizeView()
     private var selectedSize: Int?
     private var pickerView = UIPickerView()
@@ -65,7 +63,7 @@ class SizeViewController: UIViewController {
 
 extension SizeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        Constants.numberOfComponents
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

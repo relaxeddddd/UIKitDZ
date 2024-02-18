@@ -13,6 +13,8 @@ final class ProfileView: UIView {
         static let privateDataTitle = "Личные данные"
     }
 
+    // MARK: - Visual Components
+
     let uiViewBackgroundCard: UIView = {
         let uiViewBackgroundCard = UIView()
         uiViewBackgroundCard.backgroundColor = .black
@@ -161,32 +163,6 @@ final class ProfileView: UIView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        addSubview(logoImageView)
-        addSubview(uiViewBackgroundCard)
-        addSubview(discontLabel)
-        addSubview(numberCardLabel)
-        addSubview(qrCodeImageView)
-        addSubview(qrCodeBackgroundView)
-        addSubview(aboutImageView)
-        addSubview(aboutBackgroundView)
-        addSubview(privateDataLabel)
-        addSubview(myDataButton)
-        addSubview(inviteFriendButton)
-        addSubview(supportButton)
-        addSubview(underlineUiViewOne)
-        addSubview(underlineUiViewTwo)
-        addSubview(underlineUiViewThree)
-        setupUiViewBackgroundCard()
-        setupLogoImageView()
-        setupDiscontLabel()
-        setupNumberCardLabel()
-        setupQrCodeBackgroundView()
-        setupQrCodeImageView()
-        setupAboutBackgroundView()
-        setupAboutImageView()
-        setupPrivateDataLabel()
-        setupmyButtons()
-        setupunderLines()
     }
 
     // MARK: - Private Methods

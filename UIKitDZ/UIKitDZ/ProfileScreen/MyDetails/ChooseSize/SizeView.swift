@@ -3,7 +3,10 @@
 
 import UIKit
 
-class SizeView: UIView {
+/// Класс для отображения view's  на экране выбора размера
+final class SizeView: UIView {
+    // MARK: - Visual Components
+
     let backgrounUiView: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = .white
@@ -41,6 +44,8 @@ class SizeView: UIView {
         return button
     }()
 
+    // MARK: - Initializers
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(backgrounUiView)
@@ -65,26 +70,26 @@ class SizeView: UIView {
         setupClosebutton()
     }
 
-    func setupSizeBackground() {
+    private func setupSizeBackground() {
         backgrounUiView.topAnchor.constraint(equalTo: topAnchor, constant: 512).isActive = true
         backgrounUiView.heightAnchor.constraint(equalToConstant: 283).isActive = true
         backgrounUiView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
         backgrounUiView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
     }
 
-    func setupTitle() {
+    private func setupTitle() {
         title.centerXAnchor.constraint(equalTo: backgrounUiView.centerXAnchor).isActive = true
         title.topAnchor.constraint(equalTo: backgrounUiView.topAnchor, constant: 15).isActive = true
     }
 
-    func setupSaveButton() {
+    private func setupSaveButton() {
         saveButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         saveButton.centerXAnchor.constraint(equalTo: backgrounUiView.centerXAnchor).isActive = true
         saveButton.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 170).isActive = true
         saveButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
     }
 
-    func setupClosebutton() {
+    private func setupClosebutton() {
         closeButton.trailingAnchor.constraint(equalTo: backgrounUiView.trailingAnchor, constant: -19).isActive = true
         closeButton.topAnchor.constraint(equalTo: backgrounUiView.topAnchor, constant: 15).isActive = true
     }

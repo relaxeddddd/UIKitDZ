@@ -15,3 +15,4 @@ class CatalogViewController: UIViewController {
         navigationItem.title = "Каталог"
     }
 }
+

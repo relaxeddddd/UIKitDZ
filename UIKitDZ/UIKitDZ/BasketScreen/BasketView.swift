@@ -5,7 +5,16 @@ import UIKit
 
 // добавление view's на экран корзины
 class BasketView: UIView {
-    let backbroundImageUiView: UIView = {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let leftAnchor = 185
+        static let uppdateLeftAnchor = 35
+    }
+
+    // MARK: - Visual Components
+
+    private let backbroundImageUiView: UIView = {
         let background = UIView()
         background.backgroundColor = UIColor(red: 248 / 255, green: 248 / 255, blue: 248 / 255, alpha: 1.0)
         background.layer.cornerRadius = 20
@@ -13,21 +22,21 @@ class BasketView: UIView {
         return background
     }()
 
-    let cartButton: UIButton = {
+    private let cartButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "cart"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    let imageShoose: UIImageView = {
+    public let imageShoose: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Женские ботинки"
         label.textColor = .black
@@ -36,7 +45,7 @@ class BasketView: UIView {
         return label
     }()
 
-    let quantily: UILabel = {
+    private let quantily: UILabel = {
         let label = UILabel()
         label.text = "Количество"
         label.textColor = .black
@@ -45,7 +54,7 @@ class BasketView: UIView {
         return label
     }()
 
-    let sizeLabel: UILabel = {
+    private let sizeLabel: UILabel = {
         let label = UILabel()
         label.text = "Размер"
         label.textColor = .black
@@ -54,7 +63,7 @@ class BasketView: UIView {
         return label
     }()
 
-    let priceLabel: UILabel = {
+    private let priceLabel: UILabel = {
         let label = UILabel()
         label.text = "Цена"
         label.textColor = .black
@@ -63,7 +72,7 @@ class BasketView: UIView {
         return label
     }()
 
-    let pluseButton: UIButton = {
+    public let pluseButton: UIButton = {
         let button = UIButton()
         button.setTitle("-", for: .normal)
         button.backgroundColor = UIColor(red: 250 / 255, green: 235 / 255, blue: 244 / 255, alpha: 1.0)
@@ -72,7 +81,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let minusButton: UIButton = {
+    public let minusButton: UIButton = {
         let button = UIButton()
         button.setTitle("+", for: .normal)
         button.backgroundColor = UIColor(red: 250 / 255, green: 235 / 255, blue: 244 / 255, alpha: 1.0)
@@ -81,7 +90,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let quantilyShoes: UILabel = {
+    public let quantilyShoes: UILabel = {
         let label = UILabel()
         label.text = "1"
         label.textColor = .black
@@ -90,7 +99,7 @@ class BasketView: UIView {
         return label
     }()
 
-    let sizeButton36: UIButton = {
+    private let sizeButton36: UIButton = {
         let button = UIButton()
         button.setTitle("36", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -99,7 +108,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let sizeButton37: UIButton = {
+    private let sizeButton37: UIButton = {
         let button = UIButton()
         button.tintColor = .black
         button.setTitle("37", for: .normal)
@@ -109,7 +118,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let sizeButton38: UIButton = {
+    private let sizeButton38: UIButton = {
         let button = UIButton()
         button.tintColor = .black
         button.setTitle("38", for: .normal)
@@ -119,7 +128,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let sizeButton39: UIButton = {
+    private let sizeButton39: UIButton = {
         let button = UIButton()
         button.tintColor = .black
         button.setTitle("39", for: .normal)
@@ -129,7 +138,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let sizeButton40: UIButton = {
+    private let sizeButton40: UIButton = {
         let button = UIButton()
         button.tintColor = .black
         button.setTitle("40", for: .normal)
@@ -141,7 +150,7 @@ class BasketView: UIView {
         return button
     }()
 
-    let sumPrice: UILabel = {
+    public let sumPrice: UILabel = {
         let label = UILabel()
         label.text = ""
         label.textColor = .black
@@ -149,6 +158,18 @@ class BasketView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+
+    private let char: UILabel = {
+        let label = UILabel()
+        label.text = "₽"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Verdana-Bold", size: 13)
+        return label
+    }()
+
+    // MARK: - Public Properties
+
+    lazy var buttons = [sizeButton36, sizeButton37, sizeButton38, sizeButton39, sizeButton40]
 
     // MARK: - Initializers
 
@@ -168,6 +189,7 @@ class BasketView: UIView {
         addSubview(sizeButton40)
         addSubview(cartButton)
         addSubview(sumPrice)
+        addSubview(char)
         setupViews()
         setupSizeButtons()
     }
@@ -176,7 +198,7 @@ class BasketView: UIView {
         super.init(coder: coder)
     }
 
-    func setupViews() {
+    private func setupViews() {
         backbroundImageUiView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         backbroundImageUiView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         backbroundImageUiView.widthAnchor.constraint(equalToConstant: 157).isActive = true
@@ -222,11 +244,13 @@ class BasketView: UIView {
         sumPrice.topAnchor.constraint(equalTo: backbroundImageUiView.topAnchor, constant: 138).isActive = true
         sumPrice.trailingAnchor.constraint(equalTo: backbroundImageUiView.trailingAnchor, constant: 180)
             .isActive = true
+
+        char.topAnchor.constraint(equalTo: backbroundImageUiView.topAnchor, constant: 136).isActive = true
+        char.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
     }
 
-    func setupSizeButtons() {
-        let buttons = [sizeButton36, sizeButton37, sizeButton38, sizeButton39, sizeButton40]
-        var left = 185
+    private func setupSizeButtons() {
+        var left = Constants.leftAnchor
         for button in buttons {
             button.layer.cornerRadius = 13
             button.backgroundColor = UIColor(red: 250 / 255, green: 235 / 255, blue: 244 / 255, alpha: 1.0)
@@ -235,7 +259,14 @@ class BasketView: UIView {
             button.topAnchor.constraint(equalTo: topAnchor, constant: 97).isActive = true
             button.widthAnchor.constraint(equalToConstant: 31).isActive = true
 
-            left += 38
+            left += Constants.uppdateLeftAnchor
         }
     }
+
+//    @objc private func increaseQuantity() {
+//        if let currentQuantityText = quantilyShoes.text, var currentQuantity = Int(currentQuantityText) {
+//            currentQuantity += 1
+//            quantilyShoes.text = "\(currentQuantity)"
+//        }
+//    }
 }

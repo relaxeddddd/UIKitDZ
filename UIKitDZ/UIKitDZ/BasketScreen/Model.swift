@@ -9,6 +9,7 @@
 //
 import UIKit
 
+/// Модель с информацией о обуви
 struct ShooseModel {
     var shooseImg: UIImage
     var shoosePrice: String
