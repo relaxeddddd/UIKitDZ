@@ -73,13 +73,13 @@ class CatalogViewController: UIViewController {
         leftShoesImageView.image = images[3]
 
         // cоответствующие изображения для каждого прямоугольника
-        for (index, imageView) in rectangleImagesView[1].subviews.enumerated() {
+        for (_, imageView) in rectangleImagesView[1].subviews.enumerated() {
             if let imageView = imageView as? UIImageView {
                 imageView.image = images[0] // Изображение обуви
             }
         }
 
-        for (index, imageView) in rectangleImagesView[2].subviews.enumerated() {
+        for (_, imageView) in rectangleImagesView[2].subviews.enumerated() {
             if let imageView = imageView as? UIImageView {
                 imageView.image = images[1] // Изображение сумки
             }
@@ -133,9 +133,9 @@ class CatalogViewController: UIViewController {
     // 3 прямоугольника
     func setupRectangleImages() {
         let imageSize = CGSize(width: 335, height: 80)
-        let imageNames = ["rectangleImage", "rectangleImage", "rectangleImage"]
+        let _ = ["rectangleImage", "rectangleImage", "rectangleImage"]
         let yPositions: [CGFloat] = [326, 426, 526]
-        for (index, yPos) in yPositions.enumerated() {
+        for (_, yPos) in yPositions.enumerated() {
             let rectangleImageView = UIImageView()
             rectangleImageView.translatesAutoresizingMaskIntoConstraints = false
             rectangleImageView.image = UIImage(named: "rectangleImage")
@@ -199,7 +199,8 @@ class CatalogViewController: UIViewController {
         label.heightAnchor.constraint(equalToConstant: 17).isActive = true
 
         // Констрейнты для UIImageView
-        imageView.leadingAnchor.constraint(equalTo: rectangleImagesView[1].leadingAnchor, constant: 233).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: rectangleImagesView[1].leadingAnchor, constant: 233)
+            .isActive = true
         imageView.topAnchor.constraint(equalTo: rectangleImagesView[1].topAnchor).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 99).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
@@ -226,7 +227,8 @@ class CatalogViewController: UIViewController {
         label.heightAnchor.constraint(equalToConstant: 17).isActive = true
 
         // Констрейнты для UIImageView
-        imageView.leadingAnchor.constraint(equalTo: rectangleImagesView[2].leadingAnchor, constant: 233).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: rectangleImagesView[2].leadingAnchor, constant: 233)
+            .isActive = true
         imageView.topAnchor.constraint(equalTo: rectangleImagesView[2].topAnchor).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 99).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
@@ -251,10 +253,8 @@ class CatalogViewController: UIViewController {
 
     // Метод для обработки события нажатия на кнопку обуви
     @objc func shoesButtonTapped() {
-        let shoesVC = ShoesViewController()
-
-        // Переходим на экран ShoesViewController
-        navigationController?.pushViewController(shoesVC, animated: true)
+        let shoesVeControl = ShoesViewController()
+        navigationController?.pushViewController(shoesVeControl, animated: true)
     }
 
     private func setupBarButton() {

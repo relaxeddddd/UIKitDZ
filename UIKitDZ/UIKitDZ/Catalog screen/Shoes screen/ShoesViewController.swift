@@ -3,9 +3,17 @@
 
 import UIKit
 
+//protocol ShoesViewControllerDelegate: AnyObject {
+    
+    
+    //func transitInformation(shouse: ShooseModel)
+//}
+
 class ShoesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //weak var delegat : ShoesViewControllerDelegate?
 
         view.backgroundColor = .white
 
@@ -22,6 +30,16 @@ class ShoesViewController: UIViewController {
         setupFifthButton()
         setupPriceLabels()
     }
+    
+    /*func setDelegate() {
+            guard let basketViewController = (
+                navigationController?.tabBarController?
+                    .viewControllers?[1] as? UINavigationController
+            )?.viewControllers[0] as? BasketViewController
+            else { return }
+
+            delegat = basketViewController
+        } */
 
     func setupTitleLabel() {
         let titleLabel = UILabel()
@@ -36,6 +54,8 @@ class ShoesViewController: UIViewController {
         titleLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
+    
+    var imageShoes = [UIImageView]()
 
     func setupImageView(
         imageName: String,
@@ -55,6 +75,7 @@ class ShoesViewController: UIViewController {
         imageViewBackground.topAnchor.constraint(equalTo: view.topAnchor, constant: height).isActive = true
 
         let image = UIImageView(image: UIImage(named: imageName))
+        imageShoes.append(image)
         image.translatesAutoresizingMaskIntoConstraints = false
         imageViewBackground.addSubview(image)
 
@@ -83,9 +104,10 @@ class ShoesViewController: UIViewController {
     func setupKedsImage() {
         setupImageView(imageName: "kedsImage", width: 20, height: 476)
     }
+    let prices = ["2250", "5750", "5750", "4250", "3500"]
 
     func setupPriceLabels() {
-        let prices = ["2250 ₽", "5750 ₽", "5750 ₽", "4250 ₽", "3500 ₽"]
+      
         let labelPositions = [
             (x: CGFloat(105), y: CGFloat(263)),
             (x: CGFloat(105), y: CGFloat(436)),
@@ -110,10 +132,11 @@ class ShoesViewController: UIViewController {
         }
     }
 
-    func setupButton(imageName: String, widthButton: CGFloat, heightButton: CGFloat) {
+    func setupButton(imageName: String, widthButton: CGFloat, heightButton: CGFloat, tag: Int) {
         let buttonSize = CGSize(width: 20, height: 19)
 
         let button = UIButton()
+        button.tag = tag
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(named: "buttonColor")
         button.setImage(UIImage(named: imageName), for: .normal)
@@ -128,23 +151,23 @@ class ShoesViewController: UIViewController {
     }
 
     func setupFirstButton() {
-        setupButton(imageName: "basketImage", widthButton: 146, heightButton: 141)
+        setupButton(imageName: "basketImage", widthButton: 146, heightButton: 141, tag: 0)
     }
 
     func setupSecondButton() {
-        setupButton(imageName: "basketImage", widthButton: 146, heightButton: 314)
+        setupButton(imageName: "basketImage", widthButton: 146, heightButton: 314, tag: 1)
     }
 
     func setupTheedButton() {
-        setupButton(imageName: "basketImage", widthButton: 146, heightButton: 488)
+        setupButton(imageName: "basketImage", widthButton: 146, heightButton: 488, tag: 2)
     }
 
     func setupFourthButton() {
-        setupButton(imageName: "basketImage", widthButton: 327, heightButton: 141)
+        setupButton(imageName: "basketImage", widthButton: 327, heightButton: 141, tag: 3)
     }
 
     func setupFifthButton() {
-        setupButton(imageName: "basketImage", widthButton: 327, heightButton: 314)
+        setupButton(imageName: "basketImage", widthButton: 327, heightButton: 314, tag: 4)
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
@@ -153,10 +176,10 @@ class ShoesViewController: UIViewController {
         } else if sender.currentImage == UIImage(named: "pinkBasketImage") {
             sender.setImage(UIImage(named: "basketImage"), for: .normal)
         }
-        let sizeShoesVC = SizeShoesViewController()
-        // navigationController?.pushViewController(sizeShoesVC, animated: true)
-        present(sizeShoesVC, animated: true)
+        //let shoes = ShooseModel(shooseImg: imageShouse[sender.tag].image ?? UIImage(), shoosePrice: prices[sender.tag])
+                //delegat?.transitInformation(shouse: shoes)
 
-        // navigationController?.popViewController(animated: true)
+        let sizeShoesVC = SizeShoesViewController()
+        present(sizeShoesVC, animated: true)
     }
 }
