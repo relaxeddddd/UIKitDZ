@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		041BC2902B8220E4002234B9 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC28F2B8220E4002234B9 /* CatalogViewController.swift */; };
+		041BC2E32B83778A002234B9 /* SizeShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC2E12B83778A002234B9 /* SizeShoesViewController.swift */; };
+		041BC2E42B83778A002234B9 /* ShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC2E22B83778A002234B9 /* ShoesViewController.swift */; };
 		043BD3C92B7D5B00004CB819 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3C82B7D5B00004CB819 /* BasketViewController.swift */; };
 		043BD3CC2B7D5B1D004CB819 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3CB2B7D5B1D004CB819 /* ProfileViewController.swift */; };
 		043BD3CF2B7D6A9B004CB819 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3CE2B7D6A9B004CB819 /* UIView+Extension.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		041BC28F2B8220E4002234B9 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		041BC2E12B83778A002234B9 /* SizeShoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeShoesViewController.swift; sourceTree = "<group>"; };
+		041BC2E22B83778A002234B9 /* ShoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesViewController.swift; sourceTree = "<group>"; };
 		043BD3C82B7D5B00004CB819 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		043BD3CB2B7D5B1D004CB819 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		043BD3CE2B7D6A9B004CB819 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -75,6 +79,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041BC2DE2B83778A002234B9 /* Catalog screen */ = {
+			isa = PBXGroup;
+			children = (
+				041BC2DF2B83778A002234B9 /* Shoes screen */,
+			);
+			path = "Catalog screen";
+			sourceTree = "<group>";
+		};
+		041BC2DF2B83778A002234B9 /* Shoes screen */ = {
+			isa = PBXGroup;
+			children = (
+				041BC2E02B83778A002234B9 /* Size shoes screen */,
+				041BC2E22B83778A002234B9 /* ShoesViewController.swift */,
+			);
+			path = "Shoes screen";
+			sourceTree = "<group>";
+		};
+		041BC2E02B83778A002234B9 /* Size shoes screen */ = {
+			isa = PBXGroup;
+			children = (
+				041BC2E12B83778A002234B9 /* SizeShoesViewController.swift */,
+			);
+			path = "Size shoes screen";
+			sourceTree = "<group>";
+		};
 		043BD3C52B7D5A61004CB819 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +205,7 @@
 		0499A4722B71214100DDDFCC /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				041BC2DE2B83778A002234B9 /* Catalog screen */,
 				043BD3C72B7D5AEE004CB819 /* BasketScreen */,
 				043BD3CA2B7D5B06004CB819 /* ProfileScreen */,
 				043BD3C62B7D5A72004CB819 /* CatalogScreen */,
@@ -313,8 +343,10 @@
 				043BD40C2B7ED920004CB819 /* Model.swift in Sources */,
 				043BD3F12B7D774F004CB819 /* ProfileView.swift in Sources */,
 				043BD3FF2B7E4709004CB819 /* UserModel.swift in Sources */,
+				041BC2E32B83778A002234B9 /* SizeShoesViewController.swift in Sources */,
 				043BD3F52B7D9BCE004CB819 /* UnderlineButton.swift in Sources */,
 				043BD4032B7E74CE004CB819 /* SizeViewController.swift in Sources */,
+				041BC2E42B83778A002234B9 /* ShoesViewController.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
 				043BD3F82B7D9D56004CB819 /* MyDetailsViewController.swift in Sources */,
 			);

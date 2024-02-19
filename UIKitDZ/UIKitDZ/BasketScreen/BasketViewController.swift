@@ -98,8 +98,8 @@ class BasketViewController: UIViewController {
     }
 }
 
- extension BasketViewController: ShoesViewControllerDelegate {
+extension BasketViewController: ShoesViewControllerDelegate {
     func transitInformation(shouse: ShooseModel) {
         shouses.append(shouse)
     }
- }
+}
