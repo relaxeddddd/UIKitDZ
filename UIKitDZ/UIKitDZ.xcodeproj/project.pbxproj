@@ -14,6 +14,8 @@
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* CatalogViewController.swift */; };
 		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
+		5E5BECFE2B7D6FBF00A9D88F /* ShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5BECFD2B7D6FBF00A9D88F /* ShoesViewController.swift */; };
+		5E5BED012B7D6FFF00A9D88F /* SizeShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5BED002B7D6FFF00A9D88F /* SizeShoesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -42,6 +44,8 @@
 		0499A4772B71214100DDDFCC /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E5BECFD2B7D6FBF00A9D88F /* ShoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesViewController.swift; sourceTree = "<group>"; };
+		5E5BED002B7D6FFF00A9D88F /* SizeShoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeShoesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				0499A4772B71214100DDDFCC /* CatalogViewController.swift */,
+				5E5BECFC2B7D6F7600A9D88F /* Shoes screen */,
 			);
 			path = "Catalog screen";
 			sourceTree = "<group>";
@@ -124,6 +129,23 @@
 				043BD3C52B7D5A61004CB819 /* Supports */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		5E5BECFC2B7D6F7600A9D88F /* Shoes screen */ = {
+			isa = PBXGroup;
+			children = (
+				5E5BECFD2B7D6FBF00A9D88F /* ShoesViewController.swift */,
+				5E5BECFF2B7D6FC900A9D88F /* Size shoes screen */,
+			);
+			path = "Shoes screen";
+			sourceTree = "<group>";
+		};
+		5E5BECFF2B7D6FC900A9D88F /* Size shoes screen */ = {
+			isa = PBXGroup;
+			children = (
+				5E5BED002B7D6FFF00A9D88F /* SizeShoesViewController.swift */,
+			);
+			path = "Size shoes screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +265,8 @@
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				043BD3CC2B7D5B1D004CB819 /* ProfileViewController.swift in Sources */,
 				043BD3C92B7D5B00004CB819 /* BasketViewController.swift in Sources */,
+				5E5BED012B7D6FFF00A9D88F /* SizeShoesViewController.swift in Sources */,
+				5E5BECFE2B7D6FBF00A9D88F /* ShoesViewController.swift in Sources */,
 				043BD3CF2B7D6A9B004CB819 /* UIView+Extension.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
 			);
