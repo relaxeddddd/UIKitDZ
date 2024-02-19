@@ -3,17 +3,13 @@
 
 import UIKit
 
-//protocol ShoesViewControllerDelegate: AnyObject {
-    
-    
-    //func transitInformation(shouse: ShooseModel)
-//}
+protocol ShoesViewControllerDelegate: AnyObject {
+    func transitInformation(shouse: ShooseModel)
+}
 
 class ShoesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //weak var delegat : ShoesViewControllerDelegate?
 
         view.backgroundColor = .white
 
@@ -29,17 +25,20 @@ class ShoesViewController: UIViewController {
         setupFourthButton()
         setupFifthButton()
         setupPriceLabels()
+        setDelegate()
     }
-    
-    /*func setDelegate() {
-            guard let basketViewController = (
-                navigationController?.tabBarController?
-                    .viewControllers?[1] as? UINavigationController
-            )?.viewControllers[0] as? BasketViewController
-            else { return }
 
-            delegat = basketViewController
-        } */
+    weak var delegat: ShoesViewControllerDelegate?
+
+    func setDelegate() {
+        guard let basketViewController = (
+            navigationController?.tabBarController?
+                .viewControllers?[1] as? UINavigationController
+        )?.viewControllers[0] as? BasketViewController
+        else { return }
+
+        delegat = basketViewController
+    }
 
     func setupTitleLabel() {
         let titleLabel = UILabel()
@@ -54,7 +53,7 @@ class ShoesViewController: UIViewController {
         titleLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
-    
+
     var imageShoes = [UIImageView]()
 
     func setupImageView(
@@ -90,11 +89,11 @@ class ShoesViewController: UIViewController {
     }
 
     func setupDebrImage() {
-        setupImageView(imageName: "debrImage", width: 198, height: 130)
+        setupImageView(imageName: "crossImage", width: 198, height: 130)
     }
 
     func setupCrossImage() {
-        setupImageView(imageName: "crossImage", width: 20, height: 303)
+        setupImageView(imageName: "debrImage", width: 20, height: 303)
     }
 
     func setupYellowShoeslImage() {
@@ -104,10 +103,10 @@ class ShoesViewController: UIViewController {
     func setupKedsImage() {
         setupImageView(imageName: "kedsImage", width: 20, height: 476)
     }
+
     let prices = ["2250", "5750", "5750", "4250", "3500"]
 
     func setupPriceLabels() {
-      
         let labelPositions = [
             (x: CGFloat(105), y: CGFloat(263)),
             (x: CGFloat(105), y: CGFloat(436)),
@@ -176,8 +175,8 @@ class ShoesViewController: UIViewController {
         } else if sender.currentImage == UIImage(named: "pinkBasketImage") {
             sender.setImage(UIImage(named: "basketImage"), for: .normal)
         }
-        //let shoes = ShooseModel(shooseImg: imageShouse[sender.tag].image ?? UIImage(), shoosePrice: prices[sender.tag])
-                //delegat?.transitInformation(shouse: shoes)
+        let shoes = ShooseModel(shooseImg: imageShoes[sender.tag].image ?? UIImage(), shoosePrice: prices[sender.tag])
+        delegat?.transitInformation(shouse: shoes)
 
         let sizeShoesVC = SizeShoesViewController()
         present(sizeShoesVC, animated: true)

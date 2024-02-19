@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041BC2902B8220E4002234B9 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC28F2B8220E4002234B9 /* CatalogViewController.swift */; };
+		041BC2E32B83778A002234B9 /* SizeShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC2E12B83778A002234B9 /* SizeShoesViewController.swift */; };
+		041BC2E42B83778A002234B9 /* ShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC2E22B83778A002234B9 /* ShoesViewController.swift */; };
 		043BD3C92B7D5B00004CB819 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3C82B7D5B00004CB819 /* BasketViewController.swift */; };
 		043BD3CC2B7D5B1D004CB819 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3CB2B7D5B1D004CB819 /* ProfileViewController.swift */; };
 		043BD3CF2B7D6A9B004CB819 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3CE2B7D6A9B004CB819 /* UIView+Extension.swift */; };
+		043BD3F12B7D774F004CB819 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3F02B7D774F004CB819 /* ProfileView.swift */; };
+		043BD3F52B7D9BCE004CB819 /* UnderlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3F42B7D9BCE004CB819 /* UnderlineButton.swift */; };
+		043BD3F82B7D9D56004CB819 /* MyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3F72B7D9D56004CB819 /* MyDetailsViewController.swift */; };
+		043BD3FA2B7DA39F004CB819 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3F92B7DA39F004CB819 /* DetailsView.swift */; };
+		043BD3FC2B7DA785004CB819 /* CustomTextFieldFromDetalis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3FB2B7DA785004CB819 /* CustomTextFieldFromDetalis.swift */; };
+		043BD3FF2B7E4709004CB819 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD3FE2B7E4709004CB819 /* UserModel.swift */; };
+		043BD4032B7E74CE004CB819 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD4022B7E74CE004CB819 /* SizeViewController.swift */; };
+		043BD4062B7E7C5F004CB819 /* SizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD4052B7E7C5F004CB819 /* SizeView.swift */; };
+		043BD4082B7EADB6004CB819 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD4072B7EADB6004CB819 /* BasketView.swift */; };
+		043BD40C2B7ED920004CB819 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BD40B2B7ED920004CB819 /* Model.swift */; };
 		0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4732B71214100DDDFCC /* AppDelegate.swift */; };
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
-		0499A4782B71214100DDDFCC /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* CatalogViewController.swift */; };
 		0499A47D2B71214400DDDFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499A47C2B71214400DDDFCC /* Assets.xcassets */; };
-		5E5BECFE2B7D6FBF00A9D88F /* ShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5BECFD2B7D6FBF00A9D88F /* ShoesViewController.swift */; };
-		5E5BED012B7D6FFF00A9D88F /* SizeShoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5BED002B7D6FFF00A9D88F /* SizeShoesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -35,17 +45,27 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		041BC28F2B8220E4002234B9 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		041BC2E12B83778A002234B9 /* SizeShoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeShoesViewController.swift; sourceTree = "<group>"; };
+		041BC2E22B83778A002234B9 /* ShoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesViewController.swift; sourceTree = "<group>"; };
 		043BD3C82B7D5B00004CB819 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		043BD3CB2B7D5B1D004CB819 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		043BD3CE2B7D6A9B004CB819 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		043BD3F02B7D774F004CB819 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		043BD3F42B7D9BCE004CB819 /* UnderlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineButton.swift; sourceTree = "<group>"; };
+		043BD3F72B7D9D56004CB819 /* MyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailsViewController.swift; sourceTree = "<group>"; };
+		043BD3F92B7DA39F004CB819 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		043BD3FB2B7DA785004CB819 /* CustomTextFieldFromDetalis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldFromDetalis.swift; sourceTree = "<group>"; };
+		043BD3FE2B7E4709004CB819 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		043BD4022B7E74CE004CB819 /* SizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
+		043BD4052B7E7C5F004CB819 /* SizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeView.swift; sourceTree = "<group>"; };
+		043BD4072B7EADB6004CB819 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		043BD40B2B7ED920004CB819 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0499A4702B71214100DDDFCC /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0499A4732B71214100DDDFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0499A4752B71214100DDDFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0499A4772B71214100DDDFCC /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		0499A47C2B71214400DDDFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0499A4812B71214400DDDFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E5BECFD2B7D6FBF00A9D88F /* ShoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesViewController.swift; sourceTree = "<group>"; };
-		5E5BED002B7D6FFF00A9D88F /* SizeShoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeShoesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +79,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041BC2DE2B83778A002234B9 /* Catalog screen */ = {
+			isa = PBXGroup;
+			children = (
+				041BC2DF2B83778A002234B9 /* Shoes screen */,
+			);
+			path = "Catalog screen";
+			sourceTree = "<group>";
+		};
+		041BC2DF2B83778A002234B9 /* Shoes screen */ = {
+			isa = PBXGroup;
+			children = (
+				041BC2E02B83778A002234B9 /* Size shoes screen */,
+				041BC2E22B83778A002234B9 /* ShoesViewController.swift */,
+			);
+			path = "Shoes screen";
+			sourceTree = "<group>";
+		};
+		041BC2E02B83778A002234B9 /* Size shoes screen */ = {
+			isa = PBXGroup;
+			children = (
+				041BC2E12B83778A002234B9 /* SizeShoesViewController.swift */,
+			);
+			path = "Size shoes screen";
+			sourceTree = "<group>";
+		};
 		043BD3C52B7D5A61004CB819 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,29 +113,32 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
-		043BD3C62B7D5A72004CB819 /* Catalog screen */ = {
+		043BD3C62B7D5A72004CB819 /* CatalogScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0499A4772B71214100DDDFCC /* CatalogViewController.swift */,
-				5E5BECFC2B7D6F7600A9D88F /* Shoes screen */,
+				041BC28F2B8220E4002234B9 /* CatalogViewController.swift */,
 			);
-			path = "Catalog screen";
+			path = CatalogScreen;
 			sourceTree = "<group>";
 		};
-		043BD3C72B7D5AEE004CB819 /* Basket screen */ = {
+		043BD3C72B7D5AEE004CB819 /* BasketScreen */ = {
 			isa = PBXGroup;
 			children = (
 				043BD3C82B7D5B00004CB819 /* BasketViewController.swift */,
+				043BD4072B7EADB6004CB819 /* BasketView.swift */,
+				043BD40B2B7ED920004CB819 /* Model.swift */,
 			);
-			path = "Basket screen";
+			path = BasketScreen;
 			sourceTree = "<group>";
 		};
-		043BD3CA2B7D5B06004CB819 /* Profile screen */ = {
+		043BD3CA2B7D5B06004CB819 /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
 				043BD3CB2B7D5B1D004CB819 /* ProfileViewController.swift */,
+				043BD3F02B7D774F004CB819 /* ProfileView.swift */,
+				043BD3F62B7D9D1A004CB819 /* MyDetails */,
 			);
-			path = "Profile screen";
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 		043BD3CD2B7D6A73004CB819 /* Extension */ = {
@@ -99,6 +147,43 @@
 				043BD3CE2B7D6A9B004CB819 /* UIView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		043BD3F32B7D9BB0004CB819 /* CustomUIView */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3F42B7D9BCE004CB819 /* UnderlineButton.swift */,
+				043BD3FB2B7DA785004CB819 /* CustomTextFieldFromDetalis.swift */,
+			);
+			path = CustomUIView;
+			sourceTree = "<group>";
+		};
+		043BD3F62B7D9D1A004CB819 /* MyDetails */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3FD2B7E46E5004CB819 /* UserDefaults */,
+				043BD3F72B7D9D56004CB819 /* MyDetailsViewController.swift */,
+				043BD3F92B7DA39F004CB819 /* DetailsView.swift */,
+				043BD4042B7E7C38004CB819 /* ChooseSize */,
+			);
+			path = MyDetails;
+			sourceTree = "<group>";
+		};
+		043BD3FD2B7E46E5004CB819 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				043BD3FE2B7E4709004CB819 /* UserModel.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		043BD4042B7E7C38004CB819 /* ChooseSize */ = {
+			isa = PBXGroup;
+			children = (
+				043BD4022B7E74CE004CB819 /* SizeViewController.swift */,
+				043BD4052B7E7C5F004CB819 /* SizeView.swift */,
+			);
+			path = ChooseSize;
 			sourceTree = "<group>";
 		};
 		0499A4672B71214100DDDFCC = {
@@ -120,32 +205,17 @@
 		0499A4722B71214100DDDFCC /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
-				043BD3CA2B7D5B06004CB819 /* Profile screen */,
-				043BD3C72B7D5AEE004CB819 /* Basket screen */,
-				043BD3C62B7D5A72004CB819 /* Catalog screen */,
+				041BC2DE2B83778A002234B9 /* Catalog screen */,
+				043BD3C72B7D5AEE004CB819 /* BasketScreen */,
+				043BD3CA2B7D5B06004CB819 /* ProfileScreen */,
+				043BD3C62B7D5A72004CB819 /* CatalogScreen */,
 				0499A47C2B71214400DDDFCC /* Assets.xcassets */,
 				0499A4812B71214400DDDFCC /* Info.plist */,
+				043BD3F32B7D9BB0004CB819 /* CustomUIView */,
 				043BD3CD2B7D6A73004CB819 /* Extension */,
 				043BD3C52B7D5A61004CB819 /* Supports */,
 			);
 			path = UIKitDZ;
-			sourceTree = "<group>";
-		};
-		5E5BECFC2B7D6F7600A9D88F /* Shoes screen */ = {
-			isa = PBXGroup;
-			children = (
-				5E5BECFD2B7D6FBF00A9D88F /* ShoesViewController.swift */,
-				5E5BECFF2B7D6FC900A9D88F /* Size shoes screen */,
-			);
-			path = "Shoes screen";
-			sourceTree = "<group>";
-		};
-		5E5BECFF2B7D6FC900A9D88F /* Size shoes screen */ = {
-			isa = PBXGroup;
-			children = (
-				5E5BED002B7D6FFF00A9D88F /* SizeShoesViewController.swift */,
-			);
-			path = "Size shoes screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,14 +331,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0499A4782B71214100DDDFCC /* CatalogViewController.swift in Sources */,
+				041BC2902B8220E4002234B9 /* CatalogViewController.swift in Sources */,
+				043BD4082B7EADB6004CB819 /* BasketView.swift in Sources */,
+				043BD3FC2B7DA785004CB819 /* CustomTextFieldFromDetalis.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
+				043BD4062B7E7C5F004CB819 /* SizeView.swift in Sources */,
 				043BD3CC2B7D5B1D004CB819 /* ProfileViewController.swift in Sources */,
+				043BD3FA2B7DA39F004CB819 /* DetailsView.swift in Sources */,
 				043BD3C92B7D5B00004CB819 /* BasketViewController.swift in Sources */,
-				5E5BED012B7D6FFF00A9D88F /* SizeShoesViewController.swift in Sources */,
-				5E5BECFE2B7D6FBF00A9D88F /* ShoesViewController.swift in Sources */,
 				043BD3CF2B7D6A9B004CB819 /* UIView+Extension.swift in Sources */,
+				043BD40C2B7ED920004CB819 /* Model.swift in Sources */,
+				043BD3F12B7D774F004CB819 /* ProfileView.swift in Sources */,
+				043BD3FF2B7E4709004CB819 /* UserModel.swift in Sources */,
+				041BC2E32B83778A002234B9 /* SizeShoesViewController.swift in Sources */,
+				043BD3F52B7D9BCE004CB819 /* UnderlineButton.swift in Sources */,
+				043BD4032B7E74CE004CB819 /* SizeViewController.swift in Sources */,
+				041BC2E42B83778A002234B9 /* ShoesViewController.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
+				043BD3F82B7D9D56004CB819 /* MyDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2NN82372P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -422,6 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2NN82372P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
