@@ -131,17 +131,12 @@ final class NotificationsViewController: UIViewController {
 extension NotificationsViewController: UITableViewDelegate {}
 
 /// MARK: - NotificationsViewController + UITableViewDataSource
-/// Расширение для работы с методами dataSource
 extension NotificationsViewController: UITableViewDataSource {
     
-    /// Количество секций
-    /// - Returns: количество секций
     func numberOfSections(in tableView: UITableView) -> Int {
         Constants.numberOfSections
     }
-    
-    /// Количество ячеек в секции
-    /// - Returns: ячеек в секции
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -153,8 +148,7 @@ extension NotificationsViewController: UITableViewDataSource {
         }
     }
     
-    /// Заполнение контентом ячейку
-    /// - Returns: заполненную ячейку
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -201,9 +195,7 @@ extension NotificationsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
-    /// Хедеры секций
-    /// - Returns: хедер над каждой секцией
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = .white

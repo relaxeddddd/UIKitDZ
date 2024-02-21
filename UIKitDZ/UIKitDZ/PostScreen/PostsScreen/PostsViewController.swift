@@ -141,16 +141,13 @@ final class PostsViewController: UIViewController {
 extension PostsViewController: UITableViewDelegate {}
 
 /// MARK: - NotificationsViewController + UITableViewDataSource
-/// Расширение для работы с методами dataSource
 extension PostsViewController: UITableViewDataSource {
-    /// Количество секций
-    /// - Returns: количество секций
+
     func numberOfSections(in tableView: UITableView) -> Int {
         items.count
     }
     
-    /// Количество ячеек в секции
-    /// - Returns: ячеек в секции
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cell = items[section]
         switch cell {
@@ -163,8 +160,6 @@ extension PostsViewController: UITableViewDataSource {
         }
     }
 
-    /// Заполнение контентом ячейку
-    /// - Returns: заполненную ячейку
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section]
 
@@ -198,8 +193,6 @@ extension PostsViewController: UITableViewDataSource {
         }
     }
 
-    /// Хедеры секций
-    /// - Returns: херед над каждой секцией
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = items[indexPath.section]
         switch cell {
