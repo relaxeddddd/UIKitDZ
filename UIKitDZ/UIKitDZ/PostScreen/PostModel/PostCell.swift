@@ -193,12 +193,18 @@ final class PostCell: UITableViewCell {
 
         hearthButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 12).isActive = true
         hearthButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13).isActive = true
+        hearthButton.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        hearthButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
 
         commentButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 12).isActive = true
         commentButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 42).isActive = true
+        commentButton.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        commentButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
 
-        telegramButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 12).isActive = true
-        telegramButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 77).isActive = true
+        telegramButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 14).isActive = true
+        telegramButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 74).isActive = true
+        telegramButton.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        telegramButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
 
         saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -14).isActive = true
         saveButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 11).isActive = true
