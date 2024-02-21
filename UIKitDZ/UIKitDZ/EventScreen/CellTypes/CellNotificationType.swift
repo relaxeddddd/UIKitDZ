@@ -5,6 +5,6 @@ import Foundation
 
 // Перечисление с типами ячеек
 enum CellNotificationType {
-    case comment([ModelCommentCell])
-    case subscribe([ModelSubscribeCell])
+    case comment([CommentItemCell])
+    case subscribe([SubscribeItemCell])
 }

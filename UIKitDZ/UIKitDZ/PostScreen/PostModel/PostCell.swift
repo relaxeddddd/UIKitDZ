@@ -131,13 +131,13 @@ final class PostCell: UITableViewCell {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     // MARK: - Public Methods
 
-    func configure(with items: ModelPost) {
+    func configure(with items: Post) {
         userImageView.image = items.imageUser
         userNameLabel.text = items.username
         scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width) * items.postImage.count, height: 240)
@@ -232,7 +232,7 @@ final class PostCell: UITableViewCell {
         pageControll.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
     }
 
-    private func setImageOnScrollView(items: ModelPost) {
+    private func setImageOnScrollView(items: Post) {
         var xOffSet = Constants.xOffset
 
         for image in items.postImage {

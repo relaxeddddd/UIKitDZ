@@ -4,7 +4,9 @@
 import UIKit
 
 // Модель данных ячейки с кнопкой подписаться
-struct ModelSubscribeCell {
+struct SubscribeItemCell {
+    // Аватарка пользователя
     let imageUser: UIImage
+    // Коментарий пользователя
     let userComment: String
 }

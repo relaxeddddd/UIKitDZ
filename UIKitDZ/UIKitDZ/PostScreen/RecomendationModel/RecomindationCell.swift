@@ -76,7 +76,7 @@ final class RecomindationCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    public func configure(with items: [ModelRecomendation]) {
+    public func configure(with items: [Recomendation]) {
         var xOffset = CGFloat(Constants.xOffset)
 
         for item in items {

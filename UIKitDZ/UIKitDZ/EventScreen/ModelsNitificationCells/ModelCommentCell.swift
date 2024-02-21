@@ -4,8 +4,11 @@
 import UIKit
 
 // Модель данных ячейки комментария
-struct ModelCommentCell {
+struct CommentItemCell {
+    // Аватарка пользователя
     var userImage: UIImage
+    // Коментарий пользователя
     var userText: String
+    // Изображение
     var image: UIImage
 }

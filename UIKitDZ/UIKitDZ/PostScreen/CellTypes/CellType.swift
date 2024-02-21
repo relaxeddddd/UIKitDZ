@@ -5,7 +5,7 @@ import UIKit
 
 // Перечисление с типом ячеек
 enum CellType {
-    case stories([ModelStories])
-    case post([ModelPost])
-    case recomendation([ModelRecomendation])
+    case stories([Stories])
+    case post([Post])
+    case recomendation([Recomendation])
 }

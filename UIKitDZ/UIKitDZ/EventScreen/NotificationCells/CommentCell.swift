@@ -47,7 +47,7 @@ final class CommentCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    public func configure(with info: ModelCommentCell) {
+    public func configure(with info: CommentItemCell) {
         commentLabel.text = info.userText
         userImageView.image = info.userImage
         commentImageView.image = info.image

@@ -4,7 +4,7 @@
 import UIKit
 
 // Класс с экраном уведомлений
-class NotificationsViewController: UIViewController {
+final class NotificationsViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
@@ -18,13 +18,13 @@ class NotificationsViewController: UIViewController {
 
     // MARK: - Visual Components
 
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
-    let subRequest: UILabel = {
+    private let subRequest: UILabel = {
         let label = UILabel()
         label.text = "Запросы на подписку"
         label.font = UIFont(name: "Verdana", size: 14)
@@ -36,14 +36,14 @@ class NotificationsViewController: UIViewController {
 
     private var today: [CellNotificationType] = [
         .comment([
-            ModelCommentCell(
+            CommentItemCell(
                 userImage: UIImage(named: "otherUserImage") ?? UIImage(),
                 userText: "lavanda123 понравился ваш комментарий: 'Очень красиво!' 12ч",
                 image: UIImage(named: "mainOne") ?? UIImage()
             )
         ]),
         .comment([
-            ModelCommentCell(
+            CommentItemCell(
                 userImage: UIImage(named: "otherUserImage") ?? UIImage(),
                 userText: "lavanda123 упомянула вас в комментарии: @rm Спасибо! 12ч",
                 image: UIImage(named: "mainOne") ?? UIImage()
@@ -53,39 +53,39 @@ class NotificationsViewController: UIViewController {
 
     private var onWeek: [CellNotificationType] = [
         .comment([
-            ModelCommentCell(
+            CommentItemCell(
                 userImage: UIImage(named: "otherUserImage") ?? UIImage(),
                 userText: "lavanda123 понравился ваш комментарий: 'Это где?' 3д.",
                 image: UIImage(named: "imageComments") ?? UIImage()
             )
         ]),
         .subscribe([
-            ModelSubscribeCell(
+            SubscribeItemCell(
                 imageUser: UIImage(named: "12miho") ?? UIImage(),
                 userComment: "12miho появилась(-ась) в RMLink. Вы можете быть знакомы 3д."
             )
         ]),
         .subscribe([
-            ModelSubscribeCell(
+            SubscribeItemCell(
                 imageUser: UIImage(named: "otherUserImage") ?? UIImage(),
                 userComment: "lavanda123 \nподписался(-ась) на ваши новости 5д."
             )
         ]),
         .comment([
-            ModelCommentCell(
+            CommentItemCell(
                 userImage: UIImage(named: "otherUserImage") ?? UIImage(),
                 userText: "lavanda123 понравился ваш комментарий: 'Ты вернулась?' 7д.",
                 image: UIImage(named: "imageComments") ?? UIImage()
             )
         ]),
         .subscribe([
-            ModelSubscribeCell(
+            SubscribeItemCell(
                 imageUser: UIImage(named: "marks") ?? UIImage(),
                 userComment: "markS появилась(-ась) в RMLink. Вы можете быть знакомы 8д."
             )
         ]),
         .subscribe([
-            ModelSubscribeCell(
+            SubscribeItemCell(
                 imageUser: UIImage(named: "sv_neit") ?? UIImage(),
                 userComment: "sv_neit появилась(-ась) в RMLink. Вы можете быть знакомы 8д."
             )

@@ -4,18 +4,18 @@
 import UIKit
 
 // Класс для отображения главноего экрана с поставми
-class PostsViewController: UIViewController {
+final class PostsViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
-        static let identifierStories = "StoriesCell"
-        static let identifierPosts = "PostCell"
-        static let identifierRecomendations = "RecomindationCell"
+        static let storiesIdentifire = "StoriesCell"
+        static let postsIdentifire = "PostCell"
+        static let recomendationsIdentifire = "RecomindationCell"
     }
 
     // MARK: - Visual Components
 
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -25,16 +25,16 @@ class PostsViewController: UIViewController {
 
     private var items: [CellType] = [
         .stories([
-            ModelStories(image: UIImage(named: "mainUserImage") ?? UIImage(), name: "Ваша история", addButton: true),
-            ModelStories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            ModelStories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            ModelStories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            ModelStories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            ModelStories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            ModelStories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false)
+            Stories(image: UIImage(named: "mainUserImage") ?? UIImage(), name: "Ваша история", addButton: true),
+            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
+            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
+            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
+            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
+            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
+            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false)
         ]),
         .post([
-            ModelPost(
+            Post(
                 imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
                 username: "tur_v_dagestan",
                 postImage: [
@@ -49,12 +49,12 @@ class PostsViewController: UIViewController {
             )
         ]),
         .recomendation([
-            ModelRecomendation(image: UIImage(named: "recomendationOne") ?? UIImage(), label: "cremea_082"),
-            ModelRecomendation(image: UIImage(named: "recomendationTwo") ?? UIImage(), label: "mary_pol"),
-            ModelRecomendation(image: UIImage(named: "recomendationTwo") ?? UIImage(), label: "mary_pol")
+            Recomendation(image: UIImage(named: "recomendationOne") ?? UIImage(), label: "cremea_082"),
+            Recomendation(image: UIImage(named: "recomendationTwo") ?? UIImage(), label: "mary_pol"),
+            Recomendation(image: UIImage(named: "recomendationTwo") ?? UIImage(), label: "mary_pol")
         ]),
         .post([
-            ModelPost(
+            Post(
                 imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
                 username: "tur_v_dagestan",
                 postImage: [UIImage(named: "mainTwo") ?? UIImage()],
@@ -62,7 +62,7 @@ class PostsViewController: UIViewController {
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
-            ModelPost(
+            Post(
                 imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
                 username: "tur_v_dagestan",
                 postImage: [UIImage(named: "mainOne") ?? UIImage(), UIImage(named: "mainTwo") ?? UIImage()],
@@ -70,7 +70,7 @@ class PostsViewController: UIViewController {
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
-            ModelPost(
+            Post(
                 imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
                 username: "tur_v_dagestan",
                 postImage: [UIImage(named: "mainOne") ?? UIImage()],
@@ -78,14 +78,15 @@ class PostsViewController: UIViewController {
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
-            ModelPost(
+            Post(
                 imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
                 username: "tur_v_dagestan",
                 postImage: [UIImage(named: "mainTwo") ?? UIImage()],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
-            ), ModelPost(
+            ),
+            Post(
                 imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
                 username: "tur_v_dagestan",
                 postImage: [UIImage(named: "mainTwo") ?? UIImage(), UIImage(named: "mainOne") ?? UIImage()],
@@ -123,9 +124,9 @@ class PostsViewController: UIViewController {
     }
 
     private func setupTableView() {
-        tableView.register(StoriesCell.self, forCellReuseIdentifier: Constants.identifierStories)
-        tableView.register(PostCell.self, forCellReuseIdentifier: Constants.identifierPosts)
-        tableView.register(RecomindationCell.self, forCellReuseIdentifier: Constants.identifierRecomendations)
+        tableView.register(StoriesCell.self, forCellReuseIdentifier: Constants.storiesIdentifire)
+        tableView.register(PostCell.self, forCellReuseIdentifier: Constants.postsIdentifire)
+        tableView.register(RecomindationCell.self, forCellReuseIdentifier: Constants.recomendationsIdentifire)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = .clear
@@ -161,7 +162,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
         switch item {
         case let .stories(info):
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: Constants.identifierStories,
+                withIdentifier: Constants.storiesIdentifire,
                 for: indexPath
             ) as? StoriesCell
             else { fatalError() }
@@ -170,7 +171,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case let .post(info):
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: Constants.identifierPosts,
+                withIdentifier: Constants.postsIdentifire,
                 for: indexPath
             ) as? PostCell
             else { fatalError() }
@@ -179,7 +180,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case let .recomendation(info):
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: Constants.identifierRecomendations,
+                withIdentifier: Constants.recomendationsIdentifire,
                 for: indexPath
             ) as? RecomindationCell
             else { fatalError() }

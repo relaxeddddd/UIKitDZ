@@ -4,7 +4,9 @@
 import UIKit
 
 // Модель для ячейки рекомендации
-struct ModelRecomendation {
+struct Recomendation {
+    // Картинка рекомендации
     let image: UIImage
+    // Текст под картинкой
     let label: String
 }

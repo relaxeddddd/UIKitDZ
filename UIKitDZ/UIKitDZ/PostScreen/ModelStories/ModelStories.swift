@@ -4,8 +4,11 @@
 import UIKit
 
 // Модель для ячейки истории
-struct ModelStories {
+struct Stories {
+    // Аватарка пользователя
     let image: UIImage
+    // Имя пользователя
     let name: String
+    // Кнопка добавить историю
     let addButton: Bool
 }

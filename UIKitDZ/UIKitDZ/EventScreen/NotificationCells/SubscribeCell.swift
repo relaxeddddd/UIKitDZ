@@ -4,7 +4,7 @@
 import UIKit
 
 // Класс для создания ячейки с кнопкой подписаться
-class SubscribeCell: UITableViewCell {
+final class SubscribeCell: UITableViewCell {
     // MARK: - Visual Components
 
     private let commentLabel: UILabel = {
@@ -50,7 +50,7 @@ class SubscribeCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func configure(with info: ModelSubscribeCell) {
+    func configure(with info: SubscribeItemCell) {
         commentLabel.text = info.userComment
         userImageView.image = info.imageUser
     }

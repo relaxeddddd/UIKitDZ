@@ -41,7 +41,7 @@ final class StoriesCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    public func configure(with items: [ModelStories]) {
+    public func configure(with items: [Stories]) {
         var xOffset = CGFloat(Constants.xOffset)
 
         for item in items {
