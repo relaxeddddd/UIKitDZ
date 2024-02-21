@@ -1,18 +1,18 @@
 // ModelPost.swift
 // Copyright © RoadMap. All rights reserved.
 
-// Модель для ячейки постов
+/// Модель для ячейки постов
 struct Post {
-    // Ававтарка пользователя
-    let imageUser: String
-    // Имя пользователя
+    /// Ававтарка пользователя
+    let imageUserName: String
+    /// Имя пользователя
     let username: String
-    // Изображение в посте
-    let postImage: [String]
-    // Количество лайков
+    /// Изображение в посте
+    let postImageName: [String]
+    /// Количество лайков
     let numberLikes: String
-    // Коментарий пользователя
+    /// Коментарий пользователя
     let userComent: String
-    // Время поста
+    /// Время поста
     let time: String
 }

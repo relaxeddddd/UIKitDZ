@@ -3,7 +3,7 @@
 
 import UIKit
 
-// Экран уведомления
+/// Экран уведомления
 final class NotificationsViewController: UIViewController {
     // MARK: - Constants
 
@@ -39,16 +39,16 @@ final class NotificationsViewController: UIViewController {
     private var today: [CellNotificationType] = [
         .comment([
             CommentItemCell(
-                userImage: "otherUserImage",
+                userImageName: "otherUserImage",
                 userText: "lavanda123 понравился ваш комментарий: 'Очень красиво!' 12ч",
-                image: "mainOne"
+                imageName: "mainOne"
             )
         ]),
         .comment([
             CommentItemCell(
-                userImage: "otherUserImage",
+                userImageName: "otherUserImage",
                 userText: "lavanda123 упомянула вас в комментарии: @rm Спасибо! 12ч",
-                image: "mainOne"
+                imageName: "mainOne"
             )
         ])
     ]
@@ -56,39 +56,39 @@ final class NotificationsViewController: UIViewController {
     private var onWeek: [CellNotificationType] = [
         .comment([
             CommentItemCell(
-                userImage: "otherUserImage",
+                userImageName: "otherUserImage",
                 userText: "lavanda123 понравился ваш комментарий: 'Это где?' 3д.",
-                image: "imageComments"
+                imageName: "imageComments"
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: "12miho",
+                imageUserName: "12miho",
                 userComment: "12miho появилась(-ась) в RMLink. Вы можете быть знакомы 3д."
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: "otherUserImage",
+                imageUserName: "otherUserImage",
                 userComment: "lavanda123 \nподписался(-ась) на ваши новости 5д."
             )
         ]),
         .comment([
             CommentItemCell(
-                userImage: "otherUserImage",
+                userImageName: "otherUserImage",
                 userText: "lavanda123 понравился ваш комментарий: 'Ты вернулась?' 7д.",
-                image: "imageComments"
+                imageName: "imageComments"
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: "marks",
+                imageUserName: "marks",
                 userComment: "markS появилась(-ась) в RMLink. Вы можете быть знакомы 8д."
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: "sv_neit",
+                imageUserName: "sv_neit",
                 userComment: "sv_neit появилась(-ась) в RMLink. Вы можете быть знакомы 8д."
             )
         ])
@@ -127,15 +127,21 @@ final class NotificationsViewController: UIViewController {
     }
 }
 
-// MARK: - Extension
-
+/// MARK: - NotificationsViewController + UITableViewDelegate
 extension NotificationsViewController: UITableViewDelegate {}
 
+/// MARK: - NotificationsViewController + UITableViewDataSource
+/// Расширение для работы с методами dataSource
 extension NotificationsViewController: UITableViewDataSource {
+    
+    /// Количество секций
+    /// - Returns: количество секций
     func numberOfSections(in tableView: UITableView) -> Int {
         Constants.numberOfSections
     }
-
+    
+    /// Количество ячеек в секции
+    /// - Returns: ячеек в секции
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -146,7 +152,9 @@ extension NotificationsViewController: UITableViewDataSource {
             return 0
         }
     }
-
+    
+    /// Заполнение контентом ячейку
+    /// - Returns: заполненную ячейку
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -165,7 +173,7 @@ extension NotificationsViewController: UITableViewDataSource {
                 guard let commentCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierSubscribe,
                     for: indexPath
-                ) as? SubscribeCell, let subscribeItem = subscribe.first else { fatalError() }
+                ) as? SubscribeCell, let subscribeItem = subscribe.first else { return UITableViewCell() }
                 commentCell.configure(with: subscribeItem)
                 return commentCell
             }
@@ -177,7 +185,7 @@ extension NotificationsViewController: UITableViewDataSource {
                 guard let subscribeCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierComments,
                     for: indexPath
-                ) as? CommentCell, let comment = comments.first else { fatalError() }
+                ) as? CommentCell, let comment = comments.first else { return UITableViewCell() }
                 subscribeCell.configure(with: comment)
                 return subscribeCell
 
@@ -185,15 +193,17 @@ extension NotificationsViewController: UITableViewDataSource {
                 guard let subscribeCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierSubscribe,
                     for: indexPath
-                ) as? SubscribeCell, let subscribeItem = subscribe.first else { fatalError() }
+                ) as? SubscribeCell, let subscribeItem = subscribe.first else { return UITableViewCell() }
                 subscribeCell.configure(with: subscribeItem)
                 return subscribeCell
             }
         default:
-            fatalError()
+            return UITableViewCell()
         }
     }
-
+    
+    /// Хедеры секций
+    /// - Returns: хедер над каждой секцией
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = .white

@@ -3,7 +3,7 @@
 
 import UIKit
 
-// Ячейка с кнопкой подписаться
+/// Ячейка с кнопкой подписаться
 final class SubscribeCell: UITableViewCell {
     // MARK: - Constants
 
@@ -62,7 +62,7 @@ final class SubscribeCell: UITableViewCell {
 
     func configure(with info: SubscribeItemCell) {
         commentLabel.text = info.userComment
-        userImageView.image = UIImage(named: info.imageUser)
+        userImageView.image = UIImage(named: info.imageUserName)
     }
 
     // MARK: - Private Methods

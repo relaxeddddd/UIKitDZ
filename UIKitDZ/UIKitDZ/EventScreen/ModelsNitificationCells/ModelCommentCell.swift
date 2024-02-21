@@ -1,12 +1,12 @@
 // ModelCommentCell.swift
 // Copyright © RoadMap. All rights reserved.
 
-// Модель данных ячейки комментария
+/// Модель данных ячейки комментария
 struct CommentItemCell {
-    // Аватарка пользователя
-    var userImage: String
-    // Коментарий пользователя
+    /// Аватарка пользователя
+    var userImageName: String
+    /// Коментарий пользователя
     var userText: String
-    // Изображение
-    var image: String
+    /// Изображение
+    var imageName: String
 }

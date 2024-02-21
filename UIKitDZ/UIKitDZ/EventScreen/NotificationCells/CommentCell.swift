@@ -3,7 +3,7 @@
 
 import UIKit
 
-// Ячейка комментария
+/// Ячейка комментария
 final class CommentCell: UITableViewCell {
     // MARK: - Constants
 
@@ -57,8 +57,8 @@ final class CommentCell: UITableViewCell {
 
     func configure(with info: CommentItemCell) {
         commentLabel.text = info.userText
-        userImageView.image = UIImage(named: info.userImage)
-        commentImageView.image = UIImage(named: info.image)
+        userImageView.image = UIImage(named: info.userImageName)
+        commentImageView.image = UIImage(named: info.imageName)
     }
 
     // MARK: - Private Methods

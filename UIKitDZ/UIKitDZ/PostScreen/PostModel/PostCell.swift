@@ -147,9 +147,9 @@ final class PostCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configure(with items: Post) {
-        userImageView.image = UIImage(named: items.imageUser)
+        userImageView.image = UIImage(named: items.imageUserName)
         userNameLabel.text = items.username
-        scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width) * items.postImage.count, height: 240)
+        scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width) * items.postImageName.count, height: 240)
 
         setImageOnScrollView(items: items)
         likesLabel.text = items.numberLikes
@@ -248,15 +248,15 @@ final class PostCell: UITableViewCell {
     private func setImageOnScrollView(items: Post) {
         var xOffSet = Constants.xOffset
 
-        for image in items.postImage {
-            if items.postImage.count <= 1 {
+        for image in items.postImageName {
+            if items.postImageName.count <= 1 {
                 pageControll.isHidden = true
                 let imageView = UIImageView()
                 imageView.image = UIImage(named: image)
                 imageView.frame = CGRect(x: xOffSet, y: 0, width: Int(UIScreen.main.bounds.width), height: 240)
                 scrollView.addSubview(imageView)
             } else {
-                pageControll.numberOfPages = items.postImage.count
+                pageControll.numberOfPages = items.postImageName.count
                 let imageView = UIImageView()
                 imageView.image = UIImage(named: image)
                 imageView.frame = CGRect(x: xOffSet, y: 0, width: Int(UIScreen.main.bounds.width), height: 240)
@@ -268,7 +268,9 @@ final class PostCell: UITableViewCell {
     }
 }
 
-// Расширение для работе со скролом
+
+/// PostCell + UIScrollViewDelegate
+/// Расширение для работе со скролом
 extension PostCell: UIScrollViewDelegate {
     /// Вычисляем текущую страницу
     /// - Parameter scrollView: наш ScrollView

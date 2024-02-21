@@ -3,8 +3,9 @@
 
 import UIKit
 
-// Расширение для установки дефолтного цвета экрану
-public extension UIView {
+/// Расширение для установки дефолтного цвета экрану
+extension UIView {
+    /// Функция установки бэкграунда UIView
     func setDefaultBackgroundColor() {
         backgroundColor = .white
     }

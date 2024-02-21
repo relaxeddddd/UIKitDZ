@@ -3,7 +3,7 @@
 
 import UIKit
 
-// Класс для отображения главноего экрана с поставми
+/// Класс для отображения главноего экрана с поставми
 final class PostsViewController: UIViewController {
     // MARK: - Constants
 
@@ -28,66 +28,66 @@ final class PostsViewController: UIViewController {
 
     private var items: [CellType] = [
         .stories([
-            Stories(image: "mainUserImage", name: "Ваша история", addButton: true),
-            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
-            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
-            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
-            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
-            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
-            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false)
+            Stories(imageName: "mainUserImage", name: "Ваша история", addButton: true),
+            Stories(imageName: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(imageName: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(imageName: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(imageName: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(imageName: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(imageName: "otherUserImage", name: "Nihao1337", addButton: false)
         ]),
         .post([
             Post(
-                imageUser: "imageDagestan",
+                imageUserName: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: ["mainOne", "mainTwo", "mainOne", "mainTwo"],
+                postImageName: ["mainOne", "mainTwo", "mainOne", "mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             )
         ]),
         .recomendation([
-            Recomendation(image: "recomendationOne", label: "cremea_082"),
-            Recomendation(image: "recomendationTwo", label: "mary_pol"),
-            Recomendation(image: "recomendationTwo", label: "mary_pol")
+            Recomendation(imageName: "recomendationOne", label: "cremea_082"),
+            Recomendation(imageName: "recomendationTwo", label: "mary_pol"),
+            Recomendation(imageName: "recomendationTwo", label: "mary_pol")
         ]),
         .post([
             Post(
-                imageUser: "imageDagestan",
+                imageUserName: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: ["mainTwo"],
+                postImageName: ["mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: "imageDagestan",
+                imageUserName: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: ["mainOne", "mainTwo"],
+                postImageName: ["mainOne", "mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: "imageDagestan",
+                imageUserName: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: ["mainOne"],
+                postImageName: ["mainOne"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: "imageDagestan",
+                imageUserName: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: ["mainTwo"],
+                postImageName: ["mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: "imageDagestan",
+                imageUserName: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: ["mainTwo", "mainOne"],
+                postImageName: ["mainTwo", "mainOne"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
@@ -137,15 +137,20 @@ final class PostsViewController: UIViewController {
     }
 }
 
-// Расширение делегата tableView
+/// MARK: - NotificationsViewController + UITableViewDelegate
 extension PostsViewController: UITableViewDelegate {}
 
-// Расширение dataSource tableView
+/// MARK: - NotificationsViewController + UITableViewDataSource
+/// Расширение для работы с методами dataSource
 extension PostsViewController: UITableViewDataSource {
+    /// Количество секций
+    /// - Returns: количество секций
     func numberOfSections(in tableView: UITableView) -> Int {
         items.count
     }
-
+    
+    /// Количество ячеек в секции
+    /// - Returns: ячеек в секции
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cell = items[section]
         switch cell {
@@ -158,6 +163,8 @@ extension PostsViewController: UITableViewDataSource {
         }
     }
 
+    /// Заполнение контентом ячейку
+    /// - Returns: заполненную ячейку
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section]
 
@@ -191,6 +198,8 @@ extension PostsViewController: UITableViewDataSource {
         }
     }
 
+    /// Хедеры секций
+    /// - Returns: херед над каждой секцией
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = items[indexPath.section]
         switch cell {

@@ -3,7 +3,7 @@
 
 import UIKit
 
-// Создание ячейки с рекомендациями
+/// Создание ячейки с рекомендациями
 final class RecomindationCell: UITableViewCell {
     // MARK: - Constants
 
@@ -93,7 +93,7 @@ final class RecomindationCell: UITableViewCell {
             scrollView.addSubview(uiView)
 
             let imageview = UIImageView()
-            imageview.image = UIImage(named: item.image)
+            imageview.image = UIImage(named: item.imageName)
             imageview.contentMode = .scaleAspectFill
             imageview.clipsToBounds = true
             imageview.layer.cornerRadius = 57.5

@@ -9,7 +9,7 @@
 //
 import UIKit
 
-// Класс создания ячейки историй
+/// Класс создания ячейки историй
 final class StoriesCell: UITableViewCell {
     // MARK: - Constants
 
@@ -48,7 +48,7 @@ final class StoriesCell: UITableViewCell {
 
         for item in items {
             let imageView = UIImageView()
-            imageView.image = UIImage(named: item.image)
+            imageView.image = UIImage(named: item.imageName)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             scrollView.addSubview(imageView)
