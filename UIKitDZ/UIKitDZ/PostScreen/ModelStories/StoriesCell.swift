@@ -9,7 +9,7 @@
 //
 import UIKit
 
-// Класс создания ячейки
+// Класс создания ячейки историй
 final class StoriesCell: UITableViewCell {
     // MARK: - Constants
 
@@ -31,12 +31,14 @@ final class StoriesCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
+        setupView()
+        setupConstraints()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupUI()
+        setupView()
+        setupConstraints()
     }
 
     // MARK: - Public Methods
@@ -45,7 +47,8 @@ final class StoriesCell: UITableViewCell {
         var xOffset = CGFloat(Constants.xOffset)
 
         for item in items {
-            let imageView = UIImageView(image: item.image)
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: item.image)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             scrollView.addSubview(imageView)
@@ -91,9 +94,11 @@ final class StoriesCell: UITableViewCell {
 
     // MARK: - Private Methods
 
-    private func setupUI() {
+    private func setupView() {
         contentView.addSubview(scrollView)
+    }
 
+    private func setupConstraints() {
         scrollView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true

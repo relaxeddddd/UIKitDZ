@@ -3,8 +3,16 @@
 
 import UIKit
 
-// Класс для создания ячейки с кнопкой подписаться
+// Ячейка с кнопкой подписаться
 final class SubscribeCell: UITableViewCell {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let fontVerdana = "Verdana"
+        static let fontVerdanaBold = "Verdana-Bold"
+        static let accept = "Подтвердить"
+    }
+
     // MARK: - Visual Components
 
     private let commentLabel: UILabel = {
@@ -12,7 +20,7 @@ final class SubscribeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont(name: "Verdana", size: 12)
+        label.font = UIFont(name: Constants.fontVerdana, size: 12)
         return label
     }()
 
@@ -27,10 +35,10 @@ final class SubscribeCell: UITableViewCell {
     private let addSubButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0 / 255, green: 122 / 255, blue: 255, alpha: 1.0)
-        button.setTitle("Подтвердить", for: .normal)
+        button.setTitle(Constants.accept, for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 8
-        button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 10)
+        button.titleLabel?.font = UIFont(name: Constants.fontVerdanaBold, size: 10)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -40,24 +48,26 @@ final class SubscribeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
-        setupViews()
+        setupConstraints()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        addViews()
+        setupConstraints()
     }
 
     // MARK: - Public Methods
 
     func configure(with info: SubscribeItemCell) {
         commentLabel.text = info.userComment
-        userImageView.image = info.imageUser
+        userImageView.image = UIImage(named: info.imageUser)
     }
 
     // MARK: - Private Methods
 
-    private func setupViews() {
+    private func setupConstraints() {
         userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
         userImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true

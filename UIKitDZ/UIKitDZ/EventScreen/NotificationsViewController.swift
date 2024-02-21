@@ -3,7 +3,7 @@
 
 import UIKit
 
-// Класс с экраном уведомлений
+// Экран уведомления
 final class NotificationsViewController: UIViewController {
     // MARK: - Constants
 
@@ -14,6 +14,8 @@ final class NotificationsViewController: UIViewController {
         static let identifierSubscribe = "SubscribeCell"
         static let todayTitle = "  Сегодня"
         static let onWeekTitle = "  На этой неделе"
+        static let subRequestText = "Запросы на подписку"
+        static let fontVerdana = "Verdana"
     }
 
     // MARK: - Visual Components
@@ -26,8 +28,8 @@ final class NotificationsViewController: UIViewController {
 
     private let subRequest: UILabel = {
         let label = UILabel()
-        label.text = "Запросы на подписку"
-        label.font = UIFont(name: "Verdana", size: 14)
+        label.text = Constants.subRequestText
+        label.font = UIFont(name: Constants.fontVerdana, size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -37,16 +39,16 @@ final class NotificationsViewController: UIViewController {
     private var today: [CellNotificationType] = [
         .comment([
             CommentItemCell(
-                userImage: UIImage(named: "otherUserImage") ?? UIImage(),
+                userImage: "otherUserImage",
                 userText: "lavanda123 понравился ваш комментарий: 'Очень красиво!' 12ч",
-                image: UIImage(named: "mainOne") ?? UIImage()
+                image: "mainOne"
             )
         ]),
         .comment([
             CommentItemCell(
-                userImage: UIImage(named: "otherUserImage") ?? UIImage(),
+                userImage: "otherUserImage",
                 userText: "lavanda123 упомянула вас в комментарии: @rm Спасибо! 12ч",
-                image: UIImage(named: "mainOne") ?? UIImage()
+                image: "mainOne"
             )
         ])
     ]
@@ -54,39 +56,39 @@ final class NotificationsViewController: UIViewController {
     private var onWeek: [CellNotificationType] = [
         .comment([
             CommentItemCell(
-                userImage: UIImage(named: "otherUserImage") ?? UIImage(),
+                userImage: "otherUserImage",
                 userText: "lavanda123 понравился ваш комментарий: 'Это где?' 3д.",
-                image: UIImage(named: "imageComments") ?? UIImage()
+                image: "imageComments"
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: UIImage(named: "12miho") ?? UIImage(),
+                imageUser: "12miho",
                 userComment: "12miho появилась(-ась) в RMLink. Вы можете быть знакомы 3д."
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: UIImage(named: "otherUserImage") ?? UIImage(),
+                imageUser: "otherUserImage",
                 userComment: "lavanda123 \nподписался(-ась) на ваши новости 5д."
             )
         ]),
         .comment([
             CommentItemCell(
-                userImage: UIImage(named: "otherUserImage") ?? UIImage(),
+                userImage: "otherUserImage",
                 userText: "lavanda123 понравился ваш комментарий: 'Ты вернулась?' 7д.",
-                image: UIImage(named: "imageComments") ?? UIImage()
+                image: "imageComments"
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: UIImage(named: "marks") ?? UIImage(),
+                imageUser: "marks",
                 userComment: "markS появилась(-ась) в RMLink. Вы можете быть знакомы 8д."
             )
         ]),
         .subscribe([
             SubscribeItemCell(
-                imageUser: UIImage(named: "sv_neit") ?? UIImage(),
+                imageUser: "sv_neit",
                 userComment: "sv_neit появилась(-ась) в RMLink. Вы можете быть знакомы 8д."
             )
         ])
@@ -104,8 +106,8 @@ final class NotificationsViewController: UIViewController {
     // MARK: - Private Methods
 
     private func setupTableView() {
-        tableView.register(CommentCell.self, forCellReuseIdentifier: "CommentCell")
-        tableView.register(SubscribeCell.self, forCellReuseIdentifier: "SubscribeCell")
+        tableView.register(CommentCell.self, forCellReuseIdentifier: Constants.identifierComments)
+        tableView.register(SubscribeCell.self, forCellReuseIdentifier: Constants.identifierSubscribe)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
@@ -125,7 +127,11 @@ final class NotificationsViewController: UIViewController {
     }
 }
 
-extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Extension
+
+extension NotificationsViewController: UITableViewDelegate {}
+
+extension NotificationsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         Constants.numberOfSections
     }
@@ -150,8 +156,8 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
                 guard let commentCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierComments,
                     for: indexPath
-                ) as? CommentCell else { fatalError() }
-                guard let comment = comments.first else { fatalError() }
+                ) as? CommentCell,
+                    let comment = comments.first else { fatalError() }
                 commentCell.configure(with: comment)
                 return commentCell
 
@@ -159,8 +165,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
                 guard let commentCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierSubscribe,
                     for: indexPath
-                ) as? SubscribeCell else { fatalError() }
-                guard let subscribeItem = subscribe.first else { fatalError() }
+                ) as? SubscribeCell, let subscribeItem = subscribe.first else { fatalError() }
                 commentCell.configure(with: subscribeItem)
                 return commentCell
             }
@@ -172,8 +177,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
                 guard let subscribeCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierComments,
                     for: indexPath
-                ) as? CommentCell else { fatalError() }
-                guard let comment = comments.first else { fatalError() }
+                ) as? CommentCell, let comment = comments.first else { fatalError() }
                 subscribeCell.configure(with: comment)
                 return subscribeCell
 
@@ -181,8 +185,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
                 guard let subscribeCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierSubscribe,
                     for: indexPath
-                ) as? SubscribeCell else { fatalError() }
-                guard let subscribeItem = subscribe.first else { fatalError() }
+                ) as? SubscribeCell, let subscribeItem = subscribe.first else { fatalError() }
                 subscribeCell.configure(with: subscribeItem)
                 return subscribeCell
             }
@@ -195,11 +198,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
         let label = UILabel()
         label.backgroundColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        if section == 0 {
-            label.text = Constants.todayTitle
-        } else {
-            label.text = Constants.onWeekTitle
-        }
+        label.text = section == 0 ? Constants.todayTitle : Constants.onWeekTitle
         return label
     }
 }

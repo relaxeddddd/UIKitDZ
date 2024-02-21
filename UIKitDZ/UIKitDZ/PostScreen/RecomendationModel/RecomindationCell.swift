@@ -10,6 +10,11 @@ final class RecomindationCell: UITableViewCell {
     private enum Constants {
         static let xOffset = 20
         static let increaseXOffset = 210
+        static let fontVerdana = "Verdana"
+        static let fontVerdanaBold = "Verdana-Bold"
+        static let recomindationLabelText = "Рекомендуем вам"
+        static let buttonTitle = "Все"
+        static let subscribeButton = "Подписаться"
     }
 
     // MARK: - Visual Components
@@ -24,18 +29,18 @@ final class RecomindationCell: UITableViewCell {
 
     private let recomindationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Рекомендуем вам"
+        label.text = Constants.recomindationLabelText
         label.textColor = .black
-        label.font = UIFont(name: "Verdana-Bold", size: 10)
+        label.font = UIFont(name: Constants.fontVerdanaBold, size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let recomindationButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Все", for: .normal)
+        button.setTitle(Constants.buttonTitle, for: .normal)
         button.setTitleColor(UIColor(red: 0 / 255, green: 122 / 255, blue: 255 / 255, alpha: 1.0), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 10)
+        button.titleLabel?.font = UIFont(name: Constants.fontVerdanaBold, size: 10)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -45,11 +50,13 @@ final class RecomindationCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
-        setupViews()
+        setupConstraints()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        addViews()
+        setupConstraints()
     }
 
     // MARK: - Private Methods
@@ -60,7 +67,7 @@ final class RecomindationCell: UITableViewCell {
         contentView.addSubview(recomindationButton)
     }
 
-    private func setupViews() {
+    private func setupConstraints() {
         scrollView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -76,7 +83,7 @@ final class RecomindationCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    public func configure(with items: [Recomendation]) {
+    func configure(with items: [Recomendation]) {
         var xOffset = CGFloat(Constants.xOffset)
 
         for item in items {
@@ -85,7 +92,8 @@ final class RecomindationCell: UITableViewCell {
             uiView.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview(uiView)
 
-            let imageview = UIImageView(image: item.image)
+            let imageview = UIImageView()
+            imageview.image = UIImage(named: item.image)
             imageview.contentMode = .scaleAspectFill
             imageview.clipsToBounds = true
             imageview.layer.cornerRadius = 57.5
@@ -95,15 +103,15 @@ final class RecomindationCell: UITableViewCell {
             let label = UILabel()
             label.text = item.label
             label.textColor = .black
-            label.font = UIFont(name: "Verdana", size: 10)
+            label.font = UIFont(name: Constants.fontVerdana, size: 10)
             label.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview(label)
 
             let button = UIButton()
-            button.setTitle("Подписаться", for: .normal)
+            button.setTitle(Constants.subscribeButton, for: .normal)
             button.backgroundColor = UIColor(red: 0 / 255, green: 122 / 255, blue: 255 / 255, alpha: 1.0)
             button.layer.cornerRadius = 8
-            button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 10)
+            button.titleLabel?.font = UIFont(name: Constants.fontVerdanaBold, size: 10)
             button.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview(button)
 

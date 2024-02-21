@@ -11,6 +11,9 @@ final class PostsViewController: UIViewController {
         static let storiesIdentifire = "StoriesCell"
         static let postsIdentifire = "PostCell"
         static let recomendationsIdentifire = "RecomindationCell"
+        static let storiesHeightCell = 100
+        static let postsHeightCell = 450
+        static let recomendationsHeightCell = 270
     }
 
     // MARK: - Visual Components
@@ -25,71 +28,66 @@ final class PostsViewController: UIViewController {
 
     private var items: [CellType] = [
         .stories([
-            Stories(image: UIImage(named: "mainUserImage") ?? UIImage(), name: "Ваша история", addButton: true),
-            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false),
-            Stories(image: UIImage(named: "otherUserImage") ?? UIImage(), name: "Nihao1337", addButton: false)
+            Stories(image: "mainUserImage", name: "Ваша история", addButton: true),
+            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false),
+            Stories(image: "otherUserImage", name: "Nihao1337", addButton: false)
         ]),
         .post([
             Post(
-                imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
+                imageUser: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: [
-                    UIImage(named: "mainOne") ?? UIImage(),
-                    UIImage(named: "mainTwo") ?? UIImage(),
-                    UIImage(named: "mainOne") ?? UIImage(),
-                    UIImage(named: "mainTwo") ?? UIImage()
-                ],
+                postImage: ["mainOne", "mainTwo", "mainOne", "mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             )
         ]),
         .recomendation([
-            Recomendation(image: UIImage(named: "recomendationOne") ?? UIImage(), label: "cremea_082"),
-            Recomendation(image: UIImage(named: "recomendationTwo") ?? UIImage(), label: "mary_pol"),
-            Recomendation(image: UIImage(named: "recomendationTwo") ?? UIImage(), label: "mary_pol")
+            Recomendation(image: "recomendationOne", label: "cremea_082"),
+            Recomendation(image: "recomendationTwo", label: "mary_pol"),
+            Recomendation(image: "recomendationTwo", label: "mary_pol")
         ]),
         .post([
             Post(
-                imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
+                imageUser: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: [UIImage(named: "mainTwo") ?? UIImage()],
+                postImage: ["mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
+                imageUser: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: [UIImage(named: "mainOne") ?? UIImage(), UIImage(named: "mainTwo") ?? UIImage()],
+                postImage: ["mainOne", "mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
+                imageUser: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: [UIImage(named: "mainOne") ?? UIImage()],
+                postImage: ["mainOne"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
+                imageUser: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: [UIImage(named: "mainTwo") ?? UIImage()],
+                postImage: ["mainTwo"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
             ),
             Post(
-                imageUser: UIImage(named: "imageDagestan") ?? UIImage(),
+                imageUser: "imageDagestan",
                 username: "tur_v_dagestan",
-                postImage: [UIImage(named: "mainTwo") ?? UIImage(), UIImage(named: "mainOne") ?? UIImage()],
+                postImage: ["mainTwo", "mainOne"],
                 numberLikes: "Нравится: 201",
                 userComent: "tur_v_dagestan Насладитесь красотой природы. Забронировать тур в Дагестан можно уже сейчас!",
                 time: "10 минут назад"
@@ -139,7 +137,11 @@ final class PostsViewController: UIViewController {
     }
 }
 
-extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
+// Расширение делегата tableView
+extension PostsViewController: UITableViewDelegate {}
+
+// Расширение dataSource tableView
+extension PostsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         items.count
     }
@@ -164,8 +166,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: Constants.storiesIdentifire,
                 for: indexPath
-            ) as? StoriesCell
-            else { fatalError() }
+            ) as? StoriesCell else { return UITableViewCell() }
             cell.selectionStyle = .none
             cell.configure(with: info)
             return cell
@@ -174,7 +175,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
                 withIdentifier: Constants.postsIdentifire,
                 for: indexPath
             ) as? PostCell
-            else { fatalError() }
+            else { return UITableViewCell() }
             cell.selectionStyle = .none
             cell.configure(with: info[indexPath.row])
             return cell
@@ -183,7 +184,7 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
                 withIdentifier: Constants.recomendationsIdentifire,
                 for: indexPath
             ) as? RecomindationCell
-            else { fatalError() }
+            else { return UITableViewCell() }
             cell.selectionStyle = .none
             cell.configure(with: info)
             return cell
@@ -194,11 +195,11 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = items[indexPath.section]
         switch cell {
         case .stories:
-            return 100
+            return CGFloat(Constants.storiesHeightCell)
         case .post:
-            return 450
+            return CGFloat(Constants.postsHeightCell)
         case .recomendation:
-            return 270
+            return CGFloat(Constants.recomendationsHeightCell)
         }
     }
 }

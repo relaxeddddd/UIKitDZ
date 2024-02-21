@@ -5,6 +5,17 @@ import UIKit
 
 /// Class SceneDelegate
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let postsNavigationTitle = "Лента"
+        static let postsNavigationImage = "iconPosts"
+        static let notificationsNavigationTitle = "Уведомления"
+        static let notificationsNavigationImage = "iconNotifications"
+        static let profileNavigationTitle = "Профиль"
+        static let profileNavigationImage = "iconProfile"
+    }
+
     var window: UIWindow?
 
     func scene(
@@ -17,29 +28,33 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let tabBarController = UITabBarController()
 
-        let postsNavigetionController = UINavigationController(rootViewController: PostsViewController())
+        let postsNavigationController = UINavigationController(rootViewController: PostsViewController())
         let notificationsNavigationController =
             UINavigationController(rootViewController: NotificationsViewController())
         let profileNavigationController = UINavigationController(rootViewController: ProfileViewController())
 
         tabBarController.setViewControllers(
             [
-                postsNavigetionController,
+                postsNavigationController,
                 notificationsNavigationController,
                 profileNavigationController
             ],
             animated: true
         )
 
-        postsNavigetionController.tabBarItem = UITabBarItem(title: "Лента", image: UIImage(named: "iconPosts"), tag: 0)
+        postsNavigationController.tabBarItem = UITabBarItem(
+            title: Constants.postsNavigationTitle,
+            image: UIImage(named: Constants.postsNavigationImage),
+            tag: 0
+        )
         notificationsNavigationController.tabBarItem = UITabBarItem(
-            title: "Уведомления",
-            image: UIImage(named: "iconNotifications"),
+            title: Constants.notificationsNavigationTitle,
+            image: UIImage(named: Constants.notificationsNavigationImage),
             tag: 1
         )
         profileNavigationController.tabBarItem = UITabBarItem(
-            title: "Профиль",
-            image: UIImage(named: "iconProfile"),
+            title: Constants.profileNavigationTitle,
+            image: UIImage(named: Constants.profileNavigationImage),
             tag: 2
         )
 

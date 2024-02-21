@@ -3,13 +3,22 @@
 
 import UIKit
 
-// Класс для создания ячейки
+// Класс для создания ячейки c постом
 final class PostCell: UITableViewCell {
     // MARK: - Constants
 
     private enum Constants {
         static let boldString = "tur_v_dagestan"
         static let xOffset = 0
+        static let fontVerdanaBold = "Verdana-Bold"
+        static let fontVerdana = "Verdana"
+        static let nameShareButton = "ShareButton"
+        static let nameHearthImage = "hearth"
+        static let nameCommentImage = "comment"
+        static let nameShareImage = "telegram"
+        static let nameSaveImage = "save"
+        static let nameContentImage = "mainUserImage"
+        static let placeholder = "Комментировать ..."
     }
 
     // MARK: - Visual Components
@@ -24,14 +33,14 @@ final class PostCell: UITableViewCell {
 
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Verdana-Bold", size: 12)
+        label.font = UIFont(name: Constants.fontVerdanaBold, size: 12)
         label.textColor = .black
         return label
     }()
 
     private let shareButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "shareButton"), for: .normal)
+        button.setImage(UIImage(named: Constants.nameShareButton), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -54,28 +63,28 @@ final class PostCell: UITableViewCell {
 
     private let hearthButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "hearth"), for: .normal)
+        button.setImage(UIImage(named: Constants.nameHearthImage), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private let commentButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "comment"), for: .normal)
+        button.setImage(UIImage(named: Constants.nameCommentImage), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private let telegramButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "telegram"), for: .normal)
+        button.setImage(UIImage(named: Constants.nameShareImage), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private let saveButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "save"), for: .normal)
+        button.setImage(UIImage(named: Constants.nameSaveImage), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -84,14 +93,14 @@ final class PostCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Verdana-Bold", size: 10)
+        label.font = UIFont(name: Constants.fontVerdanaBold, size: 10)
         return label
     }()
 
     private let comentLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont(name: "Verdana", size: 10)
+        label.font = UIFont(name: Constants.fontVerdana, size: 10)
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -100,15 +109,15 @@ final class PostCell: UITableViewCell {
 
     private let imageComment: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "mainUserImage")
+        imageView.image = UIImage(named: Constants.nameContentImage)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
     private let commentTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Комментировать ..."
-        textField.font = UIFont(name: "Verdana", size: 10)
+        textField.placeholder = Constants.placeholder
+        textField.font = UIFont(name: Constants.fontVerdana, size: 10)
         textField.borderStyle = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -117,7 +126,7 @@ final class PostCell: UITableViewCell {
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
-        label.font = UIFont(name: "Verdana", size: 10)
+        label.font = UIFont(name: Constants.fontVerdana, size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -138,7 +147,7 @@ final class PostCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configure(with items: Post) {
-        userImageView.image = items.imageUser
+        userImageView.image = UIImage(named: items.imageUser)
         userNameLabel.text = items.username
         scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width) * items.postImage.count, height: 240)
 
@@ -148,7 +157,11 @@ final class PostCell: UITableViewCell {
         let text = items.userComent
         let attributedString = NSMutableAttributedString(string: text)
         let range = (text as NSString).range(of: Constants.boldString)
-        attributedString.addAttribute(.font, value: UIFont(name: "Verdana-Bold", size: 10) ?? "", range: range)
+        attributedString.addAttribute(
+            .font,
+            value: UIFont(name: Constants.fontVerdanaBold, size: 10) ?? "",
+            range: range
+        )
         comentLabel.attributedText = attributedString
     }
 
@@ -238,12 +251,14 @@ final class PostCell: UITableViewCell {
         for image in items.postImage {
             if items.postImage.count <= 1 {
                 pageControll.isHidden = true
-                let imageView = UIImageView(image: image)
+                let imageView = UIImageView()
+                imageView.image = UIImage(named: image)
                 imageView.frame = CGRect(x: xOffSet, y: 0, width: Int(UIScreen.main.bounds.width), height: 240)
                 scrollView.addSubview(imageView)
             } else {
                 pageControll.numberOfPages = items.postImage.count
-                let imageView = UIImageView(image: image)
+                let imageView = UIImageView()
+                imageView.image = UIImage(named: image)
                 imageView.frame = CGRect(x: xOffSet, y: 0, width: Int(UIScreen.main.bounds.width), height: 240)
                 scrollView.addSubview(imageView)
 
@@ -253,7 +268,11 @@ final class PostCell: UITableViewCell {
     }
 }
 
+// Расширение для работе со скролом
 extension PostCell: UIScrollViewDelegate {
+    /// Вычисляем текущую страницу
+    /// - Parameter scrollView: наш ScrollView
+    /// - Returns: отображаем страницу в зависимости от прокрутки контента
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControll.currentPage = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
     }

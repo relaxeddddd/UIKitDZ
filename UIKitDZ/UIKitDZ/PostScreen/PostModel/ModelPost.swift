@@ -1,16 +1,14 @@
 // ModelPost.swift
 // Copyright © RoadMap. All rights reserved.
 
-import UIKit
-
 // Модель для ячейки постов
 struct Post {
     // Ававтарка пользователя
-    let imageUser: UIImage
+    let imageUser: String
     // Имя пользователя
     let username: String
     // Изображение в посте
-    let postImage: [UIImage]
+    let postImage: [String]
     // Количество лайков
     let numberLikes: String
     // Коментарий пользователя

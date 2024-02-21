@@ -1,12 +1,10 @@
 // ModelStories.swift
 // Copyright © RoadMap. All rights reserved.
 
-import UIKit
-
 // Модель для ячейки истории
 struct Stories {
     // Аватарка пользователя
-    let image: UIImage
+    let image: String
     // Имя пользователя
     let name: String
     // Кнопка добавить историю

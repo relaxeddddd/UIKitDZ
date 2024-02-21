@@ -3,8 +3,14 @@
 
 import UIKit
 
-// Класс для создания ячейки коментария
+// Ячейка комментария
 final class CommentCell: UITableViewCell {
+    // MARK: - Constants
+
+    private enum Constants {
+        static let fontVerdana = "Verdana"
+    }
+
     // MARK: - Visual Components
 
     private let commentLabel: UILabel = {
@@ -12,7 +18,7 @@ final class CommentCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont(name: "Verdana", size: 12)
+        label.font = UIFont(name: Constants.fontVerdana, size: 12)
         return label
     }()
 
@@ -37,20 +43,22 @@ final class CommentCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
-        setupViews()
+        setupConstraints()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        addViews()
+        setupConstraints()
     }
 
     // MARK: - Public Methods
 
-    public func configure(with info: CommentItemCell) {
+    func configure(with info: CommentItemCell) {
         commentLabel.text = info.userText
-        userImageView.image = info.userImage
-        commentImageView.image = info.image
+        userImageView.image = UIImage(named: info.userImage)
+        commentImageView.image = UIImage(named: info.image)
     }
 
     // MARK: - Private Methods
@@ -61,7 +69,7 @@ final class CommentCell: UITableViewCell {
         contentView.addSubview(commentImageView)
     }
 
-    private func setupViews() {
+    private func setupConstraints() {
         userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
         userImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true

@@ -3,9 +3,12 @@
 
 import UIKit
 
-// Перечисление с типом ячеек
+// Перечисление с типом ячеек для такблицы
 enum CellType {
+    // Кейс для ячейки историй
     case stories([Stories])
+    // Кейс для ячейки постов
     case post([Post])
+    // Кейс для ячейки рекомендаций
     case recomendation([Recomendation])
 }
