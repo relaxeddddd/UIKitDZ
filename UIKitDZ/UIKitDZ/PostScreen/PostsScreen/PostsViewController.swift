@@ -137,16 +137,16 @@ final class PostsViewController: UIViewController {
     }
 }
 
-/// MARK: - NotificationsViewController + UITableViewDelegate
+// MARK: - NotificationsViewController + UITableViewDelegate
+
 extension PostsViewController: UITableViewDelegate {}
 
-/// MARK: - NotificationsViewController + UITableViewDataSource
-extension PostsViewController: UITableViewDataSource {
+// MARK: - NotificationsViewController + UITableViewDataSource
 
+extension PostsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         items.count
     }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cell = items[section]

@@ -268,7 +268,6 @@ final class PostCell: UITableViewCell {
     }
 }
 
-
 /// PostCell + UIScrollViewDelegate
 /// Расширение для работе со скролом
 extension PostCell: UIScrollViewDelegate {
