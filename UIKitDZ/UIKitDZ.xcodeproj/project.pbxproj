@@ -23,6 +23,13 @@
 		041BC3592B84E9E5002234B9 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC3582B84E9E5002234B9 /* CommentCell.swift */; };
 		046B5B812B853AC800C19F18 /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5B802B853AC700C19F18 /* SubscribeCell.swift */; };
 		046B5B852B8558F700C19F18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046B5B842B8558F700C19F18 /* Assets.xcassets */; };
+		046B5B8A2B86412500C19F18 /* ProfileInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5B892B86412500C19F18 /* ProfileInformationCell.swift */; };
+		046B5B8D2B8641F100C19F18 /* ModelProfileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5B8C2B8641F100C19F18 /* ModelProfileInformation.swift */; };
+		046B5B902B86425400C19F18 /* ProfileCellTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5B8F2B86425400C19F18 /* ProfileCellTypes.swift */; };
+		046B5B932B865F4300C19F18 /* ModelProfileStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5B922B865F4300C19F18 /* ModelProfileStories.swift */; };
+		046B5B952B865FCE00C19F18 /* ProfileStoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5B942B865FCE00C19F18 /* ProfileStoriesCell.swift */; };
+		046B5BBD2B8748B800C19F18 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5BBC2B8748B800C19F18 /* WKWebViewController.swift */; };
+		046B5BC02B87776200C19F18 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5BBF2B87776200C19F18 /* CollectionCell.swift */; };
 		0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4732B71214100DDDFCC /* AppDelegate.swift */; };
 		0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4752B71214100DDDFCC /* SceneDelegate.swift */; };
 		0499A4782B71214100DDDFCC /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499A4772B71214100DDDFCC /* PostsViewController.swift */; };
@@ -63,6 +70,13 @@
 		041BC3582B84E9E5002234B9 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		046B5B802B853AC700C19F18 /* SubscribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
 		046B5B842B8558F700C19F18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		046B5B892B86412500C19F18 /* ProfileInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationCell.swift; sourceTree = "<group>"; };
+		046B5B8C2B8641F100C19F18 /* ModelProfileInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProfileInformation.swift; sourceTree = "<group>"; };
+		046B5B8F2B86425400C19F18 /* ProfileCellTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellTypes.swift; sourceTree = "<group>"; };
+		046B5B922B865F4300C19F18 /* ModelProfileStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProfileStories.swift; sourceTree = "<group>"; };
+		046B5B942B865FCE00C19F18 /* ProfileStoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoriesCell.swift; sourceTree = "<group>"; };
+		046B5BBC2B8748B800C19F18 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		046B5BBF2B87776200C19F18 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		0499A4702B71214100DDDFCC /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0499A4732B71214100DDDFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0499A4752B71214100DDDFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +206,53 @@
 			path = NotificationCells;
 			sourceTree = "<group>";
 		};
+		046B5B882B863B4400C19F18 /* PersonProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				046B5BBE2B8776AA00C19F18 /* ProfileCollectionCell */,
+				046B5B912B865F1800C19F18 /* ProfileStoriesModel */,
+				046B5B8E2B86423D00C19F18 /* ProfileCellTypes */,
+				046B5B8B2B8641C800C19F18 /* ProfileInformationModel */,
+				041BC30B2B838759002234B9 /* ProfileViewController.swift */,
+				046B5BBC2B8748B800C19F18 /* WKWebViewController.swift */,
+			);
+			path = PersonProfileScreen;
+			sourceTree = "<group>";
+		};
+		046B5B8B2B8641C800C19F18 /* ProfileInformationModel */ = {
+			isa = PBXGroup;
+			children = (
+				046B5B892B86412500C19F18 /* ProfileInformationCell.swift */,
+				046B5B8C2B8641F100C19F18 /* ModelProfileInformation.swift */,
+			);
+			path = ProfileInformationModel;
+			sourceTree = "<group>";
+		};
+		046B5B8E2B86423D00C19F18 /* ProfileCellTypes */ = {
+			isa = PBXGroup;
+			children = (
+				046B5B8F2B86425400C19F18 /* ProfileCellTypes.swift */,
+			);
+			path = ProfileCellTypes;
+			sourceTree = "<group>";
+		};
+		046B5B912B865F1800C19F18 /* ProfileStoriesModel */ = {
+			isa = PBXGroup;
+			children = (
+				046B5B922B865F4300C19F18 /* ModelProfileStories.swift */,
+				046B5B942B865FCE00C19F18 /* ProfileStoriesCell.swift */,
+			);
+			path = ProfileStoriesModel;
+			sourceTree = "<group>";
+		};
+		046B5BBE2B8776AA00C19F18 /* ProfileCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				046B5BBF2B87776200C19F18 /* CollectionCell.swift */,
+			);
+			path = ProfileCollectionCell;
+			sourceTree = "<group>";
+		};
 		0499A4672B71214100DDDFCC = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +272,7 @@
 		0499A4722B71214100DDDFCC /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				046B5B882B863B4400C19F18 /* PersonProfileScreen */,
 				041BC34C2B84D0D0002234B9 /* PostScreen */,
 				041BC3072B8386BC002234B9 /* EventScreen */,
 				0499A4792B71214100DDDFCC /* Main.storyboard */,
@@ -219,7 +281,6 @@
 				0499A4812B71214400DDDFCC /* Info.plist */,
 				041BC30D2B838A5E002234B9 /* Extension */,
 				041BC3062B83868A002234B9 /* Supports */,
-				041BC30B2B838759002234B9 /* ProfileViewController.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -339,19 +400,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046B5B8D2B8641F100C19F18 /* ModelProfileInformation.swift in Sources */,
 				041BC3262B843A41002234B9 /* RecomendationModel.swift in Sources */,
 				041BC31D2B83AE70002234B9 /* ModelPost.swift in Sources */,
+				046B5BBD2B8748B800C19F18 /* WKWebViewController.swift in Sources */,
+				046B5B932B865F4300C19F18 /* ModelProfileStories.swift in Sources */,
 				041BC30F2B838A74002234B9 /* UIView+Extension.swift in Sources */,
 				041BC31A2B83AB7F002234B9 /* CellType.swift in Sources */,
+				046B5B8A2B86412500C19F18 /* ProfileInformationCell.swift in Sources */,
 				0499A4782B71214100DDDFCC /* PostsViewController.swift in Sources */,
 				041BC3092B8386CB002234B9 /* NotificationsViewController.swift in Sources */,
+				046B5B952B865FCE00C19F18 /* ProfileStoriesCell.swift in Sources */,
 				041BC3282B843C2D002234B9 /* RecomindationCell.swift in Sources */,
 				041BC3122B8395B5002234B9 /* ModelStories.swift in Sources */,
 				041BC30C2B838759002234B9 /* ProfileViewController.swift in Sources */,
+				046B5B902B86425400C19F18 /* ProfileCellTypes.swift in Sources */,
 				046B5B812B853AC800C19F18 /* SubscribeCell.swift in Sources */,
 				041BC3592B84E9E5002234B9 /* CommentCell.swift in Sources */,
 				041BC3162B839972002234B9 /* StoriesCell.swift in Sources */,
 				041BC3562B84E916002234B9 /* ModelsSubscribeCell.swift in Sources */,
+				046B5BC02B87776200C19F18 /* CollectionCell.swift in Sources */,
 				0499A4742B71214100DDDFCC /* AppDelegate.swift in Sources */,
 				0499A4762B71214100DDDFCC /* SceneDelegate.swift in Sources */,
 				041BC31F2B83AFA6002234B9 /* PostCell.swift in Sources */,

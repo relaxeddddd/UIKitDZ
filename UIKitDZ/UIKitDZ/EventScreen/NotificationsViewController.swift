@@ -127,12 +127,13 @@ final class NotificationsViewController: UIViewController {
     }
 }
 
-/// MARK: - NotificationsViewController + UITableViewDelegate
+// MARK: - NotificationsViewController + UITableViewDelegate
+
 extension NotificationsViewController: UITableViewDelegate {}
 
-/// MARK: - NotificationsViewController + UITableViewDataSource
+// MARK: - NotificationsViewController + UITableViewDataSource
+
 extension NotificationsViewController: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         Constants.numberOfSections
     }
@@ -147,7 +148,6 @@ extension NotificationsViewController: UITableViewDataSource {
             return 0
         }
     }
-    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
@@ -158,8 +158,7 @@ extension NotificationsViewController: UITableViewDataSource {
                 guard let commentCell = tableView.dequeueReusableCell(
                     withIdentifier: Constants.identifierComments,
                     for: indexPath
-                ) as? CommentCell,
-                    let comment = comments.first else { fatalError() }
+                ) as? CommentCell, let comment = comments.first else { fatalError() }
                 commentCell.configure(with: comment)
                 return commentCell
 

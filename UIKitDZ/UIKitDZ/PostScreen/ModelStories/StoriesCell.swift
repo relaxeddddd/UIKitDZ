@@ -70,7 +70,8 @@ final class StoriesCell: UITableViewCell {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
-            label.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+            label.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive =
+                true
             if item.addButton == true {
                 let button = UIButton()
                 button.translatesAutoresizingMaskIntoConstraints = false
