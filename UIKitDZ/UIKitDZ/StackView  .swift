@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Класс для ототбражения светоформа с помощью NSLayoutAnchor
+/// Класс для ототбражения светоформа с помощью StackView
 class StackView: UIViewController {
     // MARK: - Constants
 

@@ -4,7 +4,7 @@
 import UIKit
 
 /// Класс для отображения светофора с помощью NSLayoutConstraint
-class NSLayoutAnchor: UIViewController {
+final class NSLayoutAnchor: UIViewController {
     // MARK: - Visual Components
 
     private let blackView: UIView = {
